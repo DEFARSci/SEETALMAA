@@ -96,3 +96,24 @@ nav{
     border-left:solid 1px #DCDCDC;
     border-right:solid 1px #DCDCDC;
 }
+
+
+/* news-in-focus */
+
+.news-in-focus{
+    border-left:solid 1px #DCDCDC;
+    border-right:solid 1px #DCDCDC;
+}
+
+/* spotlight */
+
+.spotlight{
+    border-left:solid 1px #DCDCDC;
+    border-right:solid 1px #DCDCDC;
+}
+
+/* Sport */
+
+.sport-ligne{
+    border-bottom:solid 1px #DCDCDC;
+}
