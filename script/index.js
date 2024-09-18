@@ -1,49 +1,37 @@
-// Fonction pour récupérer des données d'une API et les stocker dans un tableau
-const apiKey = "9466e1b4462e459ba89007ac9952bb6e";
-var data = [];
-async function fetchDataAndStoreInArray(apiUrl) {
+let arraydata=[];
+const auteur=document.getElementById('auteur');
+const title=document.getElementById('title');
+const img=document.getElementById('img');
+async function fetchPageData() {
     try {
-        // Faire la requête pour obtenir les données depuis l'API
-        let response = await fetch(apiUrl);
+      const response = await fetch('https://setalmaa.com/wp-json/wp/v2/posts');
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error ${response.status}`);
+      }
+      
+      const data = await response.json();
+    console.log(data[0]);
+    const article=data[0].content.rendered;
+    // const img=article.getElementByTagName('img');
+    // console.log(article);
+    // console.log(img);
+    // title.innerHTML=data[0].title.rendered;
+  //  title.innerHTML=data[0].content.rendered;
 
-        // Vérifier si la réponse est correcte (code 200)
-        if (!response.ok) {
-            throw new Error(`Erreur HTTP ! Statut : ${response.status}`);
-        }
+    img.innerHTML=`<img fetchpriority="high" decoding="async" class="size-full wp-image-12913 aligncenter" style="outline: 0px; letter-spacing: -0.15px;" src="http://setalmaa.com/wp-content/uploads/FIAB-Forum-International-Afrique-Setalmaa.jpeg" alt="" width="522" height="587" srcset="https://setalmaa.com/wp-content/uploads/FIAB-Forum-International-Afrique-Setalmaa.jpeg 522w, https://setalmaa.com/wp-content/uploads/FIAB-Forum-International-Afrique-Setalmaa-173x195.jpeg 173w, https://setalmaa.com/wp-content/uploads/FIAB-Forum-International-Afrique-Setalmaa-356x400.jpeg 356w, https://setalmaa.com/wp-content/uploads/FIAB-Forum-International-Afrique-Setalmaa-187x210.jpeg 187w, https://setalmaa.com/wp-content/uploads/FIAB-Forum-International-Afrique-Setalmaa-370x416.jpeg 370w" sizes="(max-width: 600px) 100vw, 522px" /></p>\n<p><span style="font-weight: 400;">`;
 
-        // Convertir la réponse en JSON
-        let data = await response.json();
+     ;
+   
+    // auteur.innerHTML=`<img fetchpriority="high" decoding="async" class="size-full wp-image-12913 aligncenter" style="outline: 0px; letter-spacing: -0.15px;" src="http://setalmaa.com/wp-content/uploads/FIAB-Forum-International-Afrique-Setalmaa.jpeg" alt="" width="522" height="587" srcset="https://setalmaa.com/wp-content/uploads/FIAB-Forum-International-Afrique-Setalmaa.jpeg 522w, https://setalmaa.com/wp-content/uploads/FIAB-Forum-International-Afrique-Setalmaa-173x195.jpeg 173w, https://setalmaa.com/wp-content/uploads/FIAB-Forum-International-Afrique-Setalmaa-356x400.jpeg 356w, https://setalmaa.com/wp-content/uploads/FIAB-Forum-International-Afrique-Setalmaa-187x210.jpeg 187w, https://setalmaa.com/wp-content/uploads/FIAB-Forum-International-Afrique-Setalmaa-370x416.jpeg 370w" sizes="(max-width: 600px) 100vw, 522px" /></p>\n<p><span style="font-weight: 400;">`;
 
-        // Créer un tableau pour stocker les données
-        let dataArray = [];
-
-        // Parcourir les données et les ajouter dans le tableau
-        // Supposons que data est un tableau d'objets
-        if (Array.isArray(data)) {
-            dataArray = [...data];  // Cloner directement les données si c'est un tableau
-        } else {
-            dataArray.push(data);   // Si c'est un objet unique, on le met dans le tableau
-        }
-
-        // Afficher le tableau dans la console
-         console.log("Données récupérées et stockées dans le tableau :", dataArray[0].articles[0]);
-
-        // Retourner le tableau si nécessaire
-        return dataArray;
+      return data;
+      
     } catch (error) {
-        // Gérer les erreurs en cas de problème
-        console.error("Erreur lors de la récupération des données :", error);
+      console.error('Erreur lors de la récupération des données :', error);
+      throw error;
     }
-}
+  }
 
-// Exemple d'utilisation de la fonction
-let apiUrl = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey="+apiKey+"";  
-
- data= fetchDataAndStoreInArray(apiUrl);
-// const title = document.getElementById("titles-list");
-// for (let i = 0; i < dataArray[0].articles.length; i++) {
-//     const li = document.createElement("li");
-//     li.innerHTML = dataArray[0].articles[i].title;
-//     title.appendChild(li);
-// }
-// console.log(data[0].articles.length);
+  arraydata=fetchPageData();
+  console.log("mon array est ",arraydata);
