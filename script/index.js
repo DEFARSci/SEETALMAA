@@ -1,7 +1,7 @@
 let arraydata=[];
 const auteur=document.getElementById('auteur');
 const title=document.getElementById('title');
-const img=document.getElementById('img');
+//const img=document.getElementById('img');
 async function fetchPageData() {
     try {
       const response = await fetch('https://setalmaa.com/wp-json/wp/v2/posts');
