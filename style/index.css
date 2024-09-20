@@ -125,3 +125,18 @@ nav{
 .sport-ligne{
     border-bottom:solid 1px #DCDCDC;
 }
+/* news-in-focus */
+.news-in-focus{
+    border-top: solid 1px #9e9898;
+    border-left:solid 1px #DCDCDC;
+    border-right:solid 1px #DCDCDC;
+    padding-top: 15px;
+}
+
+/* spotlight */
+.spotlight{
+    border-top: solid 1px #9e9898;
+    border-left:solid 1px #DCDCDC;
+    border-right:solid 1px #DCDCDC;
+    padding-top: 15px;
+}
