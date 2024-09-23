@@ -140,3 +140,20 @@ nav{
     border-right:solid 1px #DCDCDC;
     padding-top: 15px;
 }
+/* opinion */
+
+.opinion{
+    border-top: solid 1px #9e9898;
+    border-left:solid 1px #DCDCDC;
+    border-right:solid 1px #DCDCDC;
+    padding-top: 15px;
+}
+
+/* sport */
+
+.sport{
+    border-top: solid 1px #9e9898;
+    border-left:solid 1px #DCDCDC;
+    border-right:solid 1px #DCDCDC;
+    padding-top: 15px;
+}
