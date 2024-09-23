@@ -127,7 +127,7 @@ nav{
 }
 /* news-in-focus */
 .news-in-focus{
-    border-top: solid 1px #9e9898;
+    border-top: solid 1px #DCDCDC;
     border-left:solid 1px #DCDCDC;
     border-right:solid 1px #DCDCDC;
     padding-top: 15px;
@@ -135,7 +135,7 @@ nav{
 
 /* spotlight */
 .spotlight{
-    border-top: solid 1px #9e9898;
+    border-top: solid 1px #DCDCDC;
     border-left:solid 1px #DCDCDC;
     border-right:solid 1px #DCDCDC;
     padding-top: 15px;
@@ -143,7 +143,7 @@ nav{
 /* opinion */
 
 .opinion{
-    border-top: solid 1px #9e9898;
+    border-top: solid 1px #DCDCDC;
     border-left:solid 1px #DCDCDC;
     border-right:solid 1px #DCDCDC;
     padding-top: 15px;
@@ -152,7 +152,7 @@ nav{
 /* sport */
 
 .sport{
-    border-top: solid 1px #9e9898;
+    border-top: solid 1px #DCDCDC;
     border-left:solid 1px #DCDCDC;
     border-right:solid 1px #DCDCDC;
     padding-top: 15px;
