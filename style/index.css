@@ -124,6 +124,11 @@ nav{
 
 .sport-ligne{
     border-bottom:solid 1px #DCDCDC;
+    
+}
+.sport-ligne1{
+    border-bottom:solid 1px #DCDCDC;
+    border-top:solid 1px #DCDCDC;
 }
 /* news-in-focus */
 .news-in-focus{
@@ -156,4 +161,50 @@ nav{
     border-left:solid 1px #DCDCDC;
     border-right:solid 1px #DCDCDC;
     padding-top: 15px;
+}
+/* Most_popular */
+.Most_popular{
+   
+    border-left:solid 1px #DCDCDC;
+    border-right:solid 1px #DCDCDC;
+    border-top:solid 1px #DCDCDC;
+    
+}
+.Most_popular_ligne{
+    /* border-left:solid 1px #DCDCDC; */
+    border-right:solid 1px #DCDCDC;
+    border-bottom:solid 1px #DCDCDC;
+    padding-left: 10px;
+    
+  
+}
+
+
+
+
+
+.news-number {
+    font-size: 5rem;
+    font-weight: bold;
+    line-height: 1;
+    margin: 0;
+   
+    
+}
+
+/* Les images */
+/* grande */
+.img_1{
+    width: 490px;
+    height: 374px;
+}
+/* moyenne */
+.img_2 {
+    width: 220px;
+    height: 132px;
+}
+/* petite */
+.img_3 {
+    width: 135px;
+    height: 81px;
 }
