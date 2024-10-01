@@ -1,3 +1,4 @@
+
 let arraydata = [];
 const auteur = document.getElementById('auteur');
 const title = document.getElementById('title');
@@ -11,6 +12,7 @@ const authorInput = document.getElementById('authorInput'); // Champ pour le nom
 const emailInput = document.getElementById('emailInput'); // Champ pour l'email de l'auteur
 
 // RÃ©cupÃ©ration des donnÃ©es de l'article
+
 async function fetchPageData() {
   try {
       // const data = await fetchPostData();
@@ -149,6 +151,7 @@ async function fetchCategories(categoryIds) {
             throw new Error(`HTTP error ${response.status}`);
         }
 
+
         const categoriesData = await response.json();
         console.log("Categories data:", categoriesData); 
 
@@ -242,3 +245,4 @@ async function addComment(postId) {
   }
 });
     
+
