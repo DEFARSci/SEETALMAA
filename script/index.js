@@ -24,7 +24,7 @@ async function fetchPageData() {
       displayImage( 'img_1',0);
 
       // 1
-      displayTitle('title_2',2);
+      displayTitle('title_2',1);
     
       // 2
       displayTitle('title_3',3);
@@ -64,7 +64,7 @@ async function fetchPageData() {
 
 // Fonction pour récupérer les données des posts
 async function fetchPostData() {
-  const response = await fetch('https://setalmaa.com/wp-json/wp/v2/posts');
+  const response = await fetch('https://setalmaa.com//wp-json/wp/v2/posts?per_page=100');
   if (!response.ok) {
       throw new Error(`Erreur HTTP ${response.status}`);
   }
@@ -234,6 +234,48 @@ async function addComment(postId) {
         console.error('Erreur lors de l\'ajout du commentaire :', error);
     }
 }
+async function getCategories(siteUrl) {
+    try {
+        // Envoi de la requête GET pour récupérer les catégories
+        const response = await fetch(`${siteUrl}/wp-json/wp/v2/categories`);
+
+        // Vérification si la requête a été réussie
+        if (!response.ok) {
+            throw new Error(`Erreur : ${response.statusText}`);
+        }
+
+        // Extraction des données en format JSON
+        const categories = await response.json();
+
+        // Affichage des catégories récupérées
+        console.log('Catégories récupérées :', categories[1]);
+
+        // Retourne les catégories
+        return categories;
+    } catch (error) {
+        console.error('Erreur lors de la récupération des catégories :', error);
+    }
+}
+
+// Utilisation de la fonction
+const siteUrl = 'https://setalmaa.com';  // Remplacer par l'URL du site WordPress
+getCategories(siteUrl);
+
+
+
+
+// Utilisation des fonctions
+(async function() {
+    const siteUrl = 'https://setalmaa.com';  // Remplacez par l'URL de votre site WordPress
+    const categories = await getCategories(siteUrl);
+    
+    // Supposons que vous souhaitez récupérer les articles de la première catégorie récupérée
+    if (categories && categories.length > 0) {
+        const categoryId = categories[0].id;  // Vous pouvez sélectionner l'ID de la catégorie que vous voulez
+        const posts = await getPostsByCategory(siteUrl, categoryId);
+        console.log(`Articles dans la catégorie "${categories[0].name}":`, posts);
+    }
+})();
 
 // Appel Ã  la fonction principale
  // Appel de la fonction fetchPageData pour récupérer et afficher les données, y compris les images
@@ -246,3 +288,41 @@ async function addComment(postId) {
 });
     
 
+
+function setupLinkRedirection(linkId) {
+    const linkElement = document.getElementById(linkId);
+    if (!linkElement) {
+        console.error(`Aucun élément trouvé avec l'ID: ${linkId}`);
+        return; // Sortir si l'élément n'existe pas
+    }
+
+    // Ajouter un écouteur d'événement "click" pour rediriger l'utilisateur
+    linkElement.addEventListener('click', function(event) {
+        event.preventDefault(); // Empêche le comportement par défaut du lien
+
+        // Récupérer le texte du lien
+        const linkText = removeAccents(linkElement.textContent);
+
+        // Transformer le texte en slug
+        const slug = stringToSlug(linkText);
+        console.log("slug :", slug);
+
+        // Rediriger vers une URL basée sur le slug
+        window.location.href = `/article.html?slug=${slug}`; // Modifiez ce chemin si nécessaire
+    });
+}
+setupLinkRedirection('title_1');
+setupLinkRedirection('title_2');
+// Fonction de transformation en slug
+function stringToSlug(text) {
+    return text
+        .toLowerCase()
+        .replace(/[\s_]+/g, '-')
+        .replace(/[^\w-]+/g, '')
+        .replace(/--+/g, '-')
+        .trim();
+}
+ // Fonction pour enlever les accents d'un texte
+ function removeAccents(text) {
+    return text.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // Normalise et enlève les accents
+}
