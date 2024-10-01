@@ -61,7 +61,7 @@ async function fetchPageData() {
       displayImage( 'second_img',5);
 
       // Section-deux 2
-      displayTitle('third_title',6);
+      displayTitle('third_title',2);
       displayContent('second_article',0);
       displayImage( 'third_img',6);
       

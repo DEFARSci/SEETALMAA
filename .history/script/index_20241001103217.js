@@ -50,20 +50,90 @@ async function fetchPageData() {
       // 
       displayTitle('title_10',10);
 
-      //Section-deux
+      // Récupération des éléments
+const img1 = document.getElementById('img_1');
+const title1 = document.getElementById('title_1');
+const category1 = document.getElementById('category_1');
 
-      displayTitle('first_title',0);
-      displayImage( 'first_img',0);
+const img2 = document.getElementById('img_2');
+const title2 = document.getElementById('title_2');
+const category2 = document.getElementById('category_2');
 
-      // Section-deux 1
-      displayTitle('second_title',2);
-      displayContent('first_article',0);
-      displayImage( 'second_img',5);
+const img3 = document.getElementById('img_3');
+const title3 = document.getElementById('title_3');
+const category3 = document.getElementById('category_3');
 
-      // Section-deux 2
-      displayTitle('third_title',6);
-      displayContent('second_article',0);
-      displayImage( 'third_img',6);
+// Fonction principale pour récupérer les données des articles
+async function fetchPageData() {
+    try {
+        const data = await fetchPostData(); // Assurez-vous que cette fonction existe et récupère les données correctement
+        
+        // Récupérer les données pour chaque article
+        displayArticle(data, 0, img1, title1, category1);
+        displayArticle(data, 1, img2, title2, category2);
+        displayArticle(data, 2, img3, title3, category3);
+
+    } catch (error) {
+        console.error('Erreur lors de la récupération des données :', error);
+    }
+}
+
+// Fonction pour récupérer les données des articles via l'API
+async function fetchPostData() {
+    const response = await fetch('https://setalmaa.com/wp-json/wp/v2/posts');
+    if (!response.ok) {
+        throw new Error(`Erreur HTTP ${response.status}`);
+    }
+    return await response.json();
+}
+
+// Fonction pour récupérer l'image à la une
+async function fetchFeaturedMedia(mediaId) {
+    const response = await fetch(`https://setalmaa.com/wp-json/wp/v2/media/${mediaId}`);
+    if (!response.ok) {
+        throw new Error(`Erreur HTTP ${response.status} lors de la récupération de l'image`);
+    }
+    const mediaData = await response.json();
+    return mediaData.source_url;
+}
+
+// Fonction pour afficher les articles
+async function displayArticle(data, postIndex, imgElement, titleElement, categoryElement) {
+    const post = data[postIndex];
+
+    // Affichage du titre
+    titleElement.innerHTML = post.title.rendered;
+
+    // Affichage de l'image à la une
+    const imageUrl = await fetchFeaturedMedia(post.featured_media);
+    imgElement.src = imageUrl;
+
+    // Affichage de la catégorie (si elle existe)
+    if (post.categories && post.categories.length > 0) {
+        const category = await fetchCategory(post.categories[0]);
+        categoryElement.innerHTML = category.name;
+    }
+}
+
+// Fonction pour récupérer les données des catégories
+async function fetchCategory(categoryId) {
+    const response = await fetch(`https://setalmaa.com/wp-json/wp/v2/categories/${categoryId}`);
+    if (!response.ok) {
+        throw new Error(`Erreur HTTP ${response.status} lors de la récupération de la catégorie`);
+    }
+    return await response.json();
+}
+
+// Appel de la fonction fetchPageData lors du chargement de la page
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        await fetchPageData();
+    } catch (error) {
+        console.error('Erreur lors de l\'affichage des données:', error);
+    }
+});
+
+
       
       // await fetchCategories(post.categories);
       // await fetchComments(post.id);
@@ -75,6 +145,8 @@ async function fetchPageData() {
       throw error;
   }
 }
+
+
 
 // Fonction pour récupérer les données des posts
 async function fetchPostData() {

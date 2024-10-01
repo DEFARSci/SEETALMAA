@@ -57,13 +57,7 @@ async function fetchPageData() {
 
       // Section-deux 1
       displayTitle('second_title',2);
-      displayContent('first_article',0);
-      displayImage( 'second_img',5);
-
-      // Section-deux 2
-      displayTitle('third_title',6);
-      displayContent('second_article',0);
-      displayImage( 'third_img',6);
+      displayContent('article_1',0);
       
       // await fetchCategories(post.categories);
       // await fetchComments(post.id);
