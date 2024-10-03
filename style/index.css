@@ -4,6 +4,7 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: normal;
+ 
 }
 
 *{
@@ -175,6 +176,7 @@ nav{
     border-right:solid 1px #DCDCDC;
     border-bottom:solid 1px #DCDCDC;
     padding-left: 10px;
+    height: 8rem;
     
   
 }
@@ -201,10 +203,29 @@ nav{
 /* moyenne */
 .img_2 {
     width: 220px;
-    height: 132px;
+    height: 220px;
 }
 /* petite */
 .img_3 {
     width: 135px;
     height: 81px;
 }
+
+
+
+/*  */
+
+
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+

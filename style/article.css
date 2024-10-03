@@ -1,0 +1,46 @@
+.article-content img {
+    width: 100%;
+    height: 560px;    /* Garde le ratio d'aspect de l'image */
+}
+.article-content{
+    border-left: 1px solid #DCDCDC;
+    
+}
+#ez-toc-container{
+display: none;
+}
+
+.container-article{
+    border-left: 1px solid #DCDCDC;
+    border-right: 1px solid #DCDCDC;
+}
+
+/*Buton share */
+.share-button {
+    padding: 10px 20px;
+    background-color: #0f24dc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.share-button:hover {
+    background-color: #050da5;
+}
+.share-button i {
+    margin-right: 5px;
+    font-size: 24px
+   
+}
+p span{
+    font-size: 23px !important;
+   
+   
+}
+span{
+    font-size: 23px !important;
+}
+p{
+    font-size: 23px !important;
+}
