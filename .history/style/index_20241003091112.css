@@ -1,0 +1,119 @@
+*{
+    margin: Opx;
+    padding: 0px;
+}
+nav{
+    background-color: #041F4A;
+}
+
+.separator{
+    border-right: solid 1px white; /* Couleur de la barre */
+    /* Couleur de la barre */   
+    padding-left: 1px;
+    padding-right: 1px;   
+}
+
+.top-menu{
+    color: white;
+    margin-left: 0px;
+    margin-right: 8px;
+    margin-bottom: 0px;
+}
+.top-menu-user{
+    color: #052962;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 5px;
+    margin-right: 8px;
+    margin-bottom: 1px;
+    margin-left: 8px;   
+}
+/* menu */
+.menu{
+    background-color: #052962;   
+}
+.menu-container{
+    margin-top: 4rem;
+}
+.link-hover {
+    position: relative;
+    display: inline-block;
+    margin: 0 40px 10px 0;
+
+}
+
+.link-hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px; /* Positionnement juste en dessous du texte */
+    width: 100%;
+    height: 4px; /* Épaisseur de la ligne */
+    background-color: rgb(222, 158, 21); /* Couleur de la ligne */
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.3s ease-out;
+}
+
+.link-hover:hover::after {
+    transform: scaleY(1);
+}
+.menu-burger{
+    color: #052962;  
+    background-color: #FFD900 ;
+    border-radius: 50%;
+    text-align: center;
+    padding: 10px;
+    margin-right: 8px;
+    margin-bottom: 1px;
+    margin-left: 8px; 
+}
+/* sous-menu */
+.sous-menu{
+    background-color: #052962;
+}
+.sous-menu-container{
+    margin-top: -8px;
+    border: solid 1px white;
+    padding: 3px;
+}
+.sous-menu-link{
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
+.sous-menu-link:hover{ 
+   color:#FFD900;
+   text-decoration: underline  #FFD900 2px;
+}
+
+/* headlines */
+
+.headlines-container{
+    border-left:solid 1px #DCDCDC;
+    border-right:solid 1px #DCDCDC;
+}
+
+
+/* news-in-focus */
+
+.news-in-focus{
+    border-left:solid 1px #DCDCDC;
+    border-right:solid 1px #DCDCDC;
+}
+
+/* spotlight */
+
+.spotlight{
+    border-left:solid 1px #DCDCDC;
+    border-right:solid 1px #DCDCDC;
+}
+
+/* Sport */
+
+.sport-ligne{
+    border-bottom:solid 1px #DCDCDC;
+}
