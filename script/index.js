@@ -125,11 +125,11 @@ async function fetchPageData() {
         // Section-quatre D
         await displayTitle(data,'title_4d',26);
         await displayImage(data, 'img_4d',26);
-        await displayContent(data,'article_4d',26);
+        // await displayContent(data,'article_4d',26);
 
         // Section-quatre E
-        await displayTitle(data,'title_4e',27);
-        await displayImage( data,'img_4e',27);
+        await displayTitle(data,'title_4ee',27);
+        await displayImage( data,'img_4ee',27);
 
         // Section-cinq
         await displayTitle(data,'title_cinq',28);
@@ -168,7 +168,7 @@ async function fetchPageData() {
         await displayImage(data, 'img_5f1',36);
         
         //Section-cinq F2
-        await displayTitle(data,'title_5f2',37);
+        // await displayTitle(data,'title_5f2',37);
 
         //Section-cinq G1
         await displayTitle(data,'title_5g1',38);
@@ -179,18 +179,18 @@ async function fetchPageData() {
 
       //Section-deux
 
-      displayTitle('first_title',0);
-      displayImage( 'first_img',0);
+      displayTitle(data,'first_title',40);
+      displayImage(data, 'first_img',40);
 
       // Section-deux 1
-      displayTitle('second_title',2);
-      displayContent('first_article',0);
-      displayImage( 'second_img',5);
+      displayTitle(data,'second_title',41);
+      displayContent(data,'first_article',41);
+      displayImage( data,'second_img',41);
 
       // Section-deux 2
-      displayTitle('third_title',6);
-      displayContent('second_article',0);
-      displayImage( 'third_img',6);
+      displayTitle(data,'third_title',42);
+      displayContent(data,'second_article',42);
+      displayImage( data,'third_img',42);
       
       // await fetchCategories(post.categories);
       // await fetchComments(post.id);
