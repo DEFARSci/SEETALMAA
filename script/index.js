@@ -179,18 +179,18 @@ async function fetchPageData() {
 
       //Section-deux
 
-      displayTitle(data,'first_title',0);
-      displayImage(data, 'first_img',0);
+      displayTitle(data,'first_title',40);
+      displayImage(data, 'first_img',40);
 
       // Section-deux 1
-      displayTitle(data,'second_title',2);
-      displayContent(data,'first_article',0);
-      displayImage( data,'second_img',5);
+      displayTitle(data,'second_title',41);
+      displayContent(data,'first_article',41);
+      displayImage( data,'second_img',41);
 
       // Section-deux 2
-      displayTitle(data,'third_title',6);
-      displayContent(data,'second_article',0);
-      displayImage( data,'third_img',6);
+      displayTitle(data,'third_title',42);
+      displayContent(data,'second_article',42);
+      displayImage( data,'third_img',42);
       
       // await fetchCategories(post.categories);
       // await fetchComments(post.id);
