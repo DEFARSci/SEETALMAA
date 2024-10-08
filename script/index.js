@@ -1,5 +1,9 @@
 const siteUrl = 'https://setalmaa.com';  
 const quote=document.getElementById('quote');
+const Opinionbtn=document.getElementById('opinion');
+const sportbtn=document.getElementById('sport');
+const culturebtn=document.getElementById('culture');
+const lifestylebttn=document.getElementById('lifestyle');
 
 const Headlines=['title_0','title_1','title_2','title_3','title_4','title_5','title_6',
     'title_7','title_8','title_9','title_10','title_11','title_12','title_13'];
@@ -425,3 +429,19 @@ function stringToSlug(text) {
 
 
 
+// menue button clique
+
+Opinionbtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log("click");
+    window.location.href = "pages/opinion.html";
+});
+sportbtn.addEventListener('click', () => {
+    window.location.href = "pages/sport.html";
+});
+culturebtn.addEventListener('click', () => {
+    window.location.href = "pages/culture.html";
+});
+lifestylebttn.addEventListener('click', () => {
+    window.location.href = "pages/lifestyle.html";
+});
