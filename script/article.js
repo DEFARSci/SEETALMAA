@@ -74,6 +74,7 @@ const slug = urlParams.get('slug'); // Exemple : https://votre-site.com/article.
 if (slug) {
     fetchArticleBySlug(slug);
 } else {
+    location.href = '../index.html';
     document.getElementById('article').innerHTML = '<p>Veuillez fournir un slug dans l\'URL.</p>';
 }
 
@@ -111,3 +112,28 @@ if (slug) {
 }
 
 
+// modifier les link
+ // Sélectionner le lien
+//  const myLink = document.querySelector('a');
+// console.log(myLink);
+// for (let i = 0; i < myLink.length; i++) {
+//         const currentHref = myLink[i].getAttribute('href');
+//      console.log('Href actuel :', currentHref);
+// }
+
+ // Ajouter un gestionnaire d'événement au clic
+//  myLink.addEventListener('click', function(event) {
+//      // Empêcher le comportement par défaut (ouvrir le lien)
+//      event.preventDefault();
+     
+//      // Récupérer le href actuel
+//      const currentHref = myLink.getAttribute('href');
+//      console.log('Href actuel :', currentHref);
+
+//      // Modifier le href
+//      myLink.setAttribute('href', 'http://127.0.0.1:5500/index');
+//      console.log('Nouveau href :', myLink.getAttribute('href'));
+
+//      // Maintenant, si tu veux rediriger vers la nouvelle URL après modification :
+//      window.location.href = myLink.getAttribute('href');
+//  });

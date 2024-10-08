@@ -178,10 +178,22 @@ nav{
     padding-left: 10px;
     height: 8rem;
     
+
   
 }
+.Most_popular_ligne_head{
+    border-right:solid 1px #DCDCDC;
+    border-bottom:solid 1px #DCDCDC;
+    padding-left: 10px;
+    height: 5rem;
+}
+.most_popular_ligne_head_text{
+    color: #00000048;
+}
 
-
+img{
+    object-fit: cover;
+}
 
 
 

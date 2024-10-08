@@ -13,129 +13,13 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
     </style>
+    <script src="https://unpkg.com/htmx.org"></script>
 </head>
 
 <body>
+
    
-    <!-- <div id="loading">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Gray_circles_rotate.gif" alt="Chargement...">
-    </div> -->
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-
-        <div class="container  mr-4 ml-4">
-            <div class="d-flex justify-content-start fw-bold fs-4 text-white">
-                SETALMA
-            </div>
-            <div class="d-flex justify-content-start">
-                <div class="separator"></div>
-                <div class="separator ">
-                    <div class=" mt-3 fs-5  top-menu "><strong>subscriptions</strong> </div>
-                </div>
-                <div class="separator">
-
-                    <div class="mt-3  fs-5 top-menu"><strong>Search jobs</strong> </div>
-                </div>
-
-                <div class="mt-3  fs-5  top-menu">
-
-                    <i class="fa-solid fa-user top-menu-user"></i>
-
-                    <strong>Sign in</strong>
-                </div>
-
-            </div>
-        </div>
-    </nav>
-    <!-- menu -->
-    <div class="menu">
-        <div class="navbar navbar-expand-lg " data-bs-theme="dark">
-
-            <div class="container  mr-4 ml-4 p-0 ">
-                <div class="d-flex justify-content-bottom  menu-container ">
-                    <div class="separator">
-                        <div class=" mt-3 fs-2 text-white ">
-                            <a href="#" class="text-decoration-none text-white link-hover">
-                                <strong>News</strong>
-                            </a>
-                        </div>
-
-                    </div>
-
-                    <div class="separator">
-
-                        <div class="mt-3  fs-2 text-white ">
-                            <a href="#" class="text-decoration-none text-white link-hover">
-
-                                <strong>Opinion</strong>
-                            </a>
-                        </div>
-
-                    </div>
-
-                    <div class="separator">
-
-                        <div class="mt-3  fs-2 text-white">
-                            <a href="#" class="text-decoration-none text-white link-hover">
-                                <strong>Sport</strong>
-                            </a>
-                        </div>
-
-                    </div>
-                    <div class="separator">
-
-                        <div class="mt-3  fs-2 ">
-                            <a href="#" class="text-decoration-none text-white link-hover">
-                                <strong>Culture</strong>
-                            </a>
-                        </div>
-
-                    </div>
-                    <div class="separator">
-
-                        <div class="mt-3  fs-2 text-white ">
-                            <a href="#" class="text-decoration-none text-white link-hover">
-                                <strong>Lifestyle</strong>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mt-3  fs-2 text-white">
-                        <i class="fa-solid fa-bars menu-burger"> </i>
-                    </div>
-
-                </div>
-                <!-- logo -->
-                <div class="d-flex justify-content-start fw-bold fs-1 text-white ">
-                    The<br>
-                    SETALMA
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="sous-menu">
-        <div class="container sous-menu-container">
-            <div class="d-flex justify-content-bottom   ">
-                <div class="text-white ">
-                    <a href="#" class="  sous-menu-link">
-                        World
-                    </a>
-                </div>
-                <div class="text-white ">
-                    <a href="#" class="  sous-menu-link">
-                        UK
-                    </a>
-                </div>
-                <div class="text-white ">
-                    <a href="#" class="  sous-menu-link">
-                        Climate crise
-                    </a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-   <!-- chargement -->
-   
-
+   <div hx-get="menu.html" hx-trigger="load" hx-target="this"></div>
    
     <!-- Headlines -->
     <div class="headlines">
@@ -149,20 +33,19 @@
                         <div class="col-md-4">
 
                             <a href="#" class="fs-6 text-decoration-none text-danger " id="auteur_1">Lorem </a><br>
-                            <a href="#" class="fw-bold fs-5 text-decoration-none text-black " id="title_1">Lorem ipsum dolor sit
-                                amet, consectetur adipisicing elit. Fugiat, minus?</a>
+                            <i class="fa-solid fa-quote-left text-danger fs-2" style="display:none;" id="quote"></i>
+                            <a href="#" class="fw-bold fs-5 text-decoration-none text-black " id="title_0"></a>
 
-                            <p class="fs-6 text-black" id="article_1"> Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-                            consectetur adipisicing elit. Ipsa, eum.</p>
+                            <p class="fs-6 text-black" id="article_0"></p>
                         </div>
                         <div class="col-md-8 " id="img">
-                            <img class="img_1" id="img_1" src="/img/loader.gif"  alt="img">
+                            <img class="img_1" id="img_0" src="/img/loader.gif"  alt="img">
                         </div>
                     </div>
                     <div class="row mt-3 ">
-                        <div class="col-md-4"> <span class="text-danger" style="border-top: 1px solid #DCDCDC;">Lorem ipsum</span> <a href="#" class="fs-6 text-decoration-none text-black" id="title_2"> Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.</a><br> </div>
-                        <div class="col-md-4"> <span class="text-danger" style="border-top: 1px solid #DCDCDC;">Lorem ipsum</span> <a href="#" class="fs-6 text-decoration-none text-black" id="title_3"> Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.</a><br> </div>
-                        <div class="col-md-4"> <span class="text-danger" style="border-top: 1px solid #DCDCDC;">Lorem ipsum</span> <a href="#" class="fs-6 text-decoration-none text-black" id="title_4"> Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.</a><br> </div>
+                        <div class="col-md-4"> <span class="text-danger" style="border-top: 1px solid #DCDCDC;">Lorem ipsum</span> <a href="#" class="fs-6 text-decoration-none text-black" id="title_1"></a><br> </div>
+                        <div class="col-md-4"> <span class="text-danger" style="border-top: 1px solid #DCDCDC;">Lorem ipsum</span> <a href="#" class="fs-6 text-decoration-none text-black" id="title_2"> </a><br> </div>
+                        <div class="col-md-4"> <span class="text-danger" style="border-top: 1px solid #DCDCDC;">Lorem ipsum</span> <a href="#" class="fs-6 text-decoration-none text-black" id="title_3"> <br> </div>
                         
                       
 
@@ -171,12 +54,10 @@
                         <div class="col-md-4">
                             <div style="border-top: 1px solid #DCDCDC; padding-top: 10px;  ">
                             <div style=" border-right: 1px solid #DCDCDC; ">
-
-                                    <img src="/img/loader.gif" alt="" class="  img_2  mb-3" id="img_2">
+                                    <img src="/img/loader.gif" alt="" class="  img_2  mb-3" id="img_4">
                                     <a href="#" class="fs-6 text-decoration-none text-white"><span class="bg-danger p-1">Europe
                                             live</span> </a><br>
-                                    <a href="#" class="fw-bold fs-5 text-decoration-none text-black " id="title_5">Lorem ipsum dolor sit
-                                        amet, consectetur adipisicing elit. Fugiat, minus?</a>
+                                    <a href="#" class="fw-bold fs-5 text-decoration-none text-black " id="title_4"></a>
                             </div>
 
                             </div>
@@ -185,11 +66,10 @@
                             <div style="border-top: 1px solid #DCDCDC; padding-top: 10px;  ">
                             <div style=" border-right: 1px solid #DCDCDC;">
 
-                                    <img src="" alt="" class="img_2  mb-3" id="img_3">
+                                    <img src="" alt="" class="img_2  mb-3" id="img_5">
                                     <a href="#" class="fs-6 text-decoration-none text-white"><span class="bg-danger p-1">Europe
                                             live</span> </a><br>
-                                    <a href="#" class="fw-bold fs-5 text-decoration-none text-black " id="title_6">Lorem ipsum dolor sit
-                                        amet, consectetur adipisicing elit. Fugiat, minus?</a>
+                                    <a href="#" class="fw-bold fs-5 text-decoration-none text-black " id="title_5"></a>
                             </div>
 
                             </div>
@@ -198,18 +78,15 @@
                         <div class="col-md-4 ">
                             <div style="border-top: 1px solid #DCDCDC; padding-top: 10px;">
                                 <a href="#" class="fs-6 text-decoration-none text-danger ">Lorem </a><br>
-                                <a href="#" class="fw-bold fs-6 text-decoration-none text-black " id="title_8">Lorem ipsum dolor sit
-                                    amet, consectetur adipisicing elit. Fugiat, minus?</a>
+                                <a href="#" class="fw-bold fs-6 text-decoration-none text-black " id="title_6"></a>
                             </div>
                             <div  style="border-top: 1px solid #DCDCDC; padding-top: 10px;">
                                 <a href="#" class="fs-6 text-decoration-none text-danger ">Lorem </a><br>
-                                <a href="#" class="fw-bold fs-6 text-decoration-none text-black " id="title_9">Lorem ipsum dolor sit
-                                    amet, consectetur adipisicing elit. Fugiat, minus?</a>
+                                <a href="#" class="fw-bold fs-6 text-decoration-none text-black " id="title_7"></a>
                             </div>
                             <div style="border-top: 1px solid #DCDCDC; padding-top: 10px;" >
                                 <a href="#" class="fs-6 text-decoration-none text-danger ">Lorem </a><br>
-                                <a href="#" class="fw-bold fs-6 text-decoration-none text-black " id="title_10">Lorem ipsum dolor sit
-                                    amet, consectetur adipisicing elit. Fugiat, minus?</a>
+                                <a href="#" class="fw-bold fs-6 text-decoration-none text-black " id="title_8"></a>
                             </div>
                         </div>
                     </div>
@@ -217,35 +94,31 @@
                 <div class="col-md-2  "  style="border-top: 1px solid #DCDCDC; margin-left: 10px;" >
                     
                     <div class="mt-2" >
-                        <img class="img_2 " src="/img/loader.gif" alt="" id="img_4">
+                        <img class="img_2 " src="/img/loader.gif" alt="" id="img_9">
                     </div>
                     
                     <div class="col-md-12 " style="height: 170px;">
                         <a href="#" class=" fs-6 text-decoration-none text-danger ">Lorem </a><br>
-                        <a href="#" class="fw-bold fs-5 text-decoration-none text-black " id="title_7">Lorem ipsum dolorsit a met,
-                            consectetur adipisicing elit. Fugiat, minus?</a>
+                        <a href="#" class="fw-bold fs-5 text-decoration-none text-black " id="title_9"></a>
                     </div>
                     <div class="col-md-12" style="border-top: 1px solid #DCDCDC; margin-left: 10px;">
                    
                         <a href="#" class="text-decoration-none text-black ">
                             <span class="text-danger"  >Lorem up</span>
-                            <p id="title_14"> Lorem ipsum dolorsit a met,consectetur adipisicing elit. Fugiat, minus?</p>
+                            <p id="title_10"> </p>
                         </a>
                     </div>
                         <div class="mt-2 " style="border-top: 1px solid #DCDCDC;">
                             <a href="#" class="fs-6 text-decoration-none text-danger ">Lorem </a><br>
-                            <a href="#" class="fw-bold fs-6 text-decoration-none text-black " id="title_11">Lorem ipsum dolor sit
-                                amet, consectetur adipisicing elit. Fugiat, minus?</a>
+                            <a href="#" class="fw-bold fs-6 text-decoration-none text-black " id="title_11"></a>
                         </div>
                         <div class="mt-3" style="border-top: 1px solid #DCDCDC;">
                             <a href="#" class="fs-6 text-decoration-none text-danger ">Lorem </a><br>
-                            <a href="#" class="fw-bold fs-6 text-decoration-none text-black " id="title_12">Lorem ipsum dolor sit
-                                amet, consectetur adipisicing elit. Fugiat, minus?</a>
+                            <a href="#" class="fw-bold fs-6 text-decoration-none text-black " id="title_12"></a>
                         </div>
                         <div class="mt-1" style="border-top: 1px solid #DCDCDC;">
                             <a href="#" class="fs-6 text-decoration-none text-danger ">Lorem </a><br>
-                            <a href="#" class="fw-bold fs-6 text-decoration-none text-black " id="title_13">Lorem ipsum dolor sit
-                                amet, consectetur adipisicing elit. iat, minus?</a>
+                            <a href="#" class="fw-bold fs-6 text-decoration-none text-black " id="title_13"></a>
                         </div>
 
                     </div>
@@ -268,11 +141,11 @@
            
             <div class="col-md-4 ">
                 <div class="  " style="border-top: 1px solid #DCDCDC; width: 30rem;">
-                    <img id="first_img" class="mt-2 img_1" src="" alt="">
+                    <img id="img_14" class="mt-2 img_1" src="" alt="">
                 </div>
                 <div>
                     <a href="#" class="fs-6 text-decoration-none text-danger ">Lorem </a><br>
-                    <a id="first_title" href="#" class="fw-bold fs-4 text-decoration-none text-black "></a>
+                    <a id="title_14" href="#" class="fw-bold fs-4 text-decoration-none text-black "></a>
                 </div>
 
             </div>
@@ -281,10 +154,10 @@
                     <div class="col-md-6 " style="border-left: 1px solid #DCDCDC; ">
 
                         <div class=" " style="border-top: 1px solid #DCDCDC;">
-                            <img id="second_img" class="img_2 mt-2" src="" alt="">
+                            <img id="img_15" class="img_2 mt-2" src="" alt="">
                             <div>
                                 <a href="#" class="fs-6 text-decoration-none text-danger ">Lorem </a><br>
-                                <a id="second_title" href="#" class="fw-bold fs-6 text-decoration-none text-black"></a><br><br>
+                                <a id="title_15" href="#" class="fw-bold fs-6 text-decoration-none text-black"></a><br><br>
                                 <div id="first_article" class="fs-6">
                                     
                                 </div>
@@ -294,10 +167,10 @@
                     <div class="col-md-6" style="border-left: 1px solid #DCDCDC; ">
                         <div style="border-top: 1px solid #DCDCDC;">
 
-                            <img id="third_img" class="img_2 mt-2" src="" alt="">
+                            <img id="img_16" class="img_2 mt-2" src="" alt="">
                             <div>
                                 <a href="#" class="fs-6 text-decoration-none text-danger ">Lorem </a><br>
-                                <a id="third_title" href="#" class="fw-bold fs-6 text-decoration-none text-black "></a><br><br>
+                                <a id="title_16" href="#" class="fw-bold fs-6 text-decoration-none text-black "></a><br><br>
                                 <div id="second_article" class="fs-6">
                                     
                                 </div>
@@ -332,24 +205,27 @@
                             <div class="row">
                                 <div class="col-md-4 ">
                                     <h6>Fashion</h6>
-                                    <h3 id="title_un" class="fw-bold">
+                                    <a href="#">
+                                        <h3 id="title_17" class="fw-bold">
+
+                                    </a>
                                         
                                     </h3>
-                                    <p id="article_un" class="fs-6">
+                                    <p id="article_17" class="fs-6">
                                         
                                     </p>
                                 </div>
                                 <div class="col-md-8  ">
-                            <img id="img_un" class="img_1" src="" alt="">
+                            <img id="img_17" class="img_1" src="" alt="">
                                     </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3  " style="border-top: 1px solid #DCDCDC; margin-left: 10px;">
                         <div class=" mt-2" style="border-left: 1px solid #DCDCDC;">
-                            <img id="img_deux" class="img_2 m-2" src="" alt="">
+                            <img id="img_18" class="img_2 m-2" src="" alt="">
                             <h6 class="m-2">Fashion</h6>
-                            <h3 id="title_deux" class="m-2">
+                            <h3 id="title_18" class="m-2">
                                 
                             </h3>
 
@@ -365,22 +241,25 @@
                         <!-- 1 -->
                         <div class="row pb-2 " style="border-top: 1px solid #DCDCDC;">
                             <div class="col-md-4 mr-4 mt-2">
-                                <img id="img_a1" class="img_3" src="" alt="">
+                                <img id="img_19" class="img_3" src="" alt="">
                             </div>
                             <div class="col-md-7 mt-2" style="margin-left: 10px;">
                                 <h6>categorie</h6>
-                                <h5 id="title_a1" class="fs-6"></h5>
+                                <a href="#" class="text-decoration-none text-black">
+                                    <h5 id="title_19" class="fs-6"></h5>
+
+                                </a>
                             </div>
                         </div>
 
                         <!-- 2 -->
                         <div class="row pb-2" style="border-top: 1px solid #DCDCDC;">
                             <div class="col-md-4 mr-4 mt-2">
-                                <img id="img_a2" class="img_3" src="" alt="">
+                                <img id="img_20" class="img_3" src="" alt="">
                             </div>
                             <div class="col-md-7 mt-2 " style="margin-left: 10px;" >
                                 <h6>categorie</h6>
-                                <h5 id="title_a2" class="fs-6"></h5>
+                                <h5 id="title_20" class="fs-6"></h5>
                             </div>
                         </div>
 
@@ -388,22 +267,22 @@
                         <!-- 3 -->
                         <div class="row pb-2" style="border-top: 1px solid #DCDCDC;">
                             <div class="col-md-4 mr-4 mt-2">
-                                <img id="img_a3" class="img_3" src="" alt="">
+                                <img id="img_21" class="img_3" src="" alt="">
                             </div>
                             <div class="col-md-7 mt-2" style="margin-left: 10px;" >
                                 <h6>categorie</h6>
-                                <h5 id="title_a3" class="fs-6"></h5>
+                                <h5 id="title_21" class="fs-6"></h5>
                             </div>
                         </div>
 
                         <!-- 4 -->
                         <div class="row pb-2"style="border-top: 1px solid #DCDCDC;">
                             <div class="col-md-4 mr-4 mt-2">
-                                <img id="img_a4" class="img_3" src="" alt="">
+                                <img id="img_22" class="img_3" src="" alt="">
                             </div>
                             <div class="col-md-7 mt-2" style="margin-left: 10px;" >
                                 <h6>categorie</h6>
-                                <h5 id="title_a4" class="fs-6"></h5>
+                                <h5 id="title_22" class="fs-6"></h5>
                             </div>
                         </div>
                     </div>
@@ -413,10 +292,10 @@
                     <div class="col-md-3  " style="border-top: 1px solid #DCDCDC;margin-left: 15px;">
                         <div class="mt-2 " >
 
-                            <img id="img_b" class="img_2 " src="" alt="">
+                            <img id="img_23" class="img_2 " src="" alt="">
                             <h6>Categorie</h6>
-                            <h5 id="title_b" class="fw-bold"></h5>
-                            <p id="article_b" class="fs-6"> </p>
+                            <h5 id="title_23" class="fw-bold"></h5>
+                            <p id="article_23" class="fs-6"> </p>
                         </div>
                     </div>
 
@@ -425,10 +304,10 @@
 
                             <div class="m-2 " >
     
-                                <img id="img_c" class="img_2 " src="" alt="">
+                                <img id="img_24" class="img_2 " src="" alt="">
                                 <h6>Categorie</h6>
-                                <h5 id="title_c" class="fw-bold"></h5>
-                                <p id="article_c" class="fs-6"> </p>
+                                <h5 id="title_24" class="fw-bold"></h5>
+                                <p id="article_24" class="fs-6"> </p>
                             </div>
                         </div>
                     </div>
@@ -456,17 +335,17 @@
                     <div class="row" style="border-right: 1px solid #DCDCDC;">
                         <div class="col-md-4  ">
                             <a href="#" class="text-decoration-none text-black ">
-                                <p id="title_quatre" class="fs-4 fs-5 fw-bold p-0 m-0">
+                                <p id="title_25" class="fs-4 fs-5 fw-bold p-0 m-0">
                                    
                                 </p>
                                 <p  class="fs-4 text-decoration-none text-danger fs-5 fw-bold p-0 m-0">Lorem
                                     Lorem
                                 </p>
-                                <p id="article_quatre" class="fs-6"></p>
+                                <p id="article_25" class="fs-6"></p>
                             </a>
                         </div>
                         <div class="col-md-8">
-                            <img id="img_quatre" class="img_1" src="" alt="">
+                            <img id="img_25" class="img_1" src="" alt="">
                         </div>
                     </div>
                 </div>
@@ -477,8 +356,8 @@
                                 
 
                                     <a  href="#" class="fw-bold fs-5 text-decoration-none text-black mt-2" >
-                                        <img id="img_4a" class="img_2 " src="" alt="">
-                                        <h5 id="title_4a" class="fw-bold"></h5>
+                                        <img id="img_26" class="img_2 " src="" alt="">
+                                        <h5 id="title_26" class="fw-bold"></h5>
                 
                                         <p class="fs-5 text-decoration-none text-danger  fw-bold p-0 m-0">Lorem
                                             Lorem
@@ -493,8 +372,8 @@
                             <div >
 
                                 <a href="#" class="fw-bold fs-5 text-decoration-none text-black mt-2">
-                                    <img id="img_4b" class="img_2" src="" alt="">
-                                    <h5 id="title_4b" lass="fw-bold"></h5>
+                                    <img id="img_27" class="img_2" src="" alt="">
+                                    <h5 id="title_27" lass="fw-bold"></h5>
             
                                     <p class="fs-5 text-decoration-none text-danger  fw-bold p-0 m-0">Lorem
                                         Lorem
@@ -508,8 +387,8 @@
                             
 
                                 <a href="#" class="fw-bold fs-5 text-decoration-none text-black  ">
-                                    <img id="img_4c" class="img_2" src="" alt="">
-                                    <h5 id="title_4c" class="fw-bold"></h5>
+                                    <img id="img_28" class="img_2" src="" alt="">
+                                    <h5 id="title_28" class="fw-bold"></h5>
             
                                     <p class="fs-5 text-decoration-none text-danger  fw-bold p-0 m-0">Lorem
                                         Lorem
@@ -525,8 +404,8 @@
                 <div class="col-md-10 " style="border-top: 1px solid #DCDCDC; padding-top: 10px; height: 24.5rem;" >
 
                     <a href="#" class="fs-6 text-decoration-none text-danger ">
-                        <img id="img_4d" class="img_2" src="" alt="">
-                        <h5 id="title_4d" class="fw-bold text-black"></h5>
+                        <img id="img_29" class="img_2" src="" alt="">
+                        <h5 id="title_29" class="fw-bold text-black"></h5>
 
 
                         Lorem
@@ -537,10 +416,10 @@
                     <div class="col-md-10" style="border-top: 1px solid #DCDCDC; padding-top:10px;" >
                         
                         <div  >
-                            <a href="#" class="fw-bold fs-5 text-decoration-none text-black m-2 bg-danger">
+                            <a href="#" class="fw-bold fs-5 text-decoration-none text-black m-2 ">
                                
-                                    <img id="img_4ee" class="img_2" src="" alt="">
-                                    <h5 id="title_4ee" class="fw-bold"></h5>
+                                    <img id="img_30" class="img_2" src="" alt="">
+                                    <h5 id="title_30" class="fw-bold"></h5>
                                 <p class="fs-5 text-decoration-none text-danger  fw-bold p-0 m-0">Lorem
                                     Lorem
                                 </p>
@@ -556,7 +435,25 @@
 
     </div>
     <!-- Fin Opinion -->
+     <!-- pub -->
+<div class="container">
+    <div class="row bg-black">
+        <div class="col-md-6 bg-black">
+            <div class="row">
+                <div class="col-md-4" >
+                    <h1 class="text-white fw-bold">The<br>
+                    SETALMAA</h1>
+                </div>
+                <div class="col-md-8"></div>
 
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img src="https://picsum.photos/649/300" alt="">
+        </div>
+    </div>
+</div>  
+<!-- in Pub -->
     <!-- sport -->
     <div class="sport container ">
 
@@ -568,36 +465,40 @@
                 <div class="row " style="border-top: 1px solid #DCDCDC;">
                     <div class="col-md-4 mt-2 " >
                         <a href="#" class="text-decoration-none text-black ">
-                            <p id="title_cinq" class="fs-4 fs-5 fw-bold p-0 m-0">
+                            <p id="title_31" class="fs-4 fs-5 fw-bold p-0 m-0">
                                 
                             </p>
                             <p class="fs-4 text-decoration-none text-danger fs-5 fw-bold p-0 m-0">Lorem
                                 Lorem
                             </p>
-                            <p id="article_cinq" class="fs-6"></p>
+                            <p id="article_31" class="fs-6"></p>
                         </a>
                     </div>
                     
                     <div class="col-md-8 mt-2 " >
-                        <img id="img_cinq" class="img_1" src="" alt="">
+                        <img id="img_31" class="img_1" src="" alt="">
                     </div>
                 </div>
                 <div class="row mt-2">
                     <div class="col-md-4 fw-semibold " >
-                        <a href="#" id="title_5a" class="text-decoration-none text-black">
+                        <a href="#"  class="text-decoration-none text-black">
                             <span class="text-primary " style="border-top: 1px solid #DCDCDC;">Lorem, ipsum.</span>
+
+                            <p id="title_32" class="fs-6"></p>
                             
                         </a>
                     </div>
                     <div class="col-md-4 fw-semibold" style="border-left: 1px solid #DCDCDC;">
-                        <a href="#" id="title_5b" class="text-decoration-none text-black">
+                        <a href="#" class="text-decoration-none text-black">
                             <span class="text-primary">Lorem, ipsum.</span>
+                            <p id="title_33" class="fs-6"></p>
                             
                         </a>
                     </div>
                     <div class="col-md-4 fw-semibold " style="border-left: 1px solid #DCDCDC;">
-                        <a href="#" id="title_5c" class="text-decoration-none text-black">
+                        <a href="#"  class="text-decoration-none text-black">
                             <span class="text-primary">Lorem, ipsum.</span>
+                            <p id="title_34" class="fs-6"></p>
                             
                         </a>
                     </div>
@@ -606,52 +507,52 @@
                             <div class=" sport-ligne col-md-7 ">
                                 <div class=" sport-ligne1 row " >
                                     <div class="col-md-4 mb-2 mt-3">
-                                        <img id="img_5d1" class="img_3" src="" alt="">
+                                        <img id="img_35" class="img_3" src="" alt="">
                                     </div>
                                     <div class="col-md-8 ">
                                         <div class=" pt-2">
                                             <a href="#" class=" text-decoration-none text-danger ">
                                                 Lorem
-                                                <p id="title_5d1" class="fw-bold fs-6 text-decoration-none text-black  "></p>
+                                                <p id="title_35" class="fw-bold fs-6 text-decoration-none text-black  "></p>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="sport-ligne row mt-3">
                                     <div class="col-md-4">
-                                        <img id="img_5d2" class="img_3" src="" alt="">
+                                        <img id="img_36" class="img_3" src="" alt="">
                                     </div>
                                     <div class="col-md-8 ">
                                         <div>
                                             <a href="#" class="fs-6 text-decoration-none text-danger ">
                                                 Lorem
-                                                <p id="title_5d2" class="fw-bold fs-6 text-decoration-none text-black "></p>
+                                                <p id="title_36" class="fw-bold fs-6 text-decoration-none text-black "></p>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="sport-ligne row mt-3 ">
                                     <div class="col-md-4 ">
-                                        <img id="img_5d3" class="img_3" src="" alt="">
+                                        <img id="img_37" class="img_3" src="" alt="">
                                     </div>
                                     <div class="col-md-8 ">
                                         <div>
                                             <a href="#" class="fs-6 text-decoration-none text-danger ">
                                                 Lorem
-                                                <p id="title_5d3" class="fw-bold fs-6 text-decoration-none text-black "></p>
+                                                <p id="title_37" class="fw-bold fs-6 text-decoration-none text-black "></p>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class=" row mt-3">
                                     <div class="col-md-4">
-                                        <img id="img_5d4" class="img_3" src="" alt="">
+                                        <img id="img_38" class="img_3" src="" alt="">
                                     </div>
                                     <div class="col-md-8 ">
                                         <div>
                                             <a href="#" class="fs-6 text-decoration-none text-danger ">
                                                 Lorem
-                                                <p id="title_5d4" class="fw-bold fs-6 text-decoration-none text-black "></p>
+                                                <p id="title_38" class="fw-bold fs-6 text-decoration-none text-black "></p>
                                             </a>
                                         </div>
                                     </div>
@@ -659,23 +560,23 @@
                             </div>
                     
                     <div class="col-md-4   "style="border-left: 1px solid #DCDCDC; margin-left: 10px;">
-                        <div class="" style="border-top: 1px solid #DCDCDC; height: 85%;">
+                        <div class="" style="border-top: 1px solid #DCDCDC; height: 80%;">
 
-                            <img id="img_5e1" class=" img_2 mt-2" src="" alt="">
+                            <img id="img_39" class=" img_2 mt-2" src="" alt="">
                             <div class="h-50 mt-3 ">
                                 <span class="fw-bold bg-primary text-white p-1"  >
                                     Categorie
                                 </span>
-                                <p id="title_5e1" class="fs-4 fw-semibold ">
+                                <p id="title_39" class="fs-4 fw-semibold ">
                                     
                                 </p>
                               
                             </div>
                         </div>
                          <div class=" fw-semibold ">
-                        <a href="#" id="title_5e2" class="text-decoration-none text-black">
-                            <span class="text-primary" style="border-top:solid 1px #DCDCDC;">Lorem, ipsum.</span>
-                            
+                             <span class="text-primary" style="border-top:solid 1px #DCDCDC;">Lorem, ipsum.</span>
+                             <a href="#" class="text-decoration-none text-black">
+                            <p id="title_40"  class="fs-6 text-decoration-none text-black"></p>
                         </a>
                     </div>
                     </div>
@@ -683,38 +584,28 @@
              </div>
             </div>
             <div class="col-md-3" >
-                <div class=" "  style="height: 458px; border-left: 1px solid #DCDCDC;" >
+                <div class=" "  style="height: 499px; border-left: 1px solid #DCDCDC;" >
                     <div class=" col-md-10" style="border-top: 1px solid #DCDCDC; margin-left: 10px;" >
-                       
-
                             <a href="#" class=" fs-6 text-decoration-none text-danger m-2 " >
-                                <img id="img_5f1" src="" alt="" class="img_2 m-2">
+                                <img id="img_41" src="" alt="" class="img_2 m-2">
         
         
                                 Lorem,
-                                <p id="title_5f1" class="fw-bold fs-4 text-decoration-none text-black m-2 "></p>
+                                <p id="title_41" class="fw-bold fs-4 text-decoration-none text-black m-2 "></p>
                             </a>
                        
                     </div>
                 </div>
-                <!-- <div style="border-left: 1px solid #DCDCDC; ">
-
-                    <div class=" fw-semibold bg-danger" style="border-top: 1px solid #DCDCDC; margin-left: 10px;">
-                        <a href="#" id="title_5f2" class="text-decoration-none text-black">
-                            <span class="text-primary" >Lorem, ipsum.</span>
-                            
-                        </a>
-                    </div>
-                </div> -->
-                <div class="mt-3 "   style="height:45%; border-left: 1px solid #DCDCDC;" >
-                    <div class="col-md-10" style="height:40%; border-top: 1px solid #DCDCDC; margin-left: 10px;">
+             
+                <div class="mt-3 "   style="height:40%; border-left: 1px solid #DCDCDC;" >
+                    <div class="col-md-10" style=" border-top: 1px solid #DCDCDC; margin-left: 10px;">
 
                         <a href="#" class="fs-6 text-decoration-none text-danger ">
-                            <img id="img_5g1"  src="" alt="" class=" img_2 mt-2">
+                            <img id="img_42"  src="" alt="" class=" img_2 mt-2">
     
     
                             Lorem
-                            <p id="title_5g1" class="fw-bold fs-4 text-decoration-none text-black "></p>
+                            <p id="title_42" class="fw-bold fs-4 text-decoration-none text-black "></p>
                         </a>
                     </div>
 
@@ -722,8 +613,9 @@
                 <div style="border-left: 1px solid #DCDCDC;">
 
                     <div class=" fw-semibold " style="margin-left: 10px;">
-                        <a href="#" id="title_5g2" class="text-decoration-none text-black" >
-                            <span class="text-primary" style="border-top:solid 1px #DCDCDC;"></span>
+                        <a href="#" class="text-decoration-none text-black" >
+                            <span class="text-primary" style="border-top:solid 1px #DCDCDC;">Lorem, ipsum.</span>
+                            <p id="title_43" class="fs-6 text-decoration-none text-black"></p>
                            
                         </a>
                     </div>
@@ -753,6 +645,11 @@
             <div class="col-md-8 ">
                <div class="row">
                 <div class="col-md-6  p-0">
+                    <div class=" Most_popular_ligne_head ">
+                         <strong class="fs-2">Most viewed</strong>
+                         <h6 class="most_popular_ligne_head_text">Sur quoi les lecteurs cliquent</h6>
+         
+                    </div>
                     <div class=" Most_popular_ligne ">
                         <a href="#" class="text-decoration-none text-black">
                             <div class="row news-item ">
@@ -760,7 +657,7 @@
                                     <strong class="news-number">1</strong>
                                 </div>
                                 <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
-                                    <h4 id="most_1">Japanese man who spent 46 years on death row cleared of murders death row cleared of murders</h4>
+                                    <h4 id="most_1"></h4>
                                 </div>
                             </div>
                         </a>
@@ -772,7 +669,7 @@
                                     <strong class="news-number">2</strong>
                                 </div>
                                 <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
-                                    <h4 id="most_2">Japanese man who spent 46 years on death row cleared of murders death row cleared of murders</h4>
+                                    <h4 id="most_2"></h4>
                                 </div>
                             </div>
                         </a>
@@ -784,7 +681,7 @@
                                     <strong class="news-number">3</strong>
                                 </div>
                                 <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
-                                    <h4 id="most_3">Japanese man who spent 46 years on death row cleared of murders death row cleared of murders</h4>
+                                    <h4 id="most_3"></h4>
                                 </div>
                             </div>
                         </a>
@@ -796,7 +693,7 @@
                                     <strong class="news-number">4</strong>
                                 </div>
                                 <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
-                                    <h4 id="most_4">Japanese man who spent 46 years on death row cleared of murders death row cleared of murders</h4>
+                                    <h4 id="most_4"></h4>
                                 </div>
                             </div>
                         </a>
@@ -808,7 +705,7 @@
                                     <strong class="news-number">5</strong>
                                 </div>
                                 <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
-                                    <h4 id="most_5">Japanese man who spent 46 years on death row cleared of murders death row cleared of murders</h4>
+                                    <h4 id="most_5"></h4>
                                 </div>
                             </div>
                         </a>
@@ -820,7 +717,7 @@
                                     <strong class="news-number">6</strong>
                                 </div>
                                 <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
-                                    <h4 id="most_6">Japanese man who spent 46 years on death row cleared of murders death row cleared of murders</h4>
+                                    <h4 id="most_6"></h4>
                                 </div>
                             </div>
                         </a>
@@ -832,7 +729,7 @@
                                     <strong class="news-number">7</strong>
                                 </div>
                                 <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
-                                    <h4 id="most_7">Japanese man who spent 46 years on death row cleared of murders death row cleared of murders</h4>
+                                    <h4 id="most_7"></h4>
                                 </div>
                             </div>
                         </a>
@@ -844,7 +741,7 @@
                                     <strong class="news-number">8</strong>
                                 </div>
                                 <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
-                                    <h4 id="most_8">Japanese man who spent 46 years on death row cleared of murders death row cleared of murders</h4>
+                                    <h4 id="most_8"></h4>
                                 </div>
                             </div>
                         </a>
@@ -856,7 +753,7 @@
                                     <strong class="news-number">9</strong>
                                 </div>
                                 <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
-                                    <h4 id="most_9">Japanese man who spent 46 years on death row cleared of murders death row cleared of murders</h4>
+                                    <h4 id="most_9"></h4>
                                 </div>
                             </div>
                         </a>
@@ -868,7 +765,7 @@
                                     <strong class="news-number">10</strong>
                                 </div>
                                 <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
-                                    <h4 id="most_10">Japanese man who spent 46 years on death row cleared of murders death row cleared of murders</h4>
+                                    <h4 id="most_10"></h4>
                                 </div>
                             </div>
                         </a>
@@ -876,6 +773,11 @@
 
                 </div>
                 <div class="col-md-6 p-0">
+                    <div class=" Most_popular_ligne_head ">
+                        <strong class="fs-2">Deeply read</strong>
+                        <h6 class="most_popular_ligne_head_text">Avec quoi les lecteurs passent du temps</h6>
+        
+                   </div>
                     <div class=" Most_popular_ligne ">
                         <a href="#" class="text-decoration-none text-black">
                             <div class="row news-item">
@@ -883,7 +785,7 @@
                                     <strong class="news-number">1</strong>
                                 </div>
                                 <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
-                                    <h4 id="most_1d">Japanese man who spent 46 years on death row cleared of murders death row cleared of murders</h4>
+                                    <h4 id="most_11"></h4>
                                 </div>
                             </div>
                         </a>
@@ -895,7 +797,7 @@
                                     <strong class="news-number">2</strong>
                                 </div>
                                 <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
-                                    <h4 id="most_2d">Japanese man who spent 46 years on death row cleared of murders death row cleared of murders</h4>
+                                    <h4 id="most_12"></h4>
                                 </div>
                             </div>
                         </a>
@@ -907,7 +809,7 @@
                                     <strong class="news-number">3</strong>
                                 </div>
                                 <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
-                                    <h4 id="most_3d">Japanese man who spent 46 years on death row cleared of murders death row cleared of murders</h4>
+                                    <h4 id="most_13"></h4>
                                 </div>
                             </div>
                         </a>
@@ -919,7 +821,7 @@
                                     <strong class="news-number">4</strong>
                                 </div>
                                 <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
-                                    <h4 id="most_4d">Japanese man who spent 46 years on death row cleared of murders death row cleared of murders</h4>
+                                    <h4 id="most_14"></h4>
                                 </div>
                             </div>
                         </a>
@@ -931,7 +833,7 @@
                                     <strong class="news-number">5</strong>
                                 </div>
                                 <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
-                                    <h4 id="most_5d">Japanese man who spent 46 years on death row cleared of murders death row cleared of murders</h4>
+                                    <h4 id="most_15"></h4>
                                 </div>
                             </div>
                         </a>
@@ -943,7 +845,7 @@
                                     <strong class="news-number">6</strong>
                                 </div>
                                 <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
-                                    <h4 id="most_6d">Japanese man who spent 46 years on death row cleared of murders death row cleared of murders</h4>
+                                    <h4 id="most_16"></h4>
                                 </div>
                             </div>
                         </a>
@@ -955,7 +857,7 @@
                                     <strong class="news-number">7</strong>
                                 </div>
                                 <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
-                                    <h4 id="most_7d">Japanese man who spent 46 years on death row cleared of murders death row cleared of murders</h4>
+                                    <h4 id="most_17"></h4>
                                 </div>
                             </div>
                         </a>
@@ -967,7 +869,7 @@
                                     <strong class="news-number">8</strong>
                                 </div>
                                 <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
-                                    <h4 id="most_8d">Japanese man who spent 46 years on death row cleared of murders death row cleared of murders</h4>
+                                    <h4 id="most_18"></h4>
                                 </div>
                             </div>
                         </a>
@@ -979,7 +881,7 @@
                                     <strong class="news-number">9</strong>
                                 </div>
                                 <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
-                                    <h4 id="most_9d">Japanese man who spent 46 years on death row cleared of murders death row cleared of murders</h4>
+                                    <h4 id="most_19"></h4>
                                 </div>
                             </div>
                         </a>
@@ -991,7 +893,7 @@
                                     <strong class="news-number">10</strong>
                                 </div>
                                 <div class="col-md-10 " style="margin-top: 12px; margin-bottom: 12px;">
-                                    <h4 id="most_10d">Japanese man who spent 46 years on death row cleared of murders death row cleared of murders</h4>
+                                    <h4 id="most_20"></h4>
                                 </div>
                             </div>
                         </a>
