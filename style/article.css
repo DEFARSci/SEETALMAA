@@ -3,9 +3,12 @@
     width: 100%;
     height: 560px;    /* Garde le ratio d'aspect de l'image */
 }
-.article-content{
+/* .article-content{
     border-left: 1px solid #DCDCDC;
     
+} */
+figure{
+    width: 100% !important;
 }
 #ez-toc-container{
 display: none;

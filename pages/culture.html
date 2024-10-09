@@ -15,7 +15,13 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
-    </style>
+           
+            p span{
+                  font-size: 15px !important;
+                  line-height: 0.5 !important;
+                }
+   
+   </style>
 </head>
 
 <body>
@@ -63,8 +69,7 @@
                     <div class="separator">
 
                         <div class="mt-3  fs-2 text-white ">
-                            <a href="../pages/opinion.html" class="text-decoration-none text-white link-hover">
-
+                            <a href="opinion.html" id="opinion" class="text-decoration-none text-white link-hover">
                                 <strong>Opinion</strong>
                             </a>
                         </div>
@@ -74,7 +79,7 @@
                     <div class="separator">
 
                         <div class="mt-3  fs-2 text-white">
-                            <a href="../pages/sport.html" class="text-decoration-none text-white link-hover">
+                            <a href="sport.html" id="sport" class="text-decoration-none text-white link-hover">
                                 <strong>Sport</strong>
                             </a>
                         </div>
@@ -83,8 +88,8 @@
                     <div class="separator">
 
                         <div class="mt-3  fs-2 ">
-                            <a href="../pages/culture.html" class="text-decoration-none text-white link-hover">
-                                <strong>Culture</strong>
+                            <a href="culture.html" id="culture" class="text-decoration-none text-white link-hover">
+                                <strong>News in focus</strong>
                             </a>
                         </div>
 
@@ -92,8 +97,8 @@
                     <div class="separator">
 
                         <div class="mt-3  fs-2 text-white ">
-                            <a href="../pages/lifestyle.html" class="text-decoration-none text-white link-hover">
-                                <strong>Lifestyle</strong>
+                            <a href="lifestyle.html" id="lifestyle" class="text-decoration-none text-white link-hover">
+                                <strong>Spotlight</strong>
                             </a>
                         </div>
                     </div>
@@ -115,17 +120,17 @@
             <div class="d-flex justify-content-bottom   ">
                 <div class="text-white ">
                     <a href="#" class="  sous-menu-link">
-                        World
+                        sous_catégories_1
                     </a>
                 </div>
                 <div class="text-white ">
                     <a href="#" class="  sous-menu-link">
-                        UK
+                        sous_catégories_2
                     </a>
                 </div>
                 <div class="text-white ">
                     <a href="#" class="  sous-menu-link">
-                        Climate crise
+                        sous_catégories_3
                     </a>
                 </div>
             </div>
@@ -135,27 +140,334 @@
    
 </head>
 <body>
-    <style>
-  
-    </style>
-    
-    <div class="container-article container">
+    <!-- News in focus -->
+    <div class="news-in-focus container">
         <div class="row">
-            <div class="col-md-2 ">
-                <h3 class="fw-bold">categories</h3>
-                <button id="shareBtn" class="share-button hidden">
-                    <i class="fas fa-share-alt "></i> Partager
-                </button>
+            <div class="col-md-2">
+                <h3 class="fw-bold">News in focus</h3>
             </div>
-            <div id="article" class="article-content col-md-7 mt-3">
-                
+           
+            <div class="col-md-4 ">
+                <div class="  " style="border-top: 1px solid #DCDCDC; width: 30rem;">
+                    <img id="img_14" class="mt-2 img_1" src="" alt="">
+                </div>
+                <div>
+                    <a href="#" class="fs-6 text-decoration-none text-danger ">Lorem </a><br>
+                    <a id="title_14" href="#" class="fw-bold fs-4 text-decoration-none text-black "></a>
+                </div>
+
             </div>
-            <div class="col-md-3 ">
-                <h3 class="fw-bold">pub</h3>
-                <div class=" " style="height: 15rem; background-color: rgba(84, 81, 78, 0.281);"></div>
+            <div class="col-md-5 " style="padding-left: 85px;">
+                <div class="row " >
+                    <div class="col-md-6 " style="border-left: 1px solid #DCDCDC; ">
+
+                        <div class=" " style="border-top: 1px solid #DCDCDC;">
+                            <img id="img_15" class="img_2 mt-2" src="" alt="">
+                            <div>
+                                <a href="#" class="fs-6 text-decoration-none text-danger ">Lorem </a><br>
+                                <a id="title_15" href="#" class="fw-bold fs-6 text-decoration-none text-black"></a><br><br>
+                                <div class=" text-black" id="article_15"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" style="border-left: 1px solid #DCDCDC; ">
+                        <div style="border-top: 1px solid #DCDCDC;">
+
+                            <img id="img_16" class="img_2 mt-2" src="" alt="">
+                            <div>
+                                <a href="#" class="fs-6 text-decoration-none text-danger ">Lorem </a><br>
+                                <a id="title_16" href="#" class="fw-bold fs-6 text-decoration-none text-black "></a><br><br>
+                                <p class="fs-6 text-black" id="article_16"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
+    </div>
+    <!-- fin News in focus -->
+      <!-- les articles les plus consultes -->
 
+    <div class="Most_popular  container ">
+
+        <div class="row">
+
+            <div class="col-md-2" style="border-right: 1px solid #DCDCDC;">
+                <h3 class="fw-bold">
+                    Most popular
+                </h3>
+            </div>
+
+            <div class="col-md-8 ">
+               <div class="row">
+                <div class="col-md-6  p-0">
+                    <div class=" Most_popular_ligne_head ">
+                         <strong class="fs-2">Most viewed</strong>
+                         <h6 class="most_popular_ligne_head_text">Sur quoi les lecteurs cliquent</h6>
+         
+                    </div>
+                    <div class=" Most_popular_ligne ">
+                        <a href="#" class="text-decoration-none text-black">
+                            <div class="row news-item ">
+                                <div class="col-md-2">
+                                    <strong class="news-number">1</strong>
+                                </div>
+                                <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
+                                    <h4 id="most_1"></h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" Most_popular_ligne ">
+                        <a href="#" class="text-decoration-none text-black">
+                            <div class="row news-item">
+                                <div class="col-md-2">
+                                    <strong class="news-number">2</strong>
+                                </div>
+                                <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
+                                    <h4 id="most_2"></h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" Most_popular_ligne ">
+                        <a href="#" class="text-decoration-none text-black">
+                            <div class="row news-item">
+                                <div class="col-md-2">
+                                    <strong class="news-number">3</strong>
+                                </div>
+                                <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
+                                    <h4 id="most_3"></h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" Most_popular_ligne">
+                        <a href="#" class="text-decoration-none text-black">
+                            <div class="row news-item">
+                                <div class="col-md-2">
+                                    <strong class="news-number">4</strong>
+                                </div>
+                                <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
+                                    <h4 id="most_4"></h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" Most_popular_ligne ">
+                        <a href="#" class="text-decoration-none text-black">
+                            <div class="row news-item">
+                                <div class="col-md-2">
+                                    <strong class="news-number">5</strong>
+                                </div>
+                                <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
+                                    <h4 id="most_5"></h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" Most_popular_ligne ">
+                        <a href="#" class="text-decoration-none text-black">
+                            <div class="row news-item">
+                                <div class="col-md-2">
+                                    <strong class="news-number">6</strong>
+                                </div>
+                                <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
+                                    <h4 id="most_6"></h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" Most_popular_ligne  ">
+                        <a href="#" class="text-decoration-none text-black">
+                            <div class="row news-item">
+                                <div class="col-md-2">
+                                    <strong class="news-number">7</strong>
+                                </div>
+                                <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
+                                    <h4 id="most_7"></h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" Most_popular_ligne ">
+                        <a href="#" class="text-decoration-none text-black">
+                            <div class="row news-item">
+                                <div class="col-md-2">
+                                    <strong class="news-number">8</strong>
+                                </div>
+                                <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
+                                    <h4 id="most_8"></h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" Most_popular_ligne ">
+                        <a href="#" class="text-decoration-none text-black">
+                            <div class="row news-item">
+                                <div class="col-md-2">
+                                    <strong class="news-number">9</strong>
+                                </div>
+                                <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
+                                    <h4 id="most_9"></h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" Most_popular_ligne ">
+                        <a href="#" class="text-decoration-none text-black">
+                            <div class="row news-item">
+                                <div class="col-md-2">
+                                    <strong class="news-number">10</strong>
+                                </div>
+                                <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
+                                    <h4 id="most_10"></h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="col-md-6 p-0">
+                    <div class=" Most_popular_ligne_head ">
+                        <strong class="fs-2">Deeply read</strong>
+                        <h6 class="most_popular_ligne_head_text">Avec quoi les lecteurs passent du temps</h6>
+        
+                   </div>
+                    <div class=" Most_popular_ligne ">
+                        <a href="#" class="text-decoration-none text-black">
+                            <div class="row news-item">
+                                <div class="col-md-2">
+                                    <strong class="news-number">1</strong>
+                                </div>
+                                <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
+                                    <h4 id="most_11"></h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" Most_popular_ligne ">
+                        <a href="#" class="text-decoration-none text-black">
+                            <div class="row news-item">
+                                <div class="col-md-2">
+                                    <strong class="news-number">2</strong>
+                                </div>
+                                <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
+                                    <h4 id="most_12"></h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" Most_popular_ligne ">
+                        <a href="#" class="text-decoration-none text-black">
+                            <div class="row news-item">
+                                <div class="col-md-2">
+                                    <strong class="news-number">3</strong>
+                                </div>
+                                <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
+                                    <h4 id="most_13"></h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" Most_popular_ligne ">
+                        <a href="#" class="text-decoration-none text-black">
+                            <div class="row news-item">
+                                <div class="col-md-2">
+                                    <strong class="news-number">4</strong>
+                                </div>
+                                <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
+                                    <h4 id="most_14"></h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" Most_popular_ligne ">
+                        <a href="#" class="text-decoration-none text-black">
+                            <div class="row news-item">
+                                <div class="col-md-2">
+                                    <strong class="news-number">5</strong>
+                                </div>
+                                <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
+                                    <h4 id="most_15"></h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" Most_popular_ligne ">
+                        <a href="#" class="text-decoration-none text-black">
+                            <div class="row news-item">
+                                <div class="col-md-2">
+                                    <strong class="news-number">6</strong>
+                                </div>
+                                <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
+                                    <h4 id="most_16"></h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" Most_popular_ligne ">
+                        <a href="#" class="text-decoration-none text-black">
+                            <div class="row news-item">
+                                <div class="col-md-2">
+                                    <strong class="news-number">7</strong>
+                                </div>
+                                <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
+                                    <h4 id="most_17"></h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" Most_popular_ligne ">
+                        <a href="#" class="text-decoration-none text-black">
+                            <div class="row news-item">
+                                <div class="col-md-2">
+                                    <strong class="news-number">8</strong>
+                                </div>
+                                <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
+                                    <h4 id="most_18"></h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" Most_popular_ligne ">
+                        <a href="#" class="text-decoration-none text-black">
+                            <div class="row news-item">
+                                <div class="col-md-2">
+                                    <strong class="news-number">9</strong>
+                                </div>
+                                <div class="col-md-10" style="margin-top: 12px; margin-bottom: 12px;">
+                                    <h4 id="most_19"></h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" Most_popular_ligne ">
+                        <a href="#" class="text-decoration-none text-black">
+                            <div class="row news-item">
+                                <div class="col-md-2">
+                                    <strong class="news-number">10</strong>
+                                </div>
+                                <div class="col-md-10 " style="margin-top: 12px; margin-bottom: 12px;">
+                                    <h4 id="most_20"></h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+               </div>
+                    
+             </div>
+
+               
+            </div>
+
+            <div class="col-md-2 "></div>
+
+        </div>
+
+    </div>
+<script src="/script/culture.js"></script>
 </body>
 </html>
