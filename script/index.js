@@ -445,3 +445,9 @@ culturebtn.addEventListener('click', () => {
 lifestylebttn.addEventListener('click', () => {
     window.location.href = "pages/lifestyle.html";
 });
+
+
+
+$(document).ready(function(){
+    $(".owl-carousel").owlCarousel();
+  });

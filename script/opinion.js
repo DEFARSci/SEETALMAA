@@ -1,4 +1,6 @@
 const siteUrl = 'https://setalmaa.com';  
+const toggleButton=document.getElementById('voire_plus');
+const content=document.getElementById('containe_cache');
 // const quote=document.getElementById('quote');
 // const Opinionbtn=document.getElementById('opinion');
 // const sportbtn=document.getElementById('sport');
@@ -9,7 +11,7 @@ const Headlines=['title_0','title_1','title_2','title_3','title_4','title_5','ti
     'title_7','title_8','title_9','title_10','title_11','title_12','title_13'];
 const News_in_focus=['title_14','title_15','title_16'];
 const Spotlight=['title_17','title_18','title_19','title_20','title_21','title_22','title_23','title_24'];
-const Opinion=['title_25','title_26','title_27','title_28','title_29','title_30'];
+const Opinion=['title_25','title_26','title_27','title_28','title_29','title_30','title_31','title_32','title_33','title_34','title_35','title_36','title_37','title_38','title_39','title_40','title_41','title_42','title_43','title_44','title_45','title_46'];
 const sport=['title_31','title_32','title_33','title_34','title_35','title_36','title_37','title_38','title_39','title_40','title_41','title_42','title_43'];
 const allTitles = [ ...Opinion];
 const mostView=['most_1','most_2','most_3','most_4','most_5','most_6','most_7','most_8','most_9','most_10','most_11','most_12','most_13','most_14','most_15','most_16','most_17','most_18','most_19','most_20'];
@@ -32,6 +34,10 @@ async function fetchPageData() {
       await displayImage(data, 'img_28',28);
       await displayImage(data, 'img_29',29);
       await displayImage(data, 'img_30',30);
+      await displayImage(data, 'img_31',31);
+      await displayImage(data, 'img_32',32);
+      await displayImage(data, 'img_33',33);
+      await displayImage(data, 'img_34',34);
 
     //   sport
   
@@ -80,7 +86,7 @@ async function displayTitle(data, titleid, numpost) {
   
     // Ajouter l'ID en tant qu'attribut data-id et mettre à jour le contenu
     const titleElement = document.getElementById(titleid);
-    titleElement.innerHTML = title;
+    titleElement.innerHTML = `<i class="fa-solid fa-quote-left text-danger fs-2"  id="quote"></i> ${title}`;
     titleElement.setAttribute('data-id', slug);
   
   }
@@ -147,3 +153,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     setupLinkRedirection(element);
     
 }
+
+async function toggleContent() {
+  if (content.style.display === "none") {
+      content.style.display = "block"; // Affiche le contenu
+      toggleButton.textContent = "Cacher";
+  } else {
+      content.style.display = "none"; // Cache le contenu
+      toggleButton.textContent = "Afficher plus";
+  }
+}
+// Ajout de l'événement au bouton
+toggleButton.addEventListener('click', async () => {
+  await toggleContent(); // Appel asynchrone de la fonction
+});
