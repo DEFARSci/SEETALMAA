@@ -1,0 +1,16 @@
+                <div class="col-md-8">
+                    <div class="video-carousel">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/M7aAbxfJCcc?si=K6GVsLBzQN6EKl1T" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/watch?v=wGtvv2vLx1E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-container">
+                            <iframe src="https://youtu.be/qi9UbC5ZKL0?si=Mj9sL8nmmiGn-4Gv" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-container">
+                            <iframe src="https://youtu.be/MgtSYoO0soU?si=2mCySAo70lFxGGTT" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel Vidéo</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <style>
+        .carousel-section {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 30px 0;
+            color: white;
+        }
+        .slick-slide {
+            margin: 0 10px;
+        }
+        .slick-list {
+            margin: 0 -10px;
+        }
+        .video-container {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .slick-prev, .slick-next {
+            font-size: 0;
+            line-height: 0;
+            position: absolute;
+            top: 50%;
+            display: block;
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            transform: translate(0, -50%);
+            cursor: pointer;
+            color: white;
+            border: none;
+            outline: none;
+            background: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            z-index: 1;
+            transition: background-color 0.3s ease;
+        }
+        .slick-prev:hover, .slick-next:hover,
+        .slick-prev:focus, .slick-next:focus {
+            background-color: #8A2BE2;  /* Purple color */
+        }
+        .slick-prev {
+            left: -60px;
+        }
+        .slick-next {
+            right: -60px;
+        }
+        .slick-prev:before, .slick-next:before {
+            font-family: 'slick';
+            font-size: 20px;
+            line-height: 1;
+            opacity: .75;
+            color: white;
+            -webkit-font-smoothing: antialiased;
+        }
+        .slick-prev:before {
+            content: '←';
+        }
+        .slick-next:before {
+            content: '→';
+        }
+        .video-carousel {
+            padding: 0 50px;
+        }
+        .custom-dots {
+            display: flex;
+            justify-content: flex-start;
+            list-style-type: none;
+            padding: 0;
+            margin-top: 5px;
+        }
+        .custom-dots li {
+            margin: 0 5px;
+        }
+        .custom-dots li:first-child {
+            margin-left: 0;
+        }
+        .custom-dots button {
+            font-size: 0;
+            line-height: 0;
+            display: block;
+            width: 10px;
+            height: 10px;
+            padding: 5px;
+            cursor: pointer;
+            color: transparent;
+            border: 0;
+            outline: none;
+            background: white;
+            border-radius: 50%;
+        }
+        .custom-dots li.slick-active button {
+            background: #8A2BE2;  /* Purple color for active dot */
+        }
+    </style>
+</head>
+<body>
+    <section class="carousel-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <h2>Nos Vidéos</h2>
+                    <div class="custom-dots"></div>
+                </div>
+                <div class="col-md-8">
+                    <div class="video-carousel">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/9bZkp7q19f0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/kJQP7kiw5Fk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/JGwWNGJdvx8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <!-- Slick JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.video-carousel').slick({
+                slidesToShow: 1.15,
+                slidesToScroll: 1,
+                arrows: true,
+                dots: true,
+                appendDots: $('.custom-dots'),
+                centerMode: true,
+                centerPadding: '7.5%',
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            centerPadding: '0'
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>
