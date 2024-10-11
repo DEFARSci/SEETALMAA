@@ -9,6 +9,7 @@
     <!-- Slick CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .carousel-section {
             background-color: rgba(0, 0, 0, 0.8);
@@ -109,6 +110,62 @@
         .custom-dots li.slick-active button {
             background: #8A2BE2;  /* Purple color for active dot */
         }
+
+        /* Styles mis à jour pour la section podcast */
+        .podcast-section {
+            background-color: #f8f9fa;
+            padding: 30px 0;
+        }
+        .podcast-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .podcast-header h2 {
+            margin-bottom: 0;
+            margin-right: 20px;
+            white-space: nowrap;
+        }
+        .podcast-carousel {
+            flex-grow: 1;
+            width: calc(100% - 120px); /* Ajuster en fonction de la largeur du titre */
+        }
+        .podcast-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 0 10px;
+            width: calc(25% - 20px); /* 4 cards par ligne avec marge */
+        }
+        .podcast-image {
+            height: 120px; /* Réduire la hauteur de l'image */
+            background-size: cover;
+            background-position: center;
+        }
+        .podcast-content {
+            padding: 10px;
+            position: relative;
+        }
+        .podcast-category {
+            color: #ff0000;
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 0.8em;
+        }
+        .podcast-title {
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            padding-right: 25px;
+        }
+        .podcast-icon {
+            color: #000;
+            margin-top: 10px;
+            font-size: 1em;
+        }
+
+
+
     </style>
 </head>
 <body>
@@ -139,6 +196,64 @@
         </div>
     </section>
 
+    <!-- Début de la nouvelle section podcast -->
+     <!-- Début de la section podcast mise à jour -->
+     <section class="podcast-section">
+        <div class="container">
+            <div class="podcast-header">
+                <h2>Podcasts</h2>
+                <div class="podcast-carousel">
+                    <!-- Carte de podcast 1 -->
+                    <div class="podcast-card">
+                        <div class="podcast-image" style="background-image: url('https://picsum.photos/400/200?random=1');"></div>
+                        <div class="podcast-content">
+                            <div class="podcast-category">Technologie</div>
+                            <h3 class="podcast-title">L'avenir de l'IA</h3>
+                            <i class="fas fa-volume-up podcast-icon"></i>
+                        </div>
+                    </div>
+                    <!-- Carte de podcast 2 -->
+                    <div class="podcast-card">
+                        <div class="podcast-image" style="background-image: url('https://picsum.photos/400/200?random=2');"></div>
+                        <div class="podcast-content">
+                            <div class="podcast-category">Science</div>
+                            <h3 class="podcast-title">Explorations spatiales</h3>
+                            <i class="fas fa-volume-up podcast-icon"></i>
+                        </div>
+                    </div>
+                    <!-- Carte de podcast 3 -->
+                    <div class="podcast-card">
+                        <div class="podcast-image" style="background-image: url('https://picsum.photos/400/200?random=3');"></div>
+                        <div class="podcast-content">
+                            <div class="podcast-category">Culture</div>
+                            <h3 class="podcast-title">Art moderne</h3>
+                            <i class="fas fa-volume-up podcast-icon"></i>
+                        </div>
+                    </div>
+                    <!-- Carte de podcast 4 -->
+                    <div class="podcast-card">
+                        <div class="podcast-image" style="background-image: url('https://picsum.photos/400/200?random=4');"></div>
+                        <div class="podcast-content">
+                            <div class="podcast-category">Sport</div>
+                            <h3 class="podcast-title">Jeux Olympiques 2024</h3>
+                            <i class="fas fa-volume-up podcast-icon"></i>
+                        </div>
+                    </div>
+                    <!-- Carte de podcast 5 (pour démontrer le défilement) -->
+                    <div class="podcast-card">
+                        <div class="podcast-image" style="background-image: url('https://picsum.photos/400/200?random=5');"></div>
+                        <div class="podcast-content">
+                            <div class="podcast-category">Santé</div>
+                            <h3 class="podcast-title">Bien-être et méditation</h3>
+                            <i class="fas fa-volume-up podcast-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fin de la section podcast mise à jour -->
+
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Bootstrap JS -->
@@ -147,6 +262,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
         $(document).ready(function(){
+
             $('.video-carousel').slick({
                 slidesToShow: 1.15,
                 slidesToScroll: 1,
@@ -165,6 +281,37 @@
                     }
                 ]
             });
+
+            // Initialisation du carousel de podcast mis à jour
+            $('.podcast-carousel').slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                arrows: true,
+                dots: false,
+                infinite: false,
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 992,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+ 
+
         });
     </script>
 </body>

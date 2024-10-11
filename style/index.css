@@ -349,3 +349,57 @@ img{
 .custom-dots li.slick-active button {
     background: #8A2BE2;  /* Purple color for active dot */
 }
+
+/* Podcast */
+/* Styles mis à jour pour la section podcast */
+.podcast-section {
+    background-color: #f8f9fa;
+    padding: 30px 0;
+}
+.podcast-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.podcast-header h2 {
+    margin-bottom: 0;
+    margin-right: 20px;
+    white-space: nowrap;
+}
+.podcast-carousel {
+    flex-grow: 1;
+    width: calc(100% - 120px); /* Ajuster en fonction de la largeur du titre */
+}
+.podcast-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
+    width: calc(25% - 20px); /* 4 cards par ligne avec marge */
+}
+.podcast-image {
+    height: 120px; /* Réduire la hauteur de l'image */
+    background-size: cover;
+    background-position: center;
+}
+.podcast-content {
+    padding: 10px;
+    position: relative;
+}
+.podcast-category {
+    color: #ff0000;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.8em;
+}
+.podcast-title {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    padding-right: 25px;
+}
+.podcast-icon {
+    color: #000;
+    margin-top: 10px;
+    font-size: 1em;
+}
