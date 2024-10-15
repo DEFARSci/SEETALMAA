@@ -263,9 +263,22 @@ img{
 }
 .video-container {
     position: relative;
-    height: 300px;
+    height: 400px;
     overflow: hidden;
 }
+
+.video-header {
+    display: flex;
+    /* align-items: center; */
+    margin-bottom: 10px;
+}
+.video-header h2 {
+    margin-bottom: 0;
+    margin-right: 15px;
+    color: #fff;
+    white-space: nowrap;
+}
+
 .video-container iframe {
     position: absolute;
     top: 0;
@@ -279,8 +292,8 @@ img{
     position: absolute;
     top: 50%;
     display: block;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     padding: 0;
     transform: translate(0, -50%);
     cursor: pointer;
@@ -297,10 +310,10 @@ img{
     background-color: #8A2BE2;  /* Purple color */
 }
 .slick-prev {
-    left: -60px;
+    left: -25px;
 }
 .slick-next {
-    right: -60px;
+    right: -25px;
 }
 .slick-prev:before, .slick-next:before {
     font-family: 'slick';
@@ -317,7 +330,7 @@ img{
     content: '→';
 }
 .video-carousel {
-    padding: 0 50px;
+    padding: 0 30px;
 }
 .custom-dots {
     display: flex;
@@ -353,33 +366,38 @@ img{
 /* Podcast */
 /* Styles mis à jour pour la section podcast */
 .podcast-section {
-    background-color: #f8f9fa;
+    background-color: #0b0a0a;
     padding: 30px 0;
 }
 .podcast-header {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     margin-bottom: 20px;
 }
 .podcast-header h2 {
     margin-bottom: 0;
-    margin-right: 20px;
+    margin-right: 30px;
+    color: #fff;
     white-space: nowrap;
 }
 .podcast-carousel {
     flex-grow: 1;
-    width: calc(100% - 120px); /* Ajuster en fonction de la largeur du titre */
+    width: calc(100% - 120px); 
+    margin: 0 40px;
 }
 .podcast-card {
     background: white;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 0 10px;
-    width: calc(25% - 20px); /* 4 cards par ligne avec marge */
+    margin: 0 15px;
+    width: calc(25% - 30px); /* 4 cards par ligne avec marge */
+    height: 300px; 
 }
+
+
 .podcast-image {
-    height: 120px; /* Réduire la hauteur de l'image */
+    height: 150px; /* Réduire la hauteur de l'image */
     background-size: cover;
     background-position: center;
 }
@@ -391,15 +409,15 @@ img{
     color: #ff0000;
     font-weight: bold;
     margin-bottom: 5px;
-    font-size: 0.8em;
+    font-size: 1.0em;
 }
 .podcast-title {
-    font-size: 0.9em;
+    font-size: 1.2em;
     margin-bottom: 10px;
     padding-right: 25px;
 }
 .podcast-icon {
     color: #000;
-    margin-top: 10px;
+    margin-top: 20px;
     font-size: 1em;
 }
