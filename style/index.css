@@ -366,7 +366,7 @@ img{
 /* Podcast */
 /* Styles mis à jour pour la section podcast */
 .podcast-section {
-    background-color: #0b0a0a;
+    background-color: #ffffff;
     padding: 30px 0;
 }
 .podcast-header {
@@ -377,7 +377,7 @@ img{
 .podcast-header h2 {
     margin-bottom: 0;
     margin-right: 30px;
-    color: #fff;
+    color: #000000;
     white-space: nowrap;
 }
 .podcast-carousel {
@@ -386,7 +386,7 @@ img{
     margin: 0 40px;
 }
 .podcast-card {
-    background: white;
+    background: rgb(114, 114, 114);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -415,9 +415,12 @@ img{
     font-size: 1.2em;
     margin-bottom: 10px;
     padding-right: 25px;
+    color: #fff;
 }
 .podcast-icon {
-    color: #000;
+    color: #f7f2f2;
     margin-top: 20px;
     font-size: 1em;
 }
+
+
