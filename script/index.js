@@ -199,6 +199,9 @@ async  function displayImage(data,imageId,numpost) {
   const imgElement = document.getElementById(imageId);
   if (imgElement) {
       imgElement.src = imageUrl;
+      imgElement.alt = post.title.rendered;
+      imgElement.title = post.title.rendered;
+      
   } else {
       console.error(`L'élément avec l'ID ${imageId} n'existe pas.`);
   }
