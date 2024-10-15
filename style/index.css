@@ -246,4 +246,233 @@ img{
     align-items: center;
     z-index: 9999;
 }
+  /* Style pour les petits écrans (mobile) */
+  @media (max-width: 576px) {
+    nav{
+        
+        padding: 0;
+        margin: 0   ;
+        display: flex;
+        justify-content: flex-end;
+    }
+    #separator-top-menu{
+        display: none;
+    }
+    .logo{
+       
+        display:none !important;
+    }
+    .top-menu{
+        margin: 0;
+       padding-left: 18rem;
 
+    
+       
+    }
+    .top-menu i{
+        width: 25px;
+        height: 25px;
+    }
+    .top-menu strong{
+        font-size: 18px;
+      
+    }
+    .navbar{
+        width: 100%;
+
+    }
+    #separator-menu div a{
+        font-size: 15px;
+    }
+    #separator-menu div{
+        margin:0 !important;
+        padding: 0 !important;
+        
+    }
+    .menu{
+        padding: 0;
+        margin: 0;
+        
+    }
+    .menu-container{
+      
+    }
+    /* Les images */
+
+    /* pub */
+.imgpub{
+    width: 195px;
+    height: 112px;
+
+}
+/* grande */
+.img_1{
+    width: 100%;
+    height: 374px;
+}
+/* moyenne */
+.img_2 {
+    width: 100px;
+    height: 100px;
+   
+}
+/* petite */
+.img_3 {
+    width: 135px;
+    height: 81px;
+}
+.img_2_rond{
+    width: 150px;
+    height: 150px;
+    margin-left: 50px;
+    margin-top: 80px;
+}
+.card_1{
+    display: flex;
+}
+.sous_card_1{
+    margin-left: 10px;
+}
+.consultesFocusInNew{
+
+    padding-left: 6px !important;
+}
+
+
+/*Spotlight */
+
+.containeSpotlight{
+    margin-left: 0px !important;
+    
+}
+.containeSpotlight div{
+    border-left:0px !important;
+    margin-left: 0px !important;
+    padding: 0px !important;
+
+}
+.imgSpotlight{
+    margin: 0px !important;
+}
+/* Opinion */
+.containerOpinion{
+    height: auto !important;
+}
+/*Sport */
+.cardSport{
+    height: auto !important;
+    border-left:0px !important;
+    margin-left: 10px !important;
+    padding: 0px !important;
+    /* background-color: #052962; */
+}
+.cardSport2{
+    border-left:0px !important;
+    margin-left: 0px !important;
+    padding: 0px !important;
+    /* background-color: #052962; */
+}
+.cardSportimg{ 
+    border-left:0px !important;
+    margin-left: 0px !important;
+    padding: 0px !important;
+    /* background-color: #052962; */
+}
+.cardSportimg img{
+    
+    border:0px !important;
+    margin-left: 0px !important;
+    padding: 0px !important;
+    /* background-color: #052962; */
+}
+.cardSport3{ 
+    border-left:0px !important;
+    margin-left: 0px !important;
+    padding: 0px !important;
+    /* background-color: #052962; */
+}
+/* most popular */
+.Most_popular{
+   
+    border-left:solid 1px #DCDCDC;
+    border-right:solid 1px #DCDCDC;
+    border-top:solid 1px #DCDCDC;
+    
+}
+.Most_popular_ligne{
+    /* border-left:solid 1px #DCDCDC; */
+    border-right:solid 1px #DCDCDC;
+    border-bottom:solid 1px #DCDCDC;
+    /* padding-left: 10px; */
+    height: 5rem;
+    
+
+  
+}
+.Most_popular_ligne_head{
+    border-right:solid 1px #DCDCDC;
+    border-bottom:solid 1px #DCDCDC;
+    border-top:solid 1px #DCDCDC;
+
+    padding-left: 10px;
+    height: 5rem;
+   
+}
+.most_popular_ligne_head_text{
+    color: #00000048;
+}
+.news-number {
+    font-size: 4rem;
+    font-weight: bold;
+    line-height: 1;
+    margin: 0;
+   
+   
+    
+}
+.news-item h4 {
+    font-size: 16px;
+    margin-left: 40px !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+   
+
+}
+.conternerTextMost{
+    padding: 0px !important;
+   
+    
+}
+
+
+}
+
+ /* Tablettes (écrans moyens) */
+ @media (min-width: 576px) and (max-width: 768px) {
+    .navbar .menu a {
+        font-size: 16px;
+    }
+    .navbar .logo {
+        font-size: 20px;
+    }
+}
+
+/* Écrans moyens à grands (Desktop) */
+@media (min-width: 768px) and (max-width: 992px) {
+    .navbar .menu a {
+        font-size: 18px;
+    }
+    .navbar .logo {
+        font-size: 22px;
+    }
+}
+
+/* Grand écran (XL) */
+@media (min-width: 992px) {
+    .navbar .menu a {
+        font-size: 20px;
+    }
+    .navbar .logo {
+        font-size: 24px;
+    }
+}
