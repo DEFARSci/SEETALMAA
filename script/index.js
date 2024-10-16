@@ -19,61 +19,58 @@ const mostView=['most_1','most_2','most_3','most_4','most_5','most_6','most_7','
 async function fetchPageData() {
   try {
        const data = await fetchPostData();
-        displayImage(data, 'img_0',0);
-        displayImage(data,'img_4',4);
-        displayImage(data, 'img_5',5);
-        displayImage(data, 'img_9',9);
-
-       for (let i = 0; i < Headlines.length; i++) {
-        await displayTitle(data, Headlines[i], i);
-      }
-      
-      // const post = data[0];
-      
+       const imageIndexes = [0, 4, 5, 9];
+    // Boucle pour afficher les images
+    await Promise.all(
+        imageIndexes.map(index => displayImage(data, `img_${index}`, index))
+        );
        
+
+        Headlines.forEach((item, index) => {
+            displayTitle(data, item, index);
+        })
+  
       await displayContent(data,'article_0',0); // content.rendered);
 
-     
 
     //    News_in_focus
+        News_in_focus.forEach((item, index) => {
+            displayTitle(data, item, 14 + index);
+        })   
 
-       for (let i = 0; i < News_in_focus.length; i++) {
-        displayTitle(data, News_in_focus[i], 14+i);
-      }
-      await displayImage( data,'img_14',14);
-      await displayImage( data,'img_15',15);
-      await displayImage( data,'img_16',16);
+        const imageNews_in_focusIndexes = [14, 15, 16];
+    // Boucle pour afficher les images
+    await Promise.all(
+        imageNews_in_focusIndexes.map(index => displayImage(data, `img_${index}`, index))
+        );
 
     //  Spotlight
-    for (let i = 0; i < Spotlight.length; i++) {
-        displayTitle(data, Spotlight[i], 17+i);
-       
-      }
-      await displayContent(data,'article_17',17);
-      await displayContent(data,'article_23',23);
-      await displayContent(data,'article_24',24);
-      
-      await displayImage(data, 'img_17',17);
-      await displayImage(data, 'img_18',18);
-      await displayImage(data, 'img_19',19);
-      await displayImage(data, 'img_20',20);
-      await displayImage(data, 'img_21',21);
-      await displayImage(data, 'img_22',22);
-      await displayImage(data, 'img_23',23);
-      await displayImage(data, 'img_24',24);
-     
-    //  Opinion
-    for (let i = 0; i < Opinion.length; i++) {
-        displayTitle(data, Opinion[i], 25+i);
-      }
-      await displayContent(data,'article_25',25);
+    Spotlight.forEach((item, index) => {
+        displayTitle(data, item, 17 + index);
+    })
+        const contentSpotlightIndexes = [17, 23, 24];
+    // Boucle pour afficher les contenus
+    await Promise.all(
+        contentSpotlightIndexes.map(index => displayContent(data, `article_${index}`, index))
+        );
 
-      await displayImage(data, 'img_25',25);
-      await displayImage(data, 'img_26',26);
-      await displayImage(data, 'img_27',27);
-      await displayImage(data, 'img_28',28);
-      await displayImage(data, 'img_29',29);
-      await displayImage(data, 'img_30',30);
+      const imageSpotlightIndexes = [17, 18, 19, 20, 21, 22, 23, 24];
+    // Boucle pour afficher les images
+    await Promise.all(
+        imageSpotlightIndexes.map(index => displayImage(data, `img_${index}`, index))
+        );
+   
+    //  Opinion
+    Opinion.forEach((item, index) => {
+        displayTitle(data, item, 25 + index);
+    })
+   
+      await displayContent(data,'article_25',25);
+    const imageOpinionIndexes = [25, 26, 27, 28, 29, 30];
+    // Boucle pour afficher les images
+    await Promise.all(
+        imageOpinionIndexes.map(index => displayImage(data, `img_${index}`, index))
+        );
 
     //   sport
     sport.forEach((item, index) => {
@@ -85,11 +82,11 @@ async function fetchPageData() {
 
       await displayImage(data, 'img_31',31);
     // Tableau des index d'images à afficher
-      const imageIndexes = [31, 35, 36, 37, 38, 39, 41, 42];
+      const imageSportIndexes = [31, 35, 36, 37, 38, 39, 41, 42];
 
-// Boucle pour afficher les images
+    // Boucle pour afficher les images
        await Promise.all(
-        imageIndexes.map(index => displayImage(data, `img_${index}`, index))
+        imageSportIndexes.map(index => displayImage(data, `img_${index}`, index))
         );
 
 
@@ -97,32 +94,10 @@ async function fetchPageData() {
 
 
     //   mostvue
-
-    for (let i = 0; i < mostView.length; i++) {
-        displayTitle(data, mostView[i],i);
-        
-      }
-    // await  displayTitle(data,'most_1',0);
-    // await  displayTitle(data,'most_2',1);
-    // await  displayTitle(data,'most_3',2);
-    // await  displayTitle(data,'most_4',3);
-    // await  displayTitle(data,'most_5',4);
-    // await  displayTitle(data,'most_6',5);
-    // await  displayTitle(data,'most_7',6);
-    // await displayTitle(data,'most_8',7);
-    // await displayTitle(data,'most_9',8);
-    // await displayTitle(data,'most_10',9);
-
-    // await displayTitle(data,'most_11',10);
-    // await displayTitle(data,'most_12',11);
-    // await displayTitle(data,'most_13',12);
-    // await displayTitle(data,'most_14',13);
-    // await displayTitle(data,'most_15',14);
-    // await displayTitle(data,'most_16',15);
-    // await displayTitle(data,'most_17',16);
-    // await displayTitle(data,'most_18',17);
-    // await displayTitle(data,'most_19',18);
-    // await displayTitle(data,'most_20',19);
+        mostView.forEach((item, index) => {
+            displayTitle(data, item, index);
+        })
+  
   } catch (error) {
       console.error('Erreur lors de la récupération des données :', error);
       throw error;
@@ -189,23 +164,31 @@ function displayAuthor(authorName) {
 }
 
 // Fonction pour afficher l'image à la une
-async  function displayImage(data,imageId,numpost) {
-//   const data = await  fetchPostData();  
- 
-  const post = data[numpost];
-  
-  const imageUrl = await fetchFeaturedMedia(post.featured_media);
-  
-  const imgElement = document.getElementById(imageId);
-  if (imgElement) {
-      imgElement.src = imageUrl;
-      imgElement.alt = post.title.rendered;
-      imgElement.title = post.title.rendered;
-      
-  } else {
+async function displayImage(data, imageId, numpost) {
+    // Vérification de l'élément image avant de continuer
+    const imgElement = document.getElementById(imageId);
+    if (!imgElement) {
       console.error(`L'élément avec l'ID ${imageId} n'existe pas.`);
+      return; // Arrêter si l'élément n'existe pas
+    }
+    // Assure-toi que numpost est un index valide dans data
+    const post = data[numpost];
+    if (!post) {
+      console.error(`Aucun post trouvé pour l'index ${numpost}`);
+      return;
+    }
+    try {
+      // Récupération de l'URL de l'image associée au post
+      const imageUrl = await fetchFeaturedMedia(post.featured_media);
+      // Mise à jour de l'élément image avec l'URL et les informations du post
+      imgElement.src = imageUrl;
+      imgElement.alt = post.title.rendered || 'Image';
+      imgElement.title = post.title.rendered || 'Image';
+    } catch (error) {
+      console.error(`Erreur lors de la récupération de l'image pour le post ${numpost}:`, error);
+    }
   }
-}
+  
 
 // Fonction pour récupérer et afficher les catégories (à implémenter)
 async function fetchCategories(categories) {
@@ -396,11 +379,14 @@ function setupLinkRedirection(linkId) {
 // setupLinkRedirection('title_4');
 // setupLinkRedirection('title_5');
 // setupLinkRedirection('title_6');
-for (let id = 0; id < allTitles.length; id++) {
-    const element = allTitles[id];
-    setupLinkRedirection(element);
+
+// for (let id = 0; id < allTitles.length; id++) {
+//     const element = allTitles[id];
+//     setupLinkRedirection(element);
     
-}
+// }
+allTitles.forEach(setupLinkRedirection);
+
 
 // Fonction de transformation en slug
 function stringToSlug(text) {

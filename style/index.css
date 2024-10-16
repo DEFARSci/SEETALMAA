@@ -388,6 +388,9 @@ img{
 .containerOpinion{
     height: auto !important;
 }
+.cardOpinion{
+    height: auto !important;
+}
 /*Sport */
 .cardSport{
     height: auto !important;
