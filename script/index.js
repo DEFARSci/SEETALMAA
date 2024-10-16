@@ -76,21 +76,21 @@ async function fetchPageData() {
       await displayImage(data, 'img_30',30);
 
     //   sport
-    for (let i = 0; i < sport.length; i++) {
-        displayTitle(data, sport[i], 31+i);
-        
-      }
+    sport.forEach((item, index) => {
+        displayTitle(data, item, 31 + index);
+      });
+      
 
       await displayContent(data,'article_31',31);
 
       await displayImage(data, 'img_31',31);
-      await displayImage(data, 'img_35',35);
-      await displayImage(data, 'img_36',36);
-      await displayImage(data, 'img_37',37);
-      await displayImage(data, 'img_38',38);
-      await displayImage(data, 'img_39',39);
-      await displayImage(data, 'img_41',41);
-      await displayImage(data, 'img_42',42);
+    // Tableau des index d'images à afficher
+      const imageIndexes = [31, 35, 36, 37, 38, 39, 41, 42];
+
+// Boucle pour afficher les images
+       await Promise.all(
+        imageIndexes.map(index => displayImage(data, `img_${index}`, index))
+        );
 
 
        
