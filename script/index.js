@@ -16,93 +16,50 @@ const mostView=['most_1','most_2','most_3','most_4','most_5','most_6','most_7','
 
 // RÃ©cupÃ©ration des donnÃ©es de l'article
 
+// Fonction principale pour afficher les données de la page
 async function fetchPageData() {
-  try {
-       const data = await fetchPostData();
-       const imageIndexes = [0, 4, 5, 9];
-    // Boucle pour afficher les images
-    await Promise.all(
-        imageIndexes.map(index => displayImage(data, `img_${index}`, index))
-        );
-       
-
-        Headlines.forEach((item, index) => {
-            displayTitle(data, item, index);
-        })
+    try {
+      const data = await fetchPostData();
+      const imageIndexes = [0, 4, 5, 9];
   
-      await displayContent(data,'article_0',0); // content.rendered);
-
-
-    //    News_in_focus
-        News_in_focus.forEach((item, index) => {
-            displayTitle(data, item, 14 + index);
-        })   
-
-        const imageNews_in_focusIndexes = [14, 15, 16];
-    // Boucle pour afficher les images
-    await Promise.all(
-        imageNews_in_focusIndexes.map(index => displayImage(data, `img_${index}`, index))
-        );
-
-    //  Spotlight
-    Spotlight.forEach((item, index) => {
-        displayTitle(data, item, 17 + index);
-    })
-        const contentSpotlightIndexes = [17, 23, 24];
-    // Boucle pour afficher les contenus
-    await Promise.all(
-        contentSpotlightIndexes.map(index => displayContent(data, `article_${index}`, index))
-        );
-
-      const imageSpotlightIndexes = [17, 18, 19, 20, 21, 22, 23, 24];
-    // Boucle pour afficher les images
-    await Promise.all(
-        imageSpotlightIndexes.map(index => displayImage(data, `img_${index}`, index))
-        );
-   
-    //  Opinion
-    Opinion.forEach((item, index) => {
-        displayTitle(data, item, 25 + index);
-    })
-   
-      await displayContent(data,'article_25',25);
-    const imageOpinionIndexes = [25, 26, 27, 28, 29, 30];
-    // Boucle pour afficher les images
-    await Promise.all(
-        imageOpinionIndexes.map(index => displayImage(data, `img_${index}`, index))
-        );
-
-    //   sport
-    sport.forEach((item, index) => {
-        displayTitle(data, item, 31 + index);
-      });
+      // Afficher les images
+      await Promise.all(imageIndexes.map(index => displayImage(data, `img_${index}`, index)));
+  
+      // Afficher les titres et contenus des sections
+      Headlines.forEach((item, index) => displayTitle(data, item, index));
+      await displayContent(data, 'article_0', 0);
       
-
-      await displayContent(data,'article_31',31);
-
-      await displayImage(data, 'img_31',31);
-    // Tableau des index d'images à afficher
-      const imageSportIndexes = [31, 35, 36, 37, 38, 39, 41, 42];
-
-    // Boucle pour afficher les images
-       await Promise.all(
-        imageSportIndexes.map(index => displayImage(data, `img_${index}`, index))
-        );
-
-
-       
-
-
-    //   mostvue
-        mostView.forEach((item, index) => {
-            displayTitle(data, item, index);
-        })
+      News_in_focus.forEach((item, index) => displayTitle(data, item, 14 + index));
+      await Promise.all([14, 15, 16].map(index => displayImage(data, `img_${index}`, index)));
   
-  } catch (error) {
-      console.error('Erreur lors de la récupération des données :', error);
-      throw error;
+      Spotlight.forEach((item, index) => displayTitle(data, item, 17 + index));
+      await Promise.all([17, 23, 24].map(index => displayContent(data, `article_${index}`, index)));
+      await Promise.all([17, 18, 19, 20, 21, 22, 23, 24].map(index => displayImage(data, `img_${index}`, index)));
+  
+      Opinion.forEach((item, index) => displayTitle(data, item, 25 + index));
+      await displayContent(data, 'article_25', 25);
+      await Promise.all([25, 26, 27, 28, 29, 30].map(index => displayImage(data, `img_${index}`, index)));
+  
+      sport.forEach((item, index) => displayTitle(data, item, 31 + index));
+      await displayContent(data, 'article_31', 31);
+      await Promise.all([31, 35, 36, 37, 38, 39, 41, 42].map(index => displayImage(data, `img_${index}`, index)));
+  
+      mostView.forEach((item, index) => displayTitle(data, item, index));
+    } catch (error) {
+      showError('Erreur lors de la récupération des données.'); // Appel d'une fonction d'erreur centralisée
+      console.error('Erreur lors de la récupération des données:', error);
+    }
   }
-}
+  
+  // Appel à la fonction principale une fois que la page est prête
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      await fetchPageData();
+    } catch (error) {
+      console.error('Erreur lors de l\'affichage des données:', error);
+    }
+  });
+  
 
 // Fonction pour récupérer les données des posts
 async function fetchPostData() {
@@ -138,7 +95,7 @@ async function displayTitle(data, titleid, numpost) {
     const post = data[numpost];
     const title = post.title.rendered;
     const slug = post.slug; // On récupère l'ID du post
-  
+ 
     // Ajouter l'ID en tant qu'attribut data-id et mettre à jour le contenu
     const titleElement = document.getElementById(titleid);
     titleElement.innerHTML = title;
@@ -340,13 +297,13 @@ async function getCategories(Url) {
 
 // Appel Ã  la fonction principale
  // Appel de la fonction fetchPageData pour récupérer et afficher les données, y compris les images
- document.addEventListener('DOMContentLoaded', async () => {
-  try {
-       fetchPageData();
-  } catch (error) {
-      console.error('Erreur lors de l\'affichage des données:', error);
-  }
-});
+//  document.addEventListener('DOMContentLoaded', async () => {
+//   try {
+//        fetchPageData();
+//   } catch (error) {
+//       console.error('Erreur lors de l\'affichage des données:', error);
+//   }
+// });
     
 
 
@@ -354,25 +311,26 @@ function setupLinkRedirection(linkId) {
     const linkElement = document.getElementById(linkId);
     if (!linkElement) {
         console.error(`Aucun élément trouvé avec l'ID: ${linkId}`);
-        return; // Sortir si l'élément n'existe pas
+        return; // Sortie si l'élément n'existe pas
     }
 
     // Ajouter un écouteur d'événement "click" pour rediriger l'utilisateur
     linkElement.addEventListener('click', function(event) {
         event.preventDefault(); // Empêche le comportement par défaut du lien
+
         const slug = this.getAttribute('data-id');
-        console.log("ID du post cliqué : " + slug);
-        // Récupérer le texte du lien
-        // const linkText = removeAccents(linkElement.textContent);
+        if (!slug) {
+            console.error("Aucun attribut 'data-id' trouvé pour cet élément.");
+            return; // Sortir si le slug est manquant
+        }
 
-        // // Transformer le texte en slug
-        // const slug = stringToSlug(linkText);
-        // console.log("slug :", slug);
+        console.log(`ID du post cliqué : ${slug}`);
 
-        // // Rediriger vers une URL basée sur le slug
-         window.location.href = `pages/article.html?slug=${slug}`; // Modifiez ce chemin si nécessaire
+        // Rediriger vers une URL basée sur le slug
+        window.location.href = `pages/article.html?slug=${slug}`; // Modifiez ce chemin si nécessaire
     });
 }
+
 // setupLinkRedirection('title_1');
 // setupLinkRedirection('title_2');
 // setupLinkRedirection('title_3');
@@ -420,23 +378,54 @@ function stringToSlug(text) {
 
 // menue button clique
 
-Opinionbtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    console.log("click");
-    window.location.href = "pages/opinion.html";
-});
-sportbtn.addEventListener('click', () => {
-    window.location.href = "pages/sport.html";
-});
-culturebtn.addEventListener('click', () => {
-    window.location.href = "pages/culture.html";
-});
-lifestylebttn.addEventListener('click', () => {
-    window.location.href = "pages/lifestyle.html";
-});
-
-
-
-$(document).ready(function(){
-    $(".owl-carousel").owlCarousel();
+const buttonMappings = {
+    Opinionbtn: "pages/opinion.html",
+    sportbtn: "pages/sport.html",
+    culturebtn: "pages/culture.html",
+    lifestylebttn: "pages/lifestyle.html"
+  };
+  
+  // Ajout des gestionnaires d'événements de manière dynamique
+  Object.keys(buttonMappings).forEach(buttonId => {
+    const button = document.getElementById(buttonId);
+    if (button) {
+      button.addEventListener('click', (e) => {
+        e.preventDefault(); // Optionnel, selon le besoin
+        window.location.href = buttonMappings[buttonId];
+      });
+    } else {
+      console.error(`Le bouton avec l'ID ${buttonId} n'existe pas.`);
+    }
   });
+  
+
+
+
+// $(document).ready(function(){
+//     $(".owl-carousel").owlCarousel();
+//   });
+
+
+//   button scroll top
+
+
+// Affiche ou cache le bouton en fonction du défilement
+window.onscroll = function() {
+    console.log("scroll");
+    let button = document.getElementById("topButton");
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        button.style.display = "block"; // Afficher le bouton
+       
+    } else {
+        button.style.display = "none"; // Cacher le bouton
+        console.log("scroll");
+    }
+};
+
+// Fonction pour faire défiler vers le haut
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Animation fluide
+    });
+}
