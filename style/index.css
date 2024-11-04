@@ -16,7 +16,7 @@ nav{
 }
 
 .separator{
-    border-right: solid 1px white; /* Couleur de la barre */
+    border-right: solid 1px white; 
     /* Couleur de la barre */   
     /* padding-left: 1px;
     padding-right: 1px;    */
@@ -50,28 +50,51 @@ nav{
 
 .news{
     /* background-color: #622205; */
-    width: 110px
+    width: 110px;
+height: 40px;    
+
+
+}
+.news a{
+    margin-top: -12px;
+ 
 }
 .opinions{
     /* background-color: #622205; */
-    width: 145px
+    width: 145px;
+    height: 40px;
+}
+.opinions a{
+    margin-top: -12px;
 }
 .sports{
     /* background-color: #622205; */
-    width: 125px
+    width: 125px;
+    height: 40px;
+}
+.sports a{
+    margin-top: -12px;
 }
 .focus{
     /* background-color: #622205; */
-    width: 125px
+    width: 125px;
+    height: 40px;
+}
+.focus a{
+    margin-top: -12px;
 }
 .spotlights{
     /* background-color: #622205; */
-    width: 155px
+    width: 155px;
+    height: 40px;
+}
+.spotlights a{
+    margin-top: -12px;
 }
 .link-hover {
     position: relative;
     display: inline-block;
-    margin: 0 40px 10px 0;
+    margin: 0 0px 0px 0;
 
 }
 
@@ -106,9 +129,9 @@ nav{
     background-color: #052962;
 }
 .sous-menu-container{
-    margin-top: -8px;
+    margin-top: -9px;
     border: solid 1px white;
-    padding: 3px;
+    /* padding: 3px; */
 }
 .sous-menu-link{
     color: white;
@@ -126,6 +149,7 @@ nav{
     border-left:solid 1px #DCDCDC;
     border-right:solid 1px #DCDCDC;
 }
+
 
 
 /* news-in-focus */
@@ -238,6 +262,7 @@ img{
     width: 490px;
     height: 374px;
 }
+
 /* moyenne */
 .img_2 {
     width: 220px;
@@ -297,9 +322,47 @@ img{
     background-color: #0056b3; /* Changement de couleur au survol */
 }
 
+/* sous menue footer */
+.footer-container{
+    border-top:1px solid #DCDCDC ;  
+    border-left:1px solid #DCDCDC ;
+    border-right:1px solid #DCDCDC ;
+    border-bottom:1px solid #DCDCDC ;
+    padding: 3px;
+}
+  
+    
+.sous-menu-container-footer{
+    margin-top: -9px;
+    border: solid 1px white;
+    border-left: solid 1px #DCDCDC;
+    border-right: solid 1px #DCDCDC; 
+}
+    /* padding: 3px; */
+.sous-menu-link-footer{
+    color: rgb(0, 0, 0);
+    margin: 10px;
+    text-decoration: none;
+}
+.sous-menu-link-footer:hover{ 
+   color:#c01307;
+   /* text-decoration: underline  #5a100b 2px; */
+}
+/* footer */
+.footer {
+    background-color:  #052962; /* couleur de fond légère */
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #ffffff; /* couleur de texte gris foncé */
+}
+.footer span {
+    font-weight: bold;
+}
+
 
   /* Style pour les petits écrans (mobile) */
-  @media (max-width: 576px) {
+  @media (max-width: 767px) {
     nav{
         /* background-color: #000000; */
         padding: 0;
@@ -321,7 +384,7 @@ img{
 
     }
     .content-top-menu{
-      /* width:  !important; */
+      width:100%  !important;
         display: flex;
         justify-content: flex-end !important;
     }
@@ -339,7 +402,7 @@ img{
     }
     
     #separator-menu div a{
-        font-size: 15px;
+        font-size: 10px;
         margin: 4px !important;
         padding: 2px !important;   
         
@@ -358,10 +421,93 @@ img{
         padding: 0;
         margin: 0;
         
+        
     }
-    .menu-container{
-      
-    }
+/* menue */
+.menu{
+
+    padding-top: 3px!important;
+}
+.logotexte{
+    /* display: none !important; */
+    order: -1 !important;
+    padding-bottom: 6px;
+}
+.news{
+    /* background-color: #622205; */
+    width: 45px !important;
+    height: 28px;  
+}
+.news a{
+    margin-top: -8px;
+    font-size: 18px;
+}
+.opinions{
+    /* background-color: #622205; */
+    width: 70px !important;
+    height: 28px;  
+}
+.opinions a{
+    margin-top: -8px;
+    font-size: 18px;
+
+}
+.sports{
+    /* background-color: #622205; */
+    display: none;
+    width: 50px !important;
+    height: 28px;
+}
+.sports a{
+   margin-top: -8px;
+    font-size: 18px;
+}
+.focus{
+    /* background-color: #622205; */
+    
+    width: 50px !important;
+   height: 28px;
+}
+.focus a{
+   margin-top: -8px;
+    font-size: 18px;
+}
+.spotlights{
+    /* background-color: #622205; */
+    border-right: none !important;
+    width: 75px !important;
+    height: 28px;
+}
+.spotlights a{
+   margin-top: -8px;
+    font-size: 18px;
+}
+.spotlightsm{
+    border-right: none !important;
+
+    width: 75px !important;
+    height: 38px;
+}
+.menu-burger-container{
+    /* background-color: #8A2BE2; */
+    width: 98px;
+    display: flex;
+   justify-content:flex-end;
+   padding: 0;
+   margin: 0;
+ 
+     margin-bottom: 80px !important; 
+    padding-bottom: 20px !important; 
+
+}
+.menu-burger-container div{
+
+    
+    /* background-color: #ffffff; */
+}
+.menu-burger{
+
+}
     /* Les images */
 
     /* pub */
@@ -371,14 +517,17 @@ img{
 
 }
 /* grande */
+#img{
+    order: -1;
+}
 .img_1{
     width: 100%;
     height: 374px;
 }
 /* moyenne */
 .img_2 {
-    width: 100px;
-    height: 100px;
+    width: 135px;
+    height: 81px;
    
 }
 /* petite */
@@ -402,10 +551,32 @@ img{
 
     padding-left: 6px !important;
 }
+/* Headline */
+#article_0{
+    display: none;
+}
 
+/* new in focus */
+.cardFocus{
+    /* background-color: #622205; */
+    margin-top: 0px !important;
+    
+}
 
 /*Spotlight */
-
+#article_17{
+    display: none;
+}
+#article_23{
+    display: none;
+}
+#article_24{
+    display: none;
+}
+#categories_18{
+    margin-top: 0px !important;
+   
+}
 .containeSpotlight{
     margin-left: 0px !important;
     
@@ -419,9 +590,25 @@ img{
 .imgSpotlight{
     margin: 0px !important;
 }
+.cardspotlight{
+    /* background-color: #041F4A !important; */
+    /* width:15rem !important; */
+    padding-left: 10px !important;
+}
+#categories_24,#title_24,#categories_23,#title_23{
+    /* color: white !important; */
+    margin-left: 10px !important;
+}
 /* Opinion */
+.cardImgOpt{
+    padding: 0px !important;
+    margin: 0px !important;
+}
 .containerOpinion{
     height: auto !important;
+}
+#article_25{
+    display: none;
 }
 .cardOpinion{
     height: auto !important;
@@ -429,22 +616,31 @@ img{
 /*Sport */
 .cardSport{
     height: auto !important;
-    border-left:0px !important;
-    margin-left: 10px !important;
-    padding: 0px !important;
+    
     /* background-color: #052962; */
 }
 .cardSport2{
+    height: auto !important;
     border-left:0px !important;
     margin-left: 0px !important;
     padding: 0px !important;
     /* background-color: #052962; */
+}
+.cardSporttext{
+    margin: 0px !important;
+    padding-left: 9px !important;
+}
+.cardSport1{
+    height: auto !important;
 }
 .cardSportimg{ 
     border-left:0px !important;
     margin-left: 0px !important;
     padding: 0px !important;
     /* background-color: #052962; */
+}
+#title_42{
+    font-size: medium !important;
 }
 .cardSportimg img{
     
@@ -458,6 +654,9 @@ img{
     margin-left: 0px !important;
     padding: 0px !important;
     /* background-color: #052962; */
+}
+#article_31{
+    display: none;
 }
 /* most popular */
 .Most_popular{
@@ -534,8 +733,27 @@ img{
     /* background-color: #622205; */
     width: 70px
 }
-}
 
+/* footer */
+.footer5{
+    border-top: solid 1px #DCDCDC;
+    padding-top: 40px;
+}
+.footer4{
+    padding-top: 40px;
+}
+.footer3{
+    border-top: solid 1px #DCDCDC;
+    /* background-color: #622205; */
+    width: 204px;
+}
+.footer2{
+    border-top: solid 1px #DCDCDC;
+}
+.footer1{
+    padding-top: 40px;
+}
+  }
  /* Tablettes (écrans moyens) */
  @media (min-width: 576px) and (max-width: 768px) {
    

@@ -33,10 +33,10 @@
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
 
         <div class="container  mr-4 ml-4  ">
-            <div class="logo  d-flex justify-content-start fw-bold fs-4 text-white">
+            <div class="logo  d-flex justify-content-start fw-bold fs-4 text-white ">
                 SETALMAA
             </div>
-            <div class=" content-top-menu d-flex justify-content-start  col-12">
+            <div class=" content-top-menu d-flex justify-content-end  ">
                 <div class="separator"id="separator-top-menu"></div>
                 <div class="separator " id="separator-top-menu">
                     <div class=" mt-3 fs-5  top-menu  "><strong>subscriptions</strong> </div>
@@ -57,74 +57,59 @@
         </div>
     </nav>
     <!-- menu -->
-    <nav class="menu col-xs-12 col-sm-12 col-md-12 col-lg-12 pt-5 pb-2 ">
+    <nav class="menu col-xs-12 col-sm-12 col-md-12 col-lg-12 pt-5  ">
         <div class="container-fluid">
             <div class="container">
                 <div class="row">
                   <!-- Div du milieu -->
-                  <div class=" separator news  order-1 order-md-1   d-flex justify-content-start" id="separator-menu">
-                    
-                        <div class=" mt-3 fs-2 text-white ">
-                            <a href="index.html" class="text-decoration-none text-white link-hover">
+                        <!-- <div class=" news  fs-2 separator  text-white  " id="separator-menu">
+                            <a href="index.html" class=" text-decoration-none text-white link-hover">
                                 <strong>News</strong>
-                            </a>
+                            </a>                                                                                                                                                                                                            
+                        </div>                    -->
+                        <div class=" news  fs-2 text-white separator d-flex justify-content-start align-items-start link-hover " id="separator-menu">
+                            <a href="index.html" class=" text-decoration-none text-white  ">
+                                <strong>News</strong>
+                            </a> 
                         </div>
-    
-                   
-                  </div>
-                  <!-- Div de gauche -->
-                  <div class=" separator opinions order-2 order-md-2 d-flex justify-content-start   " id="separator-menu">
-                    
-                        <div class=" mt-3 fs-2 text-white ">
-                            <a href="" id="opinion" class="text-decoration-none text-white link-hover ">
+                  <!-- Div de gauche --> 
+                        <div class=" opinions  fs-2 text-white separator d-flex justify-content-start link-hover " id="separator-menu">
+                            <a href="/pages/opinion.html" id="opinion" class="text-decoration-none text-white  ">
                                 <strong>Opinion</strong>
                             </a>
                         </div>
-                   
-                  </div>
                   <!-- Div de droite qui doit passer en haut sur petit écran -->
-                  <div class=" separator sports  order-2 order-md-3 d-flex justify-content-start  " id="separator-menu">
-                    
-                        <div class=" mt-3 fs-2 text-white ">
-                            <a href="/pages/sport.html" id="sport" class="text-decoration-none text-white link-hover">
+                        <div class=" sports  fs-2 text-white separator d-flex justify-content-start link-hover" id="separator-menu">
+                            <a href="/pages/sport.html" id="sport" class="text-decoration-none text-white ">
                                 <strong>Sport</strong>
                             </a>
-                      
-    
-                    </div>
-                  </div>
-                  <div class=" separator focus  order-3 order-md-3 d-flex justify-content-start " id="separator-menu">
-                    
-                        <div class=" mt-3 fs-2 text-white ">
-                            <a href="/pages/culture.html" class="text-decoration-none text-white link-hover">
+                        </div>
+                        <div class=" focus  fs-2 text-white separator d-flex justify-content-start link-hover " id="separator-menu">
+                            <a href="/pages/culture.html" class="text-decoration-none text-white ">
                                 <strong>Focus</strong>
                             </a>
                         </div>
-    
-                    
-                  </div>
-                  <div class="separator spotlights order-4 order-md-3 d-flex justify-content-start "id="separator-menu">
-                    
-                        <div class=" mt-3 fs-2 text-white ">
-                            <a href="/pages/lifestyle.html" class="text-decoration-none text-white link-hover">
+                        <div class=" spotlights  fs-2 text-white separator d-flex justify-content-start link-hover " id="separator-menu">
+                            <a href="/pages/lifestyle.html" class="text-decoration-none text-white ">
                                 <strong>Spotlight</strong>
                             </a>
                         </div>
-    
-                   
-                  </div>
-                  <div class="col-md-1 col-1 order-5 order-md-3 d-flex justify-content-start   " id="separator-menu">
-                    
-                        <div class="mt-2 t-3  fs-2 text-white">
-                            <i class="fa-solid fa-bars menu-burger"> </i>
-                         </div>
-    
-                    </div>
-                 
+                       
+                  <div class=" menu-burger-container  col-md-1  order-5 order-md-3 d-flex justify-content-start   " id="separator-menu">
+                    <div class="row ">
+                        <div class="col-8"></div>
+                        <div class="col-4">
+                            <div class="  text-withe ">
+                                <i class="fa-solid fa-bars menu-burger"> </i>
+        
+                            </div>
 
-                  <div class="col-md-2 col-12 order-0 order-md-3   d-flex justify-content-end ">
+                        </div>
+                    </div>
+                    </div>
+                  <div class="  logotexte col-md-2 col-12 order-0 order-md-3    d-flex justify-content-end ">
                     <div class=" " id="separator-menu">
-                        <div class=" mt-3 fs-2 text-white ">
+                        <div class="  fs-2 text-white ">
                             SETALMAA
                        </div>
                        
@@ -240,9 +225,9 @@
                 </div>
                 <div class="col-md-8 col-sm-12 col-lg-7 " style="border-top: 1px solid #DCDCDC; ">
                     <div class="row mt-2 " style="border-right: 1px solid #DCDCDC; ">
-                        <div class="col-md-4 col-lg-4>
+                        <div class="col-md-4 col-lg-4 ">
 
-                            <a href="#" class="fs-6 text-decoration-none text-danger " id="auteur_1">Lorem </a><br>
+                            <a href="#" class="fs-6 text-decoration-none text-danger " id="categories_0">Lorem </a><br>
                             <i class="fa-solid fa-quote-left text-danger fs-2" style="display:none;" id="quote"></i>
                             <a href="#" class="fw-bold fs-5 text-decoration-none text-black " id="title_0"></a>
 
@@ -253,19 +238,19 @@
                         </div>
                     </div>
                     <div class="row mt-3 ">
-                        <div class="col-md-4 col-lg-4"> <span class="text-danger" style="border-top: 1px solid #DCDCDC;">Lorem ipsum</span> <a href="#" class="fs-6 text-decoration-none text-black" id="title_1"></a><br> </div>
-                        <div class="col-md-4 col-lg-4"> <span class="text-danger" style="border-top: 1px solid #DCDCDC;">Lorem ipsum</span> <a href="#" class="fs-6 text-decoration-none text-black" id="title_2"> </a><br> </div>
-                        <div class="col-md-4 col-lg-4"> <span class="text-danger" style="border-top: 1px solid #DCDCDC;">Lorem ipsum</span> <a href="#" class="fs-6 text-decoration-none text-black" id="title_3"> <br> </div>
+                        <div class="col-md-4 col-lg-4"> <span class="text-danger" style="border-top: 1px solid #DCDCDC;" id="categories_1">Lorem ipsum</span> <a href="#" class="fs-6 text-decoration-none text-black" id="title_1"></a><br> </div>
+                        <div class="col-md-4 col-lg-4"> <span class="text-danger" style="border-top: 1px solid #DCDCDC;" id="categories_2">Lorem ipsum</span> <a href="#" class="fs-6 text-decoration-none text-black" id="title_2"> </a><br> </div>
+                        <div class="col-md-4 col-lg-4"> <span class="text-danger" style="border-top: 1px solid #DCDCDC;" id="categories_3">Lorem ipsum</span> <a href="#" class="fs-6 text-decoration-none text-black" id="title_3"> <br> </div>
             
                     </div>
                     <div class="row mt-3 ">
-                        <div class="col-md-4 col-lg-4">
+                        <div class="col-md-4 col-lg-4 ">
                             <div style="border-top: 1px solid #DCDCDC; padding-top: 10px;  ">
                             <div class="card_1 " style=" border-right: 1px solid #DCDCDC;  ">
                                     <img src="/img/loader.gif" alt="" class="  img_2  mb-3 " id="img_4">
                                     <div class="sous_card_1">
 
-                                        <a href="#" class="fs-6 text-decoration-none text-white"><span class="bg-danger p-1">Europe
+                                        <a href="#" class="fs-6 text-decoration-none text-white"><span class="bg-danger p-1" id="categories_4">Europe
                                                 live</span> </a><br>
                                         <a href="#" class="fw-bold fs-5 text-decoration-none text-black " id="title_4"></a>
                                     </div>
@@ -273,12 +258,12 @@
 
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 ">
                             <div style="border-top: 1px solid #DCDCDC; padding-top: 10px;  ">
                             <div class="card_1 " style=" border-right: 1px solid #DCDCDC;">
-                                <img src="" alt="" class="img_2  mb-3" id="img_5">
-                                <div  class="sous_card_1">
-                                    <a href="#" class="fs-6 text-decoration-none text-white"><span class="bg-danger p-1">Europe
+                                <img src="/img/loader.gif" alt="" class="img_2  mb-3" id="img_5">
+                                <div  class="sous_card_1 ">
+                                    <a href="#" class="fs-6 text-decoration-none text-white"><span class="bg-danger p-1" id="categories_5">Europe
                                             live</span> </a><br>
                                     <a href="#" class="fw-bold fs-5 text-decoration-none text-black " id="title_5"></a>
                                     
@@ -290,15 +275,15 @@
                     
                         <div class="col-md-4 col-lg-4 ">
                             <div style="border-top: 1px solid #DCDCDC; padding-top: 10px;">
-                                <a href="#" class="fs-6 text-decoration-none text-danger ">Lorem </a><br>
+                                <a href="#" class="fs-6 text-decoration-none text-danger " id="categories_6">Lorem </a><br>
                                 <a href="#" class="fw-bold fs-6 text-decoration-none text-black " id="title_6"></a>
                             </div>
                             <div  style="border-top: 1px solid #DCDCDC; padding-top: 10px;">
-                                <a href="#" class="fs-6 text-decoration-none text-danger ">Lorem </a><br>
+                                <a href="#" class="fs-6 text-decoration-none text-danger " id="categories_7">Lorem </a><br>
                                 <a href="#" class="fw-bold fs-6 text-decoration-none text-black " id="title_7"></a>
                             </div>
                             <div style="border-top: 1px solid #DCDCDC; padding-top: 10px;" >
-                                <a href="#" class="fs-6 text-decoration-none text-danger ">Lorem </a><br>
+                                <a href="#" class="fs-6 text-decoration-none text-danger " id="categories_8">Lorem </a><br>
                                 <a href="#" class="fw-bold fs-6 text-decoration-none text-black " id="title_8"></a>
                             </div>
                         </div>
@@ -306,11 +291,11 @@
                 </div>
                 <div class="col-md-3  col-lg-2"  style="border-top: 1px solid #DCDCDC; margin-left: 10px;" >
                     <div class="row ">
-                        <div class="img_content col-md-12 col-3 col-sm-2 p-0 m-0">
-                            <img class="img_2 " src="/img/loader.gif" alt="" id="img_9">
+                        <div class="img_content col-md-12 col-4  p-0 m-0 ">
+                            <img class="img_2 mt-2" src="/img/loader.gi" alt="" id="img_9">
                         </div>
-                        <div class="col-md-12 col-9 col-sm-10  ">
-                            <a href="#" class=" fs-6 text-decoration-none text-danger ">Lorem </a><br>
+                        <div class="col-md-12 col-7  ">
+                            <a href="#" class=" fs-6 text-decoration-none text-danger " id="categories_9">Lorem </a><br>
                             <a href="#" class="fw-bold fs-5 text-decoration-none text-black " id="title_9"></a>
 
                         </div>
@@ -319,20 +304,20 @@
                     <div class="col-md-12 col-lg-12 p-0 m-0" style="border-top: 1px solid #DCDCDC; margin-left: 10px;">
                    
                         <a href="#" class="text-decoration-none text-black ">
-                            <span class="text-danger"  >Lorem up</span>
+                            <span class="text-danger" id="categories_10"  >Lorem up</span>
                             <p id="title_10"> </p>
                         </a>
                     </div>
                         <div class="mt-2 " style="border-top: 1px solid #DCDCDC;">
-                            <a href="#" class="fs-6 text-decoration-none text-danger ">Lorem </a><br>
+                            <a href="#" class="fs-6 text-decoration-none text-danger " id="categories_11">Lorem </a><br>
                             <a href="#" class="fw-bold fs-6 text-decoration-none text-black " id="title_11"></a>
                         </div>
                         <div class="mt-3" style="border-top: 1px solid #DCDCDC;">
-                            <a href="#" class="fs-6 text-decoration-none text-danger ">Lorem </a><br>
+                            <a href="#" class="fs-6 text-decoration-none text-danger " id="categories_12">Lorem </a><br>
                             <a href="#" class="fw-bold fs-6 text-decoration-none text-black " id="title_12"></a>
                         </div>
                         <div class="mt-1" style="border-top: 1px solid #DCDCDC;">
-                            <a href="#" class="fs-6 text-decoration-none text-danger ">Lorem </a><br>
+                            <a href="#" class="fs-6 text-decoration-none text-danger " id="categories_13">Lorem </a><br>
                             <a href="#" class="fw-bold fs-6 text-decoration-none text-black " id="title_13"></a>
                         </div>
 
@@ -359,7 +344,7 @@
                     <img id="img_14" class="mt-2 img_1" src="" alt="">
                 </div>
                 <div>
-                    <a href="#" class="fs-6 text-decoration-none text-danger ">Lorem </a><br>
+                    <a href="#" class="fs-6 text-decoration-none text-danger " id="categories_14">Lorem </a><br>
                     <a id="title_14" href="#" class="fw-bold fs-4 text-decoration-none text-black "></a>
                 </div>
 
@@ -369,22 +354,22 @@
                     <div class="col-md-6 " style="border-left: 1px solid #DCDCDC; ">
 
                         <div class="row " style="border-top: 1px solid #DCDCDC; ">
-                            <div class="col-md-12 col-3  m-0">
+                            <div class="col-md-12 col-4  m-0">
                                 <img id="img_15" class="img_2 mt-2" src="" alt="">
                             </div>
-                            <div class="col-md-12 col-8 p-0 m-3 ">
-                                <a href="#" class="fs-6 text-decoration-none text-danger ">Lorem </a><br>
+                            <div class="cardFocus col-md-12 col-7 p-0 m-3 ">
+                                <a href="#" class="fs-6 text-decoration-none text-danger " id="categories_15">Lorem </a><br>
                                 <a id="title_15" href="#" class="fw-bold fs-6 text-decoration-none text-black"></a><br><br>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6" style="border-left: 1px solid #DCDCDC; ">
                         <div class="row" style="border-top: 1px solid #DCDCDC;">
-                            <div class="col-md-12 col-3  m-0">
+                            <div class="col-md-12 col-4  m-0">
                                 <img id="img_16" class="img_2 mt-2" src="" alt="">
                             </div>
-                            <div class="col-md-12 col-8 p-0 m-3 ">
-                                <a href="#" class="fs-6 text-decoration-none text-danger ">Lorem </a><br>
+                            <div class=" cardFocus col-md-12 col-7 p-0 m-3 ">
+                                <a href="#" class="fs-6 text-decoration-none text-danger " id="categories_16">Lorem </a><br>
                                 <a id="title_16" href="#" class="fw-bold fs-6 text-decoration-none text-black "></a><br><br>
                                 <div id="second_article" class="fs-6">
                                     
@@ -419,7 +404,7 @@
 
                             <div class="row">
                                 <div class="col-md-4 col-12 col-sm-12">
-                                    <h6>Fashion</h6>
+                                    <h6 id="categories_17">Fashion</h6>
                                     <a href="#" class="text-decoration-none text-black">
                                         <h3 id="title_17" class="fw-bold">
 
@@ -430,19 +415,19 @@
                                         
                                     </p>
                                 </div>
-                                <div class="col-md-8  ">
+                                <div class="col-md-8  " id="img">
                             <img id="img_17" class="img_1" src="" alt="">
                                     </div>
                             </div>
                         </div>
                     </div>
-                    <div class=" containeSpotlight col-md-3  col-lg-3  " style="border-top: 1px solid #DCDCDC; margin-left: 10px;">
-                        <div class=" row mt-2" style="border-left: 1px solid #DCDCDC;">
-                            <div class="col-md-12 col-3">
+                    <div class=" containeSpotlight col-md-3  col-lg-3 col-12 " style="border-top: 1px solid #DCDCDC; margin-left: 10px;">
+                        <div class=" row mt-2 p-0 m-0" style="border-left: 1px solid #DCDCDC;">
+                            <div class="col-md-12 col-4 ">
                                 <img id="img_18" class="imgSpotlight img_2 m-2" src="" alt="">
                             </div>
                             <div class="col-md-12 col-8 ">
-                                <h6 class="m-2">Fashion</h6>                             
+                                <h6 class="m-2" id="categories_18">Fashion</h6>                             
                                 <h3 id="title_18" class="m-2">
                                 </h3>
 
@@ -464,7 +449,7 @@
                                 <img id="img_19" class="img_3" src="" alt="">
                             </div>
                             <div class="col-md-7 mt-2 col-7 " style="margin-left: 10px;">
-                                <h6>categorie</h6>
+                                <h6 id="categories_19">categorie</h6>
                                 <a href="#" class="text-decoration-none text-black">
                                     <h5 id="title_19" class="fs-6"></h5>
 
@@ -478,7 +463,7 @@
                                 <img id="img_20" class="img_3" src="" alt="">
                             </div>
                             <div class="col-md-7 col-7 mt-2 " style="margin-left: 10px;" >
-                                <h6>categorie</h6>
+                                <h6 id="categories_20">categorie</h6>
                                 <h5 id="title_20" class="fs-6"></h5>
                             </div>
                         </div>
@@ -490,7 +475,7 @@
                                 <img id="img_21" class="img_3" src="" alt="">
                             </div>
                             <div class="col-md-7 col-7 mt-2" style="margin-left: 10px;" >
-                                <h6>categorie</h6>
+                                <h6 id="categories_21">categorie</h6>
                                 <h5 id="title_21" class="fs-6"></h5>
                             </div>
                         </div>
@@ -501,7 +486,7 @@
                                 <img id="img_22" class="img_3" src="" alt="">
                             </div>
                             <div class="col-md-7 col-7  mt-2" style="margin-left: 10px;" >
-                                <h6>categorie</h6>
+                                <h6 id="categories_22">categorie</h6>
                                 <h5 id="title_22" class="fs-6"></h5>
                             </div>
                         </div>
@@ -511,28 +496,28 @@
 
                     <div class="col-md-3 containeSpotlight  " style="border-top: 1px solid #DCDCDC;margin-left: 15px;">
                         <div class="row mt-2 " >
-                            <div class="col-md-12 col-4 ">
+                            <div class="col-md-12 col-4  ">
                                 <img id="img_23" class="img_2 " src="" alt="">
                             </div>
                            
-                            <div class="col-md-12 col-7">
+                            <div class="col-md-12 col-7  ">
 
-                                <h6>Categorie</h6>
+                                <h6 id="categories_23">Categorie</h6>
                                 <h5 id="title_23" class="fw-bold"></h5>
                                 <p id="article_23" class="fs-6"> </p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-3 containeSpotlight  " style="border-top: 1px solid #DCDCDC;margin-left: 15px;">
+                    <div class="col-md-3 col-lg-3 containeSpotlight col-sm-12 " style="border-top: 1px solid #DCDCDC;margin-left: 15px;">
                         <div class=" h-100"  style="border-left: 1px solid #DCDCDC;;">
 
-                            <div class="row m-2 " >
-                                <div class="col-md-12 col-4 ">
+                            <div class="row m-2 col-12 " >
+                                <div class="col-md-12 col-4">
                                     <img id="img_24" class="img_2 " src="" alt="">
                                 </div>
-                                <div class="col-md-12 col-6">
-                                <h6>Categorie</h6>
+                                <div class=" cardspotlight col-md-12 col-8 ">
+                                <h6 id="categories_24">Categorie</h6>
                                 <h5 id="title_24" class="fw-bold"></h5>
                                 <p id="article_24" class="fs-6"> </p>
                             </div>
@@ -565,13 +550,13 @@
                                 <p id="title_25" class="fs-4 fs-5 fw-bold p-0 m-0">
                                    
                                 </p>
-                                <p  class="fs-4 text-decoration-none text-danger fs-5 fw-bold p-0 m-0">Lorem
+                                <p  class="fs-4 text-decoration-none text-danger fs-5 fw-bold p-0 m-0" id="categories_25">Lorem
                                     Lorem
                                 </p>
                                 <p id="article_25" class="fs-6"></p>
                             </a>
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-8" id="img">
                             <img id="img_25" class="img_1" src="" alt="">
                         </div>
                     </div>
@@ -579,17 +564,17 @@
                 <div class="row ">
                     <div class="col-md-4 col-lg-4 mt-2  " style="border-right: 1px solid #DCDCDC; " >
                         <div class=" "  style="border-top: 1px solid #DCDCDC; padding-top:10px; " >
-                            <div class="row" >
-                                <div class="col-md-12 col-4">
+                            <div class="row " >
+                                <div class="col-md-12 col-4 cardImgOpt ">
 
                                     <img id="img_26" class="img_2 " src="" alt="">
                                 </div>
 
-                                <div class="col-md-12 col-7 ">
+                                <div class="col-md-12 col-7  ">
                                     <a  href="#" class="fw-bold fs-5 text-decoration-none text-black mt-2" >
                                         <h5 id="title_26" class="fw-bold"></h5>
                 
-                                        <p class="fs-5 text-decoration-none text-danger  fw-bold p-0 m-0">Lorem
+                                        <p class="fs-5 text-decoration-none text-danger  fw-bold p-0 m-0" id="categories_26">Lorem
                                             Lorem
                                         </p>
                                     </a>
@@ -600,7 +585,7 @@
                     <div class="col-md-4 col-lg-4 mt-2 " style="border-right: 1px solid #DCDCDC; ">
                         <div class=" " style="border-top: 1px solid #DCDCDC; padding-top:10px;" >
                             <div class="row" >
-                                <div class="col-md-12 col-4">
+                                <div class="col-md-12 col-4 cardImgOpt ">
                                     <img id="img_27" class="img_2" src="" alt="">
                                 </div>
 
@@ -609,7 +594,7 @@
                                     
                                     <h5 id="title_27" lass="fw-bold"></h5>
         
-                                    <p class="fs-5 text-decoration-none text-danger  fw-bold p-0 m-0">Lorem
+                                    <p class="fs-5 text-decoration-none text-danger  fw-bold p-0 m-0" id="categories_27">Lorem
                                         Lorem
                                     </p>
                                 </a>
@@ -619,15 +604,15 @@
                     </div>
                     <div class="col-md-4 col-lg-4 mt-2  "  style="border-right: 1px solid #DCDCDC; ">
                         <div class=" "  style="border-top: 1px solid #DCDCDC; padding-top:10px;">
-                            <div class="row">
-                                <div class="col-md-12 col-4">
+                            <div class="row  ">
+                                <div class="col-md-12 col-4 cardImgOpt">
                                 <img id="img_28" class="img_2" src="" alt="">
                                 </div>
-                                <div class="col-md-12 col-7">
+                                <div class="col-md-12 col-8 ">
                                 <a href="#" class="fw-bold fs-5 text-decoration-none text-black  ">
                                     <h5 id="title_28" class="fw-bold"></h5>
             
-                                    <p class="fs-5 text-decoration-none text-danger  fw-bold p-0 m-0">Lorem
+                                    <p class="fs-5 text-decoration-none text-danger  fw-bold p-0 m-0" id="categories_28">Lorem
                                         Lorem
                                     </p>
                                 </a>
@@ -638,37 +623,38 @@
 
                 </div>
              </div>
-            <div class="col-md-4  col-lg-2 col-12 ">
-                <div class="col-md-10 cardOpinion " style="border-top: 1px solid #DCDCDC; padding-top: 10px; height: 24.5rem;" >
+            <div class="col-md-4  col-lg-2 col-12   ">
+                <div class="col-md-12 cardOpinion  " style="border-top: 1px solid #DCDCDC; padding-top: 10px; height: 24.5rem;" >
                     <div class="row">
-                        <div class="col-md-12 col-4">
+                        <div class="col-md-12 col-4 cardImgOpt">
                             <img id="img_29" class="img_2" src="" alt="">
 
                         </div>
-                        <div class="col-md-12 col-7">
+                        <div class="col-md-12 col-8  ">
 
-                            <a href="#" class="fs-6 text-decoration-none text-danger ">
-                                <h5 id="title_29" class="fw-bold text-black"></h5>
-        
-        
-                                Lorem
+                            <a href="#" class="fs-6 text-decoration-none text-danger " >
+
+                                <h5 id="title_29" class="fw-bold text-black"> </h5>
+                                <p class="fs-5 text-decoration-none text-danger  fw-bold p-0 m-0" id="categories_29">Lorem
+                                    Lorem
+                                </p>
                                 <!-- <p  id ="article_4d" class="fw-bold fs-6 text-decoration-none text-black ">epturi repellat.</p> -->
                             </a>
                         </div>
                     </div>
                 </div>
                 
-                    <div class="col-md-10" style="border-top: 1px solid #DCDCDC; padding-top:10px;" >
+                    <div class="col-md-12   " style="border-top: 1px solid #DCDCDC; padding-top:10px;" >
                         
-                        <div class="row"  >
-                            <div class="col-md-12 col-4">
+                        <div class="row "  >
+                            <div class="col-md-12 col-4 cardImgOpt">
                                 <img id="img_30" class="img_2" src="" alt="">
                             </div>
-                              <div class="col-md-12 col-7 p-0 m-0 ">
+                              <div class="col-md-12 col-lg-12 col-8  ">
 
-                                  <a href="#" class="fw-bold fs-5 text-decoration-none text-black m-2 ">
+                                  <a href="#" class="fw-bold fs-5 text-decoration-none text-black  ">
                                           <h5 id="title_30" class="fw-bold"></h5>
-                                      <p class="fs-5 text-decoration-none text-danger  fw-bold p-0 m-0">Lorem
+                                      <p class="fs-5 text-decoration-none text-danger  fw-bold p-0 m-0" id="categories_30">Lorem
                                           Lorem
                                       </p>
                                   </a>
@@ -722,21 +708,21 @@
                         <a href="#" class="text-decoration-none text-black ">
                             <p id="title_31" class="fs-4 fs-5 fw-bold p-0 m-0">
                             </p>
-                            <p class="fs-4 text-decoration-none text-danger fs-5 fw-bold p-0 m-0">Lorem
+                            <p class="fs-4 text-decoration-none text-danger fs-5 fw-bold p-0 m-0" id="categories_31">Lorem
                                 Lorem
                             </p>
                             <p id="article_31" class="fs-6"></p>
                         </a>
                     </div>
                     
-                    <div class="col-md-8 mt-2 " >
+                    <div class="col-md-8 mt-2 " id="img" >
                         <img id="img_31" class="img_1" src="" alt="">
                     </div>
                 </div>
                 <div class="row mt-2 ">
                     <div class="col-md-4 fw-semibold " >
                         <a href="#"  class="text-decoration-none text-black">
-                            <span class="text-primary " style="border-top: 1px solid #DCDCDC;">Lorem, ipsum.</span>
+                            <span class="text-primary " style="border-top: 1px solid #DCDCDC;" id="categories_32">Lorem, ipsum.</span>
 
                             <p id="title_32" class="fs-6"></p>
                             
@@ -744,14 +730,14 @@
                     </div>
                     <div class="col-md-4 fw-semibold" style="border-left: 1px solid #DCDCDC;">
                         <a href="#" class="text-decoration-none text-black">
-                            <span class="text-primary">Lorem, ipsum.</span>
+                            <span class="text-primary" id="categories_33">Lorem, ipsum.</span>
                             <p id="title_33" class="fs-6"></p>
                             
                         </a>
                     </div>
                     <div class="col-md-4 fw-semibold " style="border-left: 1px solid #DCDCDC;">
                         <a href="#"  class="text-decoration-none text-black">
-                            <span class="text-primary">Lorem, ipsum.</span>
+                            <span class="text-primary" id="categories_34">Lorem, ipsum.</span>
                             <p id="title_34" class="fs-6"></p>
                             
                         </a>
@@ -765,8 +751,9 @@
                                     </div>
                                     <div class="col-md-8 col-lg-8 col-8">
                                         <div class=" pt-2 cardStortrow ">
-                                            <a href="#" class=" text-decoration-none text-danger  ">
-                                                Lorem
+                                            <a href="#" class=" text-decoration-none text-danger  " >
+                                                <span class="" id="categories_35">Lorem, ipsum.</span>
+
                                                 <p id="title_35" class="fw-bold fs-6 text-decoration-none text-black  "></p>
                                             </a>
                                         </div>
@@ -778,8 +765,9 @@
                                     </div>
                                     <div class="col-md-8 col-8 ">
                                         <div class="cardStortrow">
-                                            <a href="#" class="fs-6 text-decoration-none text-danger ">
-                                                Lorem
+                                            <a href="#" class="fs-6 text-decoration-none text-danger " >
+                                                <span class="" id="categories_36">Lorem, ipsum.</span>
+
                                                 <p id="title_36" class="fw-bold fs-6 text-decoration-none text-black "></p>
                                             </a>
                                         </div>
@@ -791,8 +779,8 @@
                                     </div>
                                     <div class="col-md-8 col-8 ">
                                         <div class="cardStortrow">
-                                            <a href="#" class="fs-6 text-decoration-none text-danger ">
-                                                Lorem
+                                            <a href="#" class="fs-6 text-decoration-none text-danger " >
+                                                <span class="" id="categories_37">Lorem, ipsum.</span>
                                                 <p id="title_37" class="fw-bold fs-6 text-decoration-none text-black "></p>
                                             </a>
                                         </div>
@@ -804,8 +792,9 @@
                                     </div>
                                     <div class="col-md-8 col-8 ">
                                         <div class="cardStortrow">
-                                            <a href="#" class="fs-6 text-decoration-none text-danger ">
-                                                Lorem
+                                            <a href="#" class="fs-6 text-decoration-none text-danger " >
+                                                <span class="" id="categories_38">Lorem, ipsum.</span>
+
                                                 <p id="title_38" class="fw-bold fs-6 text-decoration-none text-black "></p>
                                             </a>
                                         </div>
@@ -819,8 +808,8 @@
                                 <img id="img_39" class=" img_2 mt-2" src="" alt="">
 
                             </div>
-                            <div class="h-50 mt-3 col-md-12 col-7 ">
-                                <span class="fw-bold bg-primary text-white p-1"  >
+                            <div class="h-50 mt-3 col-md-12 col-7  ">
+                                <span class="fw-bold bg-primary text-white p-1" id="categories_39" >
                                     Categorie
                                 </span>
                                 <p id="title_39" class="fs-4 fw-semibold ">
@@ -830,7 +819,7 @@
                             </div>
                         </div>
                          <div class=" fw-semibold ">
-                             <span class="text-primary" style="border-top:solid 1px #DCDCDC;">Lorem, ipsum.</span>
+                             <span class="text-primary" style="border-top:solid 1px #DCDCDC;" id="categories_40">Lorem, ipsum.</span>
                              <a href="#" class="text-decoration-none text-black">
                             <p id="title_40"  class="fs-6 text-decoration-none text-black"></p>
                         </a>
@@ -839,34 +828,36 @@
                 
              </div>
             </div>
-            <div class="col-md-4 col-lg-3  " >
-                <div class=" cardSport  "  style="height: 520px; border-left: 1px solid #DCDCDC;" >
-                    <div class="  col-md-10 row cardSport2" style="border-top: 1px solid #DCDCDC; margin-left: 10px;" >
-                        <div class="col-md-12 col-3 p-0 m-0 ">
-                            <img id="img_41" src="" alt="" class="img_2 m-2">
+            <div class="col-md-4 col-lg-3 col-12  " >
+                <div class=" cardSport   "  style="height: 39%; border-left: 1px solid #DCDCDC;" >
+                    <div class="  col-md-10 row cardSport2 col-12   " style="border-top: 1px solid #DCDCDC; margin-left: 10px;" >
+                        <div class="col-md-12 col-4 p-0 m-0  ">
+                            <img id="img_41" src="" alt="" class="img_2 mt-2 ">
                         </div>
-                        <div class="  col-md-12 col-lg-12ol-8">
+                        <div class=" cardSporttext col-md-12 col-lg-12 col-8   p-0 m-0">
 
-                            <a href="#" class=" cardSportimg fs-6 text-decoration-none text-danger m-2 " >
+                            <a href="#" class=" cardSportimg fs-6 text-decoration-none text-danger  "  >
         
-                                Lorem,
-                                <p id="title_41" class="fw-bold fs-6 text-decoration-none text-black m-2 "></p>
+                                <span class="" id="categories_41">Lorem, ipsum.</span>
+                                
+                                <p id="title_41" class="fw-bold fs-6 text-decoration-none text-black  "> Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
                             </a>
                         </div>
                        
                     </div>
                 </div>
              
-                <div class="mt-3 cardSport "   style="height:40%; border-left: 1px solid #DCDCDC;" >
-                    <div class=" row col-md-10 cardSport2" style=" border-top: 1px solid #DCDCDC; margin-left: 10px;">
-                        <div class="col-md-12 col-3 p-0 m-0 ">
+                <div class="mt-3 cardSport col-12 "   style="height:50%; border-left: 1px solid #DCDCDC;" >
+                    <div class=" row col-md-10 cardSport2 col-12 " style=" border-top: 1px solid #DCDCDC; margin-left: 10px;">
+                        <div class="col-md-12 col-3 p-0 m-0 col-4 ">
                             <img id="img_42"  src="" alt="" class=" img_2 mt-2">
 
                         </div>
                         <div class="col-md-12 col-8">
-                        <a href="#" class="fs-6 text-decoration-none text-danger ">
-                            Lorem
-                            <p id="title_42" class="fw-bold fs-4 text-decoration-none text-black "></p>
+                        <a href="#" class="fs-6 text-decoration-none text-danger " >
+                            <span class="" id="categories_42">Lorem, ipsum.</span>
+
+                            <p id="title_42" class="fw-bold fs-4 text-decoration-none text-black ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, assumenda.</p>
                         </a>
                         </div>
                     </div>
@@ -876,7 +867,7 @@
 
                     <div class=" fw-semibold " style="margin-left: 10px;">
                         <a href="#" class="text-decoration-none text-black" >
-                            <span class="text-primary" style="border-top:solid 1px #DCDCDC;">Lorem, ipsum.</span>
+                            <span class="text-primary" style="border-top:solid 1px #DCDCDC;" id="categories_43">Lorem, ipsum.</span>
                             <p id="title_43" class="fs-6 text-decoration-none text-black"></p>
                            
                         </a>
@@ -991,7 +982,7 @@
 
             <div class="col-md-2 col-12 col-sm-12" style="border-right: 1px solid #DCDCDC;">
                 <h3 class="fw-bold">
-                    Most popular
+                    Les plus populaires
                 </h3>
             </div>
 
@@ -999,8 +990,8 @@
                <div class="row">
                 <div class="col-md-6  p-0">
                     <div class=" Most_popular_ligne_head ">
-                         <strong class="fs-2">Most viewed</strong>
-                         <h6 class="most_popular_ligne_head_text">Sur quoi les lecteurs cliquent</h6>
+                         <strong class="fs-2">Plus lus</strong>
+                         <h6 class="most_popular_ligne_head_text">ceux que les visiteurs lisent le plus</h6>
          
                     </div>
                     <div class=" Most_popular_ligne ">
@@ -1129,8 +1120,8 @@
                 </div>
                 <div class="col-md-6 p-0">
                     <div class=" Most_popular_ligne_head ">
-                        <strong class="fs-2">Deeply read</strong>
-                        <h6 class="most_popular_ligne_head_text">Avec quoi les lecteurs passent du temps</h6>
+                        <strong class="fs-2">Lus en profondeur</strong>
+                        <h6 class="most_popular_ligne_head_text">ceux sur quoi les visiteurs passent plus de temps</h6>
         
                    </div>
                     <div class=" Most_popular_ligne ">
@@ -1268,73 +1259,89 @@
 
      <!-- fin articles l -->
  <!-- pub -->
+
+ <div class="sous-menu-footer">
+    <div class="container sous-menu-container-footer">
+        <div class="d-flex justify-content-bottom col-12  ">
+            <div class="text-white mt-3">
+                <a href="#" class=" fs-5 sous-menu-link-footer ">
+                    Lorem, ipsum.
+                </a>
+            </div>
+            <div class="text-white mt-3">
+                <a href="#" class=" fs-5 sous-menu-link-footer">
+                    Lorem, ipsum.
+                </a>
+            </div>
+            <div class="text-white mt-3 ">
+                <a href="#" class=" fs-5 sous-menu-link-footer">
+                    Lorem, ipsum.
+                </a>
+            </div>
+            <div class="text-white mt-3">
+                <a href="#" class=" fs-5 sous-menu-link-footer">
+                    Lorem, ipsum.
+                </a>
+            </div>
+            <div class="text-white mt-3">
+                <a href="#" class=" fs-5 sous-menu-link-footer">
+                    Lorem, ipsum.
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
  <div class="" style=" background-color:#052962;">
-    <nav class="menu container col-xs-12 col-sm-12 col-md-12 col-lg-12   " style="border: 1px solid #DCDCDC ;" >
+    <nav class="menu col-xs-12 col-sm-12 col-md-12 col-lg-12 pt-2  " >
         <div class="container-fluid">
-            <div class="container">
+            <div class="container" style="border-left:solid 1px #DCDCDC ; border-right:solid 1px #DCDCDC ;">
                 <div class="row">
                   <!-- Div du milieu -->
-                  <div class=" separator news  order-1 order-md-1   d-flex justify-content-start" id="separator-menu">
-                    
-                        <div class=" mt-3 fs-2 text-white ">
-                            <a href="index.html" class="text-decoration-none text-white link-hover">
+                        <!-- <div class=" news  fs-2 separator  text-white  " id="separator-menu">
+                            <a href="index.html" class=" text-decoration-none text-white link-hover">
                                 <strong>News</strong>
-                            </a>
+                            </a>                                                                                                                                                                                                            
+                        </div>                    -->
+                        <div class=" news  fs-2 text-white separator d-flex justify-content-start align-items-start link-hover " id="separator-menu">
+                            <a href="index.html" class=" text-decoration-none text-white  ">
+                                <strong>News</strong>
+                            </a> 
                         </div>
-    
-                   
-                  </div>
-                  <!-- Div de gauche -->
-                  <div class=" separator opinions order-2 order-md-2 d-flex justify-content-start   " id="separator-menu">
-                    
-                        <div class=" mt-3 fs-2 text-white ">
-                            <a href="" id="opinion" class="text-decoration-none text-white link-hover ">
+                  <!-- Div de gauche --> 
+                        <div class=" opinions  fs-2 text-white separator d-flex justify-content-start link-hover " id="separator-menu">
+                            <a href="/pages/opinion.html" id="opinion" class="text-decoration-none text-white  ">
                                 <strong>Opinion</strong>
                             </a>
                         </div>
-                   
-                  </div>
                   <!-- Div de droite qui doit passer en haut sur petit écran -->
-                  <div class=" separator sports  order-2 order-md-3 d-flex justify-content-start  " id="separator-menu">
-                    
-                        <div class=" mt-3 fs-2 text-white ">
-                            <a href="/pages/sport.html" id="sport" class="text-decoration-none text-white link-hover">
+                        <div class=" sports  fs-2 text-white separator d-flex justify-content-start link-hover" id="separator-menu">
+                            <a href="/pages/sport.html" id="sport" class="text-decoration-none text-white ">
                                 <strong>Sport</strong>
                             </a>
-                      
-    
-                    </div>
-                  </div>
-                  <div class=" separator focus  order-3 order-md-3 d-flex justify-content-start " id="separator-menu">
-                    
-                        <div class=" mt-3 fs-2 text-white ">
-                            <a href="/pages/culture.html" class="text-decoration-none text-white link-hover">
+                        </div>
+                        <div class=" focus  fs-2 text-white separator d-flex justify-content-start link-hover " id="separator-menu">
+                            <a href="/pages/culture.html" class="text-decoration-none text-white ">
                                 <strong>Focus</strong>
                             </a>
                         </div>
-    
-                    
-                  </div>
-                  <div class="separator spotlights order-4 order-md-3 d-flex justify-content-start "id="separator-menu">
-                    
-                        <div class=" mt-3 fs-2 text-white ">
-                            <a href="/pages/lifestyle.html" class="text-decoration-none text-white link-hover">
+                        <div class=" spotlights  fs-2 text-white  d-flex justify-content-start link-hover " id="separator-menu">
+                            <a href="/pages/lifestyle.html" class="text-decoration-none text-white ">
                                 <strong>Spotlight</strong>
                             </a>
                         </div>
-    
-                   
-                  </div>
-                 
+                  
+                  
                 </div>
               </div>
         </div>
     </nav>
-    <div class="container">
+    <div class="container footer-container" >
         <div class="row">
-            <div class="col-md-3 col-12 text-white" style="border-right: 1px solid #DCDCDC ;border-left: 1px solid #DCDCDC ;">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, magnam!</div>
-            <div class="col-md-2 text-white" style="border-right: 1px solid #DCDCDC ;">
+            <div class="col-md-3 col-12 text-white" >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, magnam!
+            </div>
+            <div class=" footer2 col-md-2 col-6 text-white" style="border-right: 1px solid #DCDCDC ;">
                 <h5>
                     <a href="#" class=" sous-menu-link ">Help</a>
                 </h5>
@@ -1353,7 +1360,7 @@
                
                
             </div>
-            <div class="col-md-2 text-white" style="border-right: 1px solid #DCDCDC ;">
+            <div class="footer3 col-md-2 col-6 text-white" style="border-right: 1px solid #DCDCDC ;">
                 <h5>
                     <a href="#" class=" sous-menu-link ">Help</a>
                 </h5>
@@ -1372,37 +1379,32 @@
                
                
             </div>
-            <div class="col-md-2 text-white" style="border-right: 1px solid #DCDCDC ;">
+            <div class="footer4 col-md-2 col-6 text-white" style="border-right: 1px solid #DCDCDC ;">
                 <h5>
                     <a href="#" class=" sous-menu-link ">Help</a>
                 </h5>
                 <h5>
                     <a href="#" class=" sous-menu-link">Complaints et corrections</a>
                 </h5>
-                <h5>
-                    <a href="#" class=" sous-menu-link">SécureDrop</a>
-                </h5>
-                <h5>
-                    <a href="#" class=" sous-menu-link">Work for us</a>
-                </h5>
-                <h5>
-                    <a href="#" class=" sous-menu-link">Privacy settings</a>
-                </h5>
+               
                
                
             </div>
-            <div class="col-md-3 text-white" style="border-right: 1px solid #DCDCDC ;">
+            <div class="footer5 col-md-3 col-6 text-white" >
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla, ducimus.
             </div>
-            <button id="topButton" class="top-button col-1 "onclick="scrollToTop()"><i class="fa-solid fa-angles-up"></i></button>
         </div>
+        <button id="topButton" class="top-button col-1 "onclick="scrollToTop()"><i class="fa-solid fa-angles-up"></i></button>
 
 
     </div>
 </div>
 <!-- fin pub -->
-
-
+<footer class="footer">
+    &copy; 2024 <span>SETALMAA  Media </span> | Tous droits réservés
+</footer>
+	
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

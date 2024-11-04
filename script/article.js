@@ -44,6 +44,7 @@ async function fetchArticleBySlug(slug) {
 async function displayArticle(article) {
        // Récupérer l'image à la une
        const featuredImageUrl = await fetchFeaturedImage(article.featured_media);
+       const btnComment = document.getElementById('toggleFormButton');
 
         // Construire le contenu de l'article
         let articleContent = `
@@ -56,7 +57,8 @@ async function displayArticle(article) {
         }
 
         // Ajouter le contenu de l'article
-        articleContent += `<div>${article.content.rendered}</div>`;
+        articleContent += `<div>${article.content.rendered}</div>
+`;
         document.getElementById('article').innerHTML = articleContent;
 
         document.getElementById('shareBtn').classList.remove('hidden');
@@ -65,8 +67,8 @@ async function displayArticle(article) {
         document.getElementById('shareBtn').addEventListener('click', function () {
             shareArticle(article.title.rendered, window.location.href);
 });
+btnComment.style.display = 'block';
 }
-
 // Récupérer le slug de l'URL
 const urlParams = new URLSearchParams(window.location.search);
 const slug = urlParams.get('slug'); // Exemple : https://votre-site.com/article.html?slug=mon-super-article
@@ -111,29 +113,8 @@ if (slug) {
     }
 }
 
-
-// modifier les link
- // Sélectionner le lien
-//  const myLink = document.querySelector('a');
-// console.log(myLink);
-// for (let i = 0; i < myLink.length; i++) {
-//         const currentHref = myLink[i].getAttribute('href');
-//      console.log('Href actuel :', currentHref);
-// }
-
- // Ajouter un gestionnaire d'événement au clic
-//  myLink.addEventListener('click', function(event) {
-//      // Empêcher le comportement par défaut (ouvrir le lien)
-//      event.preventDefault();
-     
-//      // Récupérer le href actuel
-//      const currentHref = myLink.getAttribute('href');
-//      console.log('Href actuel :', currentHref);
-
-//      // Modifier le href
-//      myLink.setAttribute('href', 'http://127.0.0.1:5500/index');
-//      console.log('Nouveau href :', myLink.getAttribute('href'));
-
-//      // Maintenant, si tu veux rediriger vers la nouvelle URL après modification :
-//      window.location.href = myLink.getAttribute('href');
-//  });
+// toggleButton
+document.getElementById("toggleFormButton").addEventListener("click", function() {
+    const form = document.querySelector(".commentForm");
+    form.style.display = form.style.display === "none" ? "block" : "none";
+  });

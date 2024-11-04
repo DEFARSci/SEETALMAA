@@ -48,3 +48,14 @@ span{
 p{
     font-size: 23px !important;
 }
+.commentForm {
+    display: none;
+    margin-top: 20px;
+  }
+  #responseMessage {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  #toggleFormButton{
+    display: none;
+  }

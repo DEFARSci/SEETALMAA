@@ -1,5 +1,5 @@
 window.onscroll = function() {
-    console.log("scroll");
+   
     let button = document.getElementById("topButton");
     if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
         button.style.display = "block"; // Afficher le bouton

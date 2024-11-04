@@ -5,12 +5,20 @@ const sportbtn=document.getElementById('sport');
 const culturebtn=document.getElementById('culture');
 const lifestylebttn=document.getElementById('lifestyle');
 
-const Headlines=['title_0','title_1','title_2','title_3','title_4','title_5','title_6',
-    'title_7','title_8','title_9','title_10','title_11','title_12','title_13'];
-const News_in_focus=['title_14','title_15','title_16'];
-const Spotlight=['title_17','title_18','title_19','title_20','title_21','title_22','title_23','title_24'];
-const Opinion=['title_25','title_26','title_27','title_28','title_29','title_30'];
-const sport=['title_31','title_32','title_33','title_34','title_35','title_36','title_37','title_38','title_39','title_40','title_41','title_42','title_43'];
+// const Headlines=['title_0','title_1','title_2','title_3','title_4','title_5','title_6',
+//     'title_7','title_8','title_9','title_10','title_11','title_12','title_13'];
+// const News_in_focus=['title_14','title_15','title_16'];
+// const Spotlight=['title_17','title_18','title_19','title_20','title_21','title_22','title_23','title_24'];
+// const Opinion=['title_25','title_26','title_27','title_28','title_29','title_30'];
+// const sport=['title_31','title_32','title_33','title_34','title_35','title_36','title_37','title_38','title_39','title_40','title_41','title_42','title_43'];
+
+
+
+const Headlines=['0','1','2','3','4','5','6','7','8','9','10','11','12','13'];
+const News_in_focus=['14','15','16'];
+const Spotlight=['17','18','19','20','21','22','23','24'];
+const Opinion=['25','26','27','28','29','30'];
+const sport=['31','32','33','34','35','36','37','38','39','40','41','42','43'];
 const allTitles = [...Headlines, ...News_in_focus, ...Spotlight, ...Opinion, ...sport];
 const mostView=['most_1','most_2','most_3','most_4','most_5','most_6','most_7','most_8','most_9','most_10','most_11','most_12','most_13','most_14','most_15','most_16','most_17','most_18','most_19','most_20'];
 
@@ -26,29 +34,30 @@ async function fetchPageData() {
       await Promise.all(imageIndexes.map(index => displayImage(data, `img_${index}`, index)));
   
       // Afficher les titres et contenus des sections
-      Headlines.forEach((item, index) => displayTitle(data, item, index));
+      Headlines.forEach((item, index) => displayTitle(data, `title_${item}`,`categories_${item}`, index));
       await displayContent(data, 'article_0', 0);
       
-      News_in_focus.forEach((item, index) => displayTitle(data, item, 14 + index));
+      News_in_focus.forEach((item, index) => displayTitle(data, `title_${item}`,`categories_${item}`, 14 + index));
       await Promise.all([14, 15, 16].map(index => displayImage(data, `img_${index}`, index)));
   
-      Spotlight.forEach((item, index) => displayTitle(data, item, 17 + index));
+      Spotlight.forEach((item, index) => displayTitle(data, `title_${item}`,`categories_${item}`, 17 + index));
       await Promise.all([17, 23, 24].map(index => displayContent(data, `article_${index}`, index)));
       await Promise.all([17, 18, 19, 20, 21, 22, 23, 24].map(index => displayImage(data, `img_${index}`, index)));
   
-      Opinion.forEach((item, index) => displayTitle(data, item, 25 + index));
+      Opinion.forEach((item, index) => displayTitle(data, `title_${item}`,`categories_${item}`, 25 + index));
       await displayContent(data, 'article_25', 25);
       await Promise.all([25, 26, 27, 28, 29, 30].map(index => displayImage(data, `img_${index}`, index)));
   
-      sport.forEach((item, index) => displayTitle(data, item, 31 + index));
+      sport.forEach((item, index) => displayTitle(data, `title_${item}`,`categories_${item}`, 31 + index));
       await displayContent(data, 'article_31', 31);
       await Promise.all([31, 35, 36, 37, 38, 39, 41, 42].map(index => displayImage(data, `img_${index}`, index)));
-  
-      mostView.forEach((item, index) => displayTitle(data, item, index));
+     
+      mostView.forEach((item, index) => displayTitle(data, item,null, index));
     } catch (error) {
       showError('Erreur lors de la récupération des données.'); // Appel d'une fonction d'erreur centralisée
       console.error('Erreur lors de la récupération des données:', error);
     }
+   
   }
   
   // Appel à la fonction principale une fois que la page est prête
@@ -64,6 +73,8 @@ async function fetchPageData() {
 // Fonction pour récupérer les données des posts
 async function fetchPostData() {
   const response = await fetch(siteUrl+'/wp-json/wp/v2/posts?per_page=100&page=1');
+ 
+
   if (!response.ok) {
       throw new Error(`Erreur HTTP ${response.status}`);
   }
@@ -90,17 +101,64 @@ async function fetchFeaturedMedia(mediaId) {
 }
 
 // Fonction pour afficher le titre
-async function displayTitle(data, titleid, numpost) {
+async function displayTitle(data, titleid, categoriesid=null, numpost) {
     // const data = await fetchPostData(); // Supposons que les données soient déjà disponibles
     const post = data[numpost];
     const title = post.title.rendered;
     const slug = post.slug; // On récupère l'ID du post
- 
+    
+    // console.log("CartegoriesData:",cartegoriesData.name);
     // Ajouter l'ID en tant qu'attribut data-id et mettre à jour le contenu
     const titleElement = document.getElementById(titleid);
     titleElement.innerHTML = title;
     titleElement.setAttribute('data-id', slug);
     quote.style.display = "inline";
+    if (categoriesid !== null) {
+      // const cartegories = await fetch(siteUrl+`/wp-json/wp/v2/categories/${categoriesId}`);
+      // const cartegoriesData = await cartegories.json();
+      // const categoriesElement = document.getElementById(categoriesid);
+      // categoriesElement.innerHTML = cartegoriesData.name;
+    const categoriesId=post.categories[0];
+
+      try {
+        const cartegoriesResponse = await fetch(`${siteUrl}/wp-json/wp/v2/categories/${categoriesId}`);
+    
+        // Vérification du statut de la réponse HTTP
+        if (!cartegoriesResponse.ok) {
+            console.error(`Erreur : ${cartegoriesResponse.status} - ${cartegoriesResponse.statusText}`);
+            return; // Arrête l'exécution si la requête a échoué
+        }
+    
+        // Conversion en JSON
+        const cartegoriesData = await cartegoriesResponse.json();
+    
+        // Vérification de la structure des données reçues
+        if (!cartegoriesData || !cartegoriesData.name) {
+            console.error("Données inattendues reçues pour 'cartegoriesData'. La propriété 'name' est manquante.");
+            return; // Arrête l'exécution si les données sont incorrectes
+        }
+    
+        // Récupération de l'élément DOM
+        const categoriesElement = document.getElementById(categoriesid);
+    
+        // Vérification de l'existence de l'élément DOM
+        if (!categoriesElement) {
+            console.error(`Élément avec l'ID ${categoriesid} introuvable dans le DOM.`);
+            return; // Arrête l'exécution si l'élément n'existe pas
+        }
+    
+        // Mise à jour du contenu de l'élément
+        categoriesElement.innerHTML = cartegoriesData.name ? cartegoriesData.name : "Inconnue";
+    
+    } catch (error) {
+        console.error("Une erreur s'est produite lors de la récupération des catégories :", error);
+        categoriesElement.innerHTML=`<p>inconnu</p>`;
+    }
+    
+
+  } else {
+      console.log("Categorie ID n'a pas été fourni.");
+  }
   
     
   }
@@ -148,10 +206,10 @@ async function displayImage(data, imageId, numpost) {
   
 
 // Fonction pour récupérer et afficher les catégories (à implémenter)
-async function fetchCategories(categories) {
-  // Implémentation de la récupération des catégories
-  console.log("Récupération des catégories:", categories);
-}
+// async function fetchCategories(categories) {
+//   // Implémentation de la récupération des catégories
+//   console.log("Récupération des catégories:", categories);
+// }
 
 // Fonction pour récupérer et afficher les commentaires (à implémenter)
 async function fetchComments(postId) {
@@ -160,32 +218,32 @@ async function fetchComments(postId) {
 }
 
 
-// RÃ©cupÃ©ration des catÃ©gories
-async function fetchCategories(categoryIds) {
-    try {
-        const response = await fetch(siteUrl+'/wp-json/wp/v2/categories');
+// // RÃ©cupÃ©ration des catÃ©gories
+// async function fetchCategories(categoryIds) {
+//     try {
+//         const response = await fetch(siteUrl+'/wp-json/wp/v2/categories');
         
-        if (!response.ok) {
-            throw new Error(`HTTP error ${response.status}`);
-        }
+//         if (!response.ok) {
+//             throw new Error(`HTTP error ${response.status}`);
+//         }
 
 
-        const categoriesData = await response.json();
-        console.log("Categories data:", categoriesData); 
+//         const categoriesData = await response.json();
+//         console.log("Categories data:", categoriesData); 
 
-        // Filtrer les catÃ©gories pour celles qui sont prÃ©sentes dans l'article
-        const selectedCategories = categoriesData.filter(category => categoryIds.includes(category.id));
-        console.log("Selected categories:", selectedCategories);
+//         // Filtrer les catÃ©gories pour celles qui sont prÃ©sentes dans l'article
+//         const selectedCategories = categoriesData.filter(category => categoryIds.includes(category.id));
+//         console.log("Selected categories:", selectedCategories);
 
-        // Afficher les catÃ©gories
-        categoriesContainer.innerHTML = selectedCategories.length > 0 
-            ? selectedCategories.map(category => `<span class="badge bg-secondary me-1">${category.name}</span>`).join(' ')
-            : "<span>Aucune catÃ©gorie trouvÃ©e</span>";
+//         // Afficher les catÃ©gories
+//         categoriesContainer.innerHTML = selectedCategories.length > 0 
+//             ? selectedCategories.map(category => `<span class="badge bg-secondary me-1">${category.name}</span>`).join(' ')
+//             : "<span>Aucune catÃ©gorie trouvÃ©e</span>";
 
-    } catch (error) {
-        console.error('Erreur lors de la rÃ©cupÃ©ration des catÃ©gories :', error);
-    }
-}
+//     } catch (error) {
+//         console.error('Erreur lors de la rÃ©cupÃ©ration des catÃ©gories :', error);
+//     }
+// }
 
 // RÃ©cupÃ©ration des commentaires
 async function fetchComments(postId) {
@@ -211,7 +269,7 @@ async function fetchComments(postId) {
 
 // Ajouter un commentaire
 async function addComment(postId) {
-    const commentContent = commentInput.value;
+    const commentContent = 'test test';
     const authorName = authorInput.value;
     const authorEmail = emailInput.value;
 
@@ -252,59 +310,8 @@ async function addComment(postId) {
         console.error('Erreur lors de l\'ajout du commentaire :', error);
     }
 }
-async function getCategories(Url) {
-    try {
-        // Envoi de la requête GET pour récupérer les catégories
-        const response = await fetch(`${Url}/wp-json/wp/v2/categories`);
-
-        // Vérification si la requête a été réussie
-        if (!response.ok) {
-            throw new Error(`Erreur : ${response.statusText}`);
-        }
-
-        // Extraction des données en format JSON
-        const categories = await response.json();
-
-        // Affichage des catégories récupérées
-        console.log('Catégories récupérées :', categories[1]);
-
-        // Retourne les catégories
-        return categories;
-    } catch (error) {
-        console.error('Erreur lors de la récupération des catégories :', error);
-    }
-}
-
-// Utilisation de la fonction
-// Remplacer par l'URL du site WordPress
-// getCategories(siteUrl);
 
 
-
-
-// Utilisation des fonctions
-// (async function() {
-//     const siteUrl = 'https://setalmaa.com';  // Remplacez par l'URL de votre site WordPress
-//     const categories = await getCategories(siteUrl);
-    
-//     // Supposons que vous souhaitez récupérer les articles de la première catégorie récupérée
-//     if (categories && categories.length > 0) {
-//         const categoryId = categories[0].id;  // Vous pouvez sélectionner l'ID de la catégorie que vous voulez
-//         const posts = await getPostsByCategory(siteUrl, categoryId);
-//         console.log(`Articles dans la catégorie "${categories[0].name}":`, posts);
-//     }
-// })();
-
-// Appel Ã  la fonction principale
- // Appel de la fonction fetchPageData pour récupérer et afficher les données, y compris les images
-//  document.addEventListener('DOMContentLoaded', async () => {
-//   try {
-//        fetchPageData();
-//   } catch (error) {
-//       console.error('Erreur lors de l\'affichage des données:', error);
-//   }
-// });
-    
 
 
 function setupLinkRedirection(linkId) {
@@ -313,7 +320,8 @@ function setupLinkRedirection(linkId) {
         console.error(`Aucun élément trouvé avec l'ID: ${linkId}`);
         return; // Sortie si l'élément n'existe pas
     }
-
+    addComment(12992);
+    fetchComments(12992);
     // Ajouter un écouteur d'événement "click" pour rediriger l'utilisateur
     linkElement.addEventListener('click', function(event) {
         event.preventDefault(); // Empêche le comportement par défaut du lien
@@ -331,48 +339,9 @@ function setupLinkRedirection(linkId) {
     });
 }
 
-// setupLinkRedirection('title_1');
-// setupLinkRedirection('title_2');
-// setupLinkRedirection('title_3');
-// setupLinkRedirection('title_4');
-// setupLinkRedirection('title_5');
-// setupLinkRedirection('title_6');
 
-// for (let id = 0; id < allTitles.length; id++) {
-//     const element = allTitles[id];
-//     setupLinkRedirection(element);
-    
 // }
-allTitles.forEach(setupLinkRedirection);
-
-
-// Fonction de transformation en slug
-function stringToSlug(text) {
-    return text
-        .toLowerCase()
-        .replace(/[\s_]+/g, '-')
-        .replace(/[^\w-]+/g, '')
-        .replace(/--+/g, '-')
-        .trim();
-}
- // Fonction pour enlever les accents d'un texte
- function removeAccents(text) {
-    return text.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // Normalise et enlève les accents
-}
-
-
-
-
-
-
- // Masquer le GIF et afficher le body après 5 secondes
-//  setTimeout(function() {
-//     // Masquer le div de chargement
-//     document.getElementById('loading').style.display = 'none';
-
-//     // Afficher le body
-//     document.body.style.display = 'block';
-// }, 5000); // 5000ms = 5 secondes
+allTitles.forEach((item ) => setupLinkRedirection(`title_${item}`));
 
 
 
