@@ -60,7 +60,7 @@
                                 <strong>News</strong>
                             </a>                                                                                                                                                                                                            
                         </div>                    -->
-                        <div class=" news  fs-2 text-white separator d-flex justify-content-start align-items-start link-hover " id="separator-menu">
+                        <div class=" news  fs-2 text-white separator d-flex justify-content-start align-items-start link-hover link " id="separator-menu">
                             <a href="../index.html" class=" text-decoration-none text-white  ">
                                 <strong>News</strong>
                             </a> 
@@ -100,15 +100,15 @@
                         </div>
                     </div>
                     </div>
-                  <div class="  logotexte col-md-2 col-12 order-0 order-md-3    d-flex justify-content-end ">
-                    <div class=" " id="separator-menu">
-                        <div class="  fs-2 text-white ">
-                            SETALMAA
-                       </div>
-                       
-    
-                    </div>
-                  </div>
+                    <div class="  logotexte col-md-12 col-12 col-lg-2 order-0 order-md-3    d-flex justify-content-end ">
+                        <div class=" " id="separator-menu">
+                            <div class="  fs-2 text-white ">
+                                SETALMAA
+                           </div>
+                           
+        
+                        </div>
+                      </div>
                 </div>
               </div>
         </div>
@@ -140,10 +140,10 @@
 <body>
    
     
-    <div class="container-article container">
+    <div class="container-article container pt-5">
         <div class="row">
             <div class="col-md-2 col-12 ">
-                <h3 class="fw-bold">categories</h3>
+                <h3 class="fw-bold text-danger" id="categories">categories</h3>
                 <button id="shareBtn" class="share-button hidden">
                     <i class="fas fa-share-alt "></i> Partager
                 </button>
@@ -179,11 +179,39 @@
             </div>
         </div>
     </div>
+<div id="footer">
 
-    <div class="" style=" background-color:#052962;" id="footer">
-        <nav class="menu col-xs-12 col-sm-12 col-md-12 col-lg-12 pt-2  " >
+    <div class="sous-menu-footer " >
+        <div class="container sous-menu-container-footer">
+            <div class="d-flex justify-content-bottom col-12 col-lg-8  ">
+                <div class="sous-menu-footer-text  text-white mt-3 col-3 col-lg-2 ">
+                    <a href="#" class=" fs-5 sous-menu-link-footer ">
+                        Professionnels
+                    </a>
+                </div>
+                <div class="sous-menu-footer-text text-white mt-3 col-3 col-lg-2 ">
+                    <a href="#" class=" fs-5 sous-menu-link-footer">
+                        Particuliers
+                    </a>
+                </div>
+                <div class=" sous-menu-footer-text text-white mt-3 col-3 col-lg-2">
+                    <a href="#" class=" fs-5 sous-menu-link-footer">
+                        L'annuaire
+                    </a>
+                </div>
+                <div class="sous-menu-footer-text text-white mt-3 col-3 col-lg-2">
+                    <a href="#" class=" fs-5 sous-menu-link-footer">
+                        Service
+                    </a>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+     <div class="" style=" background-color:#052962;">
+        <nav class="menu col-xs-12 col-sm-12 col-md-12 col-lg-12 pt-5  ">
             <div class="container-fluid">
-                <div class="container" style="border-left:solid 1px #DCDCDC ; border-right:solid 1px #DCDCDC ;">
+                <div class="container">
                     <div class="row">
                       <!-- Div du milieu -->
                             <!-- <div class=" news  fs-2 separator  text-white  " id="separator-menu">
@@ -192,7 +220,7 @@
                                 </a>                                                                                                                                                                                                            
                             </div>                    -->
                             <div class=" news  fs-2 text-white separator d-flex justify-content-start align-items-start link-hover " id="separator-menu">
-                                <a href="index.html" class=" text-decoration-none text-white  ">
+                                <a href="../index.html" class=" text-decoration-none text-white  ">
                                     <strong>News</strong>
                                 </a> 
                             </div>
@@ -213,23 +241,50 @@
                                     <strong>Focus</strong>
                                 </a>
                             </div>
-                            <div class=" spotlights  fs-2 text-white  d-flex justify-content-start link-hover " id="separator-menu">
+                            <div class=" spotlights  fs-2 text-white separator d-flex justify-content-start link-hover " id="separator-menu">
                                 <a href="/pages/lifestyle.html" class="text-decoration-none text-white ">
                                     <strong>Spotlight</strong>
                                 </a>
                             </div>
+                           
                       
-                      
+                       
                     </div>
                   </div>
             </div>
         </nav>
-        <div class="container footer-container" >
+        
+        <div class="container footer-container  " >
             <div class="row">
-                <div class="col-md-3 col-12 text-white" >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, magnam!
+                <div class="footer1 col-md-12 col-lg-3 col-12 text-white " style="border-right: 1px solid #DCDCDC ;" >
+                    <p class="p-3">
+                        Des reportages originaux et des analyses incisives, en direct du SETALMAA tous les matins
+                    </p>
+                    <div class="newsletter-container col-md-12 col-12">
+                        <h2>Rejoignez notre Newsletter !</h2>
+                        <p>Recevez les dernières nouvelles et offres exclusives par email.</p>
+                        <div class="newsletter-input-container col-md-12 col-lg-12 col-12 ">
+                            <input type="email" placeholder="Entrez votre email" required>
+                            <button type="submit">S'inscrire</button>
+                        </div>
+                    </div>
                 </div>
-                <div class=" footer2 col-md-2 col-6 text-white" style="border-right: 1px solid #DCDCDC ;">
+                <div class=" footer2 col-md-3 col-lg-2 col-6 text-white" style="border-right: 1px solid #DCDCDC ;">
+                    <h5>
+                        <a href="#" class=" sous-menu-link ">Help</a>
+                    </h5>
+                    <h5>
+                        <a href="#" class=" sous-menu-link">Complaints et corrections</a>
+                    </h5>
+                    <h5>
+                        <a href="#" class=" sous-menu-link">SécureDrop</a>
+                    </h5>
+                    <h5>
+                        <a href="#" class=" sous-menu-link">Work for us</a>
+                    </h5>
+                    <h5>
+                        <a href="#" class=" sous-menu-link">Privacy settings</a>
+                    </h5>
                     <h5>
                         <a href="#" class=" sous-menu-link ">Help</a>
                     </h5>
@@ -248,7 +303,7 @@
                    
                    
                 </div>
-                <div class="footer3 col-md-2 col-6 text-white" style="border-right: 1px solid #DCDCDC ;">
+                <div class="footer3 col-md-3 col-lg-2 col-6 text-white" style="border-right: 1px solid #DCDCDC ;">
                     <h5>
                         <a href="#" class=" sous-menu-link ">Help</a>
                     </h5>
@@ -267,7 +322,7 @@
                    
                    
                 </div>
-                <div class="footer4 col-md-2 col-6 text-white" style="border-right: 1px solid #DCDCDC ;">
+                <div class="footer4 col-md-3 col-lg-2 col-6text-white" style="border-right: 1px solid #DCDCDC ;">
                     <h5>
                         <a href="#" class=" sous-menu-link ">Help</a>
                     </h5>
@@ -279,7 +334,15 @@
                    
                 </div>
                 <div class="footer5 col-md-3 col-6 text-white" >
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla, ducimus.
+                    <p class="p-3">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla, ducimus.
+    
+                    </p>
+                    <div class="button ">
+    
+                        <button class="contact-button ">Nous contacter</button>
+                    </div>
+    
                 </div>
             </div>
             <button id="topButton" class="top-button col-1 "onclick="scrollToTop()"><i class="fa-solid fa-angles-up"></i></button>
@@ -287,6 +350,12 @@
     
         </div>
     </div>
+    <!-- fin pub -->
+    <footer class="footer">
+        &copy; 2024 <span>SETALMAA  Media </span> | Tous droits réservés
+    </footer>
+</div>
+
     <script src="../script/article.js"></script>
     <script src="../script/index.js"></script>
 </body>

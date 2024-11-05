@@ -56,6 +56,6 @@ p{
     margin-top: 10px;
     font-weight: bold;
   }
-  #toggleFormButton #footer{
+  #toggleFormButton, #footer{
     display: none;
   }

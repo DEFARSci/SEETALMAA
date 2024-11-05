@@ -42,33 +42,55 @@ async function fetchArticleBySlug(slug) {
 
 // Fonction pour afficher l'article sur la page
 async function displayArticle(article) {
-       // Récupérer l'image à la une
-       const featuredImageUrl = await fetchFeaturedImage(article.featured_media);
-       const btnComment = document.getElementById('toggleFormButton');
+    try {
+        const categoriesId = article.categories[0];
+        
+        // Récupérer l'image à la une et les données de catégorie en parallèle
+        const [featuredImageUrl, categoriesData] = await Promise.all([
+            fetchFeaturedImage(article.featured_media),
+            fetchCategoryName(categoriesId)
+        ]);
 
         // Construire le contenu de l'article
-        let articleContent = `
+        const articleContent = `
             <h2>${article.title.rendered}</h2>
+            ${featuredImageUrl ? `<img class="featured-image mb-3" src="${featuredImageUrl}" alt="${article.title.rendered}">` : ""}
+            <div>${article.content.rendered}</div>
         `;
-
-        // Afficher l'image à la une si elle existe
-        if (featuredImageUrl) {
-            articleContent += `<img class="featured-image mb-3" src="${featuredImageUrl}" alt="${article.title.rendered}">`;
-        }
-
-        // Ajouter le contenu de l'article
-        articleContent += `<div>${article.content.rendered}</div>
-`;
+        
+        // Mettre à jour le DOM
         document.getElementById('article').innerHTML = articleContent;
-
+        document.getElementById('categories').innerHTML = categoriesData;
         document.getElementById('shareBtn').classList.remove('hidden');
+        
+        // Afficher les éléments du DOM requis
+        toggleVisibility(['toggleFormButton', 'footer'], 'block');
 
         // Ajouter un écouteur d'événement pour le bouton de partage
-        document.getElementById('shareBtn').addEventListener('click', function () {
+        document.getElementById('shareBtn').addEventListener('click', () => {
             shareArticle(article.title.rendered, window.location.href);
-});
-btnComment.style.display = 'block';
+        });
+        
+    } catch (error) {
+        console.error("Erreur lors de l'affichage de l'article :", error);
+    }
 }
+
+// Fonction pour récupérer le nom de la catégorie
+async function fetchCategoryName(categoryId) {
+    const response = await fetch(`${siteUrl}/wp-json/wp/v2/categories/${categoryId}`);
+    const data = await response.json();
+    return data.name;
+}
+
+// Fonction utilitaire pour afficher plusieurs éléments en même temps
+function toggleVisibility(elementIds, displayStyle) {
+    elementIds.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) element.style.display = displayStyle;
+    });
+}
+
 // Récupérer le slug de l'URL
 const urlParams = new URLSearchParams(window.location.search);
 const slug = urlParams.get('slug'); // Exemple : https://votre-site.com/article.html?slug=mon-super-article

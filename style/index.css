@@ -95,8 +95,82 @@ height: 40px;
     position: relative;
     display: inline-block;
     margin: 0 0px 0px 0;
+    
+    
 
 }
+
+
+
+
+.link::before {
+    
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 1px; /* Positionnement juste en dessous du texte */
+    width: 100%;
+    height: 6px; /* Épaisseur de la ligne */
+    background-color: rgb(240, 230, 24); /* Couleur de la ligne */
+    transform: scaleY(1); /* Ligne visible en permanence */
+    transform-origin: bottom;
+}
+.link1::before {
+    
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 1px; /* Positionnement juste en dessous du texte */
+    width: 100%;
+    height: 6px; /* Épaisseur de la ligne */
+    background-color: rgb(230, 70, 26); /* Couleur de la ligne */
+    transform: scaleY(1); /* Ligne visible en permanence */
+    transform-origin: bottom;
+}
+.link2::before {
+    
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 1px; /* Positionnement juste en dessous du texte */
+    width: 100%;
+    height: 6px; /* Épaisseur de la ligne */
+    background-color: rgb(101, 230, 26); /* Couleur de la ligne */
+    transform: scaleY(1); /* Ligne visible en permanence */
+    transform-origin: bottom;
+}
+.link3::before {
+    
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 1px; /* Positionnement juste en dessous du texte */
+    width: 100%;
+    height: 6px; /* Épaisseur de la ligne */
+    background-color: rgb(186, 26, 230); /* Couleur de la ligne */
+    transform: scaleY(1); /* Ligne visible en permanence */
+    transform-origin: bottom;
+}
+.link4::before {
+    
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 1px; /* Positionnement juste en dessous du texte */
+    width: 100%;
+    height: 6px; /* Épaisseur de la ligne */
+    background-color: rgb(26, 230, 210); /* Couleur de la ligne */
+    transform: scaleY(1); /* Ligne visible en permanence */
+    transform-origin: bottom;
+}
+
+
+
+
+
+
+
+
 
 .link-hover::after {
     content: '';
@@ -199,9 +273,9 @@ height: 40px;
 /* opinion */
 
 .opinion{
-    border-top: solid 1px #DCDCDC;
+    /* border-top: solid 1px #DCDCDC;
     border-left:solid 1px #DCDCDC;
-    border-right:solid 1px #DCDCDC;
+    border-right:solid 1px #DCDCDC; */
     padding-top: 15px;
 }
 
@@ -328,7 +402,7 @@ img{
     border-left:1px solid #DCDCDC ;
     border-right:1px solid #DCDCDC ;
     border-bottom:1px solid #DCDCDC ;
-    padding: 3px;
+    /* padding: 3px; */
 }
   
     
@@ -359,6 +433,87 @@ img{
 .footer span {
     font-weight: bold;
 }
+
+/* Container principal */
+.newsletter-container {
+    /* background-color: #f9f9f9; */
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Titre et texte */
+.newsletter-container h2 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.newsletter-container p {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* Conteneur de l'input et du bouton */
+.newsletter-input-container {
+    display: flex;
+    /* border: 1px solid #ddd; */
+    border-radius: 30px;
+    overflow: hidden;
+    
+}
+
+/* Champ d'email arrondi */
+.newsletter-input-container input[type="email"] {
+    flex: 1;
+    padding: 5px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-radius: 30px 30px 30 30px;
+}
+
+/* Bouton d'inscription */
+.newsletter-input-container button {
+    background-color: #093e8d;
+    color: white;
+    padding: 3px;
+    border: none;
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+    font-size: 12px;
+}
+/* contacte button*/
+/* Bouton "Nous contacter" */
+.contact-button {
+    background-color: #FFD700; /* Jaune doré */
+    color: #333; /* Texte sombre pour contraste */
+    padding: 12px 24px; /* Espace intérieur pour un bouton plus grand */
+    border: none;
+    border-radius: 30px; /* Arrondi complet */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Effet survol */
+    font-family: Arial, sans-serif;
+    
+}
+
+/* Effet au survol */
+.contact-button:hover {
+    background-color: #FFC107; /* Jaune légèrement plus foncé au survol */
+    transform: scale(1.05); /* Légère expansion au survol */
+}
+
+/* Effet au clic */
+.contact-button:active {
+    background-color: #FFB300; /* Jaune encore plus foncé au clic */
+    transform: scale(0.98); /* Légère réduction pour un effet de clic */
+}
+
 
 
   /* Style pour les petits écrans (mobile) */
@@ -426,7 +581,7 @@ img{
 /* menue */
 .menu{
 
-    padding-top: 3px!important;
+    padding-top: 15px!important;
 }
 .logotexte{
     /* display: none !important; */
@@ -658,6 +813,9 @@ img{
 #article_31{
     display: none;
 }
+.button{
+    margin-bottom: 10px !important;
+}
 /* most popular */
 .Most_popular{
    
@@ -693,22 +851,15 @@ img{
     font-weight: bold;
     line-height: 1;
     margin: 0;
-   
-   
-    
 }
 .news-item h4 {
     font-size: 16px;
     margin-left: 40px !important;
     margin-top: 5px !important;
     margin-bottom: 5px !important;
-   
-
 }
 .conternerTextMost{
     padding: 0px !important;
-   
-    
 }
 .podcast{
     display: none;
@@ -741,6 +892,9 @@ img{
 }
 .footer4{
     padding-top: 40px;
+    /* background-color: #000000; */
+    border-top: solid 1px #DCDCDC;
+    border-bottom: solid 1px #DCDCDC;
 }
 .footer3{
     border-top: solid 1px #DCDCDC;
@@ -753,6 +907,11 @@ img{
 .footer1{
     padding-top: 40px;
 }
+.sous-menu-footer-text a{
+ /* color: #8A2BE2 !important; */
+ font-size: 15px !important;
+}
+
   }
  /* Tablettes (écrans moyens) */
  @media (min-width: 576px) and (max-width: 768px) {
@@ -768,7 +927,67 @@ img{
 /* Écrans moyens à grands (Desktop) */
 @media (min-width: 768px) and (max-width: 992px) {
    
+/* menue */
+.menu{
 
+    padding-top: 3px!important;
+}
+.logotexte{
+    /* display: none !important; */
+    order: -1 !important;
+    /* padding-bottom: 6px; */
+    margin-left: 30px;
+}
+.news{
+    /* background-color: #622205; */
+    width: 85px !important;
+    height: 28px;  
+}
+.news a{
+    margin-top: -8px;
+    font-size: 28px;
+}
+.opinions{
+    /* background-color: #622205; */
+    width: 120px !important;
+    height: 28px;  
+}
+.opinions a{
+    margin-top: -8px;
+    font-size: 28px;
+
+}
+.sports{
+    /* background-color: #622205; */
+    display: none;
+    width: 87px !important;
+    height: 28px;
+}
+.sports a{
+   margin-top: -8px;
+   font-size: 28px;
+}
+.focus{
+    /* background-color: #622205; */
+    
+    width: 88px !important;
+   height: 28px;
+}
+.focus a{
+   margin-top: -8px;
+   font-size: 28px;
+}
+.spotlights{
+    /* background-color: #622205; */
+    border-right: none !important;
+    width: 85px !important;
+    height: 28px;
+}
+.spotlights a{
+   margin-top: -8px;
+   font-size: 28px;
+}
+/* fin  menue*/
     #article_0{
         display: none;
     }
@@ -863,6 +1082,12 @@ img{
     font-size: 15px !important;
     margin-left: 30px !important;
 }
+.footer1{
+    border-width: 0px !important;
+    border-bottom: 1px solid #DCDCDC !important;
+    background-color: #00000000 !important;
+}
+
 }
 
 /* Grand écran (XL) */
@@ -904,7 +1129,7 @@ img{
 
 .carousel-section {
     background-color: rgba(0, 0, 0, 0.8);
-    padding: 30px 0;
+    /* padding: 30px 0; */
     color: white;
 }
 .slick-slide {
