@@ -10,7 +10,7 @@ const Headlines=['title_0','title_1','title_2','title_3','title_4','title_5','ti
 const News_in_focus=['title_14','title_15','title_16'];
 const Spotlight=['title_17','title_18','title_19','title_20','title_21','title_22','title_23','title_24'];
 const Opinion=['title_25','title_26','title_27','title_28','title_29','title_30'];
-const sport=['title_31','title_32','title_33','title_34','title_35','title_36','title_37','title_38','title_39','title_40','title_41','title_42','title_43'];
+const sport=['31','32','33','34','35','36','37','38','39','40','41','42','43'];
 const allTitles = [...sport];
 const mostView=['most_1','most_2','most_3','most_4','most_5','most_6','most_7','most_8','most_9','most_10','most_11','most_12','most_13','most_14','most_15','most_16','most_17','most_18','most_19','most_20'];
 
@@ -22,32 +22,34 @@ async function fetchPageData() {
 
 
     //   sport
-    for (let i = 0; i < sport.length; i++) {
-        displayTitle(data, sport[i], 31+i);
+    // for (let i = 0; i < sport.length; i++) {
+    //     displayTitle(data, sport[i], 31+i);
         
-      }
+    //   }
 
-       displayContent(data,'article_31',31);
+    //    displayContent(data,'article_31',31);
 
-       displayImage(data, 'img_31',31);
-       displayImage(data, 'img_35',35);
-       displayImage(data, 'img_36',36);
-       displayImage(data, 'img_37',37);
-       displayImage(data, 'img_38',38);
-       displayImage(data, 'img_39',39);
-       displayImage(data, 'img_41',41);
-       displayImage(data, 'img_42',42);
+    //    displayImage(data, 'img_31',31);
+    //    displayImage(data, 'img_35',35);
+    //    displayImage(data, 'img_36',36);
+    //    displayImage(data, 'img_37',37);
+    //    displayImage(data, 'img_38',38);
+    //    displayImage(data, 'img_39',39);
+    //    displayImage(data, 'img_41',41);
+    //    displayImage(data, 'img_42',42);
 
-
+        sport.forEach((item, index) => displayTitle(data, `title_${item}`,`categories_${item}`, 17 + index));
+        await displayContent(data, 'article_31', 31);
+        await Promise.all([31, 35, 36, 37, 38, 39, 41, 42].map(index => displayImage(data, `img_${index}`, index)));
        
 
 
     //   mostvue
 
-    for (let i = 0; i < mostView.length; i++) {
-        displayTitle(data, mostView[i],i);
+    // for (let i = 0; i < mostView.length; i++) {
+    //     displayTitle(data, mostView[i],i);
         
-      }
+    //   }
   
    
    
@@ -124,20 +126,68 @@ function displayAuthor(authorName) {
 }
 
 // Fonction pour afficher l'image à la une
-async  function displayImage(data,imageId,numpost) {
-//   const data = await  fetchPostData();  
- 
-  const post = data[numpost];
-  
-  const imageUrl = await fetchFeaturedMedia(post.featured_media);
-  
-  const imgElement = document.getElementById(imageId);
-  if (imgElement) {
-      imgElement.src = imageUrl;
+// Fonction pour afficher le titre
+async function displayTitle(data, titleid, categoriesid=null, numpost) {
+    // const data = await fetchPostData(); // Supposons que les données soient déjà disponibles
+    const post = data[numpost];
+    const title = post.title.rendered;
+    const slug = post.slug; // On récupère l'ID du post
+    
+    // console.log("CartegoriesData:",cartegoriesData.name);
+    // Ajouter l'ID en tant qu'attribut data-id et mettre à jour le contenu
+    const titleElement = document.getElementById(titleid);
+    titleElement.innerHTML = title;
+    titleElement.setAttribute('data-id', slug);
+    quote.style.display = "inline";
+    if (categoriesid !== null) {
+      // const cartegories = await fetch(siteUrl+`/wp-json/wp/v2/categories/${categoriesId}`);
+      // const cartegoriesData = await cartegories.json();
+      // const categoriesElement = document.getElementById(categoriesid);
+      // categoriesElement.innerHTML = cartegoriesData.name;
+    const categoriesId=post.categories[0];
+
+      try {
+        const cartegoriesResponse = await fetch(`${siteUrl}/wp-json/wp/v2/categories/${categoriesId}`);
+    
+        // Vérification du statut de la réponse HTTP
+        if (!cartegoriesResponse.ok) {
+            console.error(`Erreur : ${cartegoriesResponse.status} - ${cartegoriesResponse.statusText}`);
+            return; // Arrête l'exécution si la requête a échoué
+        }
+    
+        // Conversion en JSON
+        const cartegoriesData = await cartegoriesResponse.json();
+    
+        // Vérification de la structure des données reçues
+        if (!cartegoriesData || !cartegoriesData.name) {
+            console.error("Données inattendues reçues pour 'cartegoriesData'. La propriété 'name' est manquante.");
+            return; // Arrête l'exécution si les données sont incorrectes
+        }
+    
+        // Récupération de l'élément DOM
+        const categoriesElement = document.getElementById(categoriesid);
+    
+        // Vérification de l'existence de l'élément DOM
+        if (!categoriesElement) {
+            console.error(`Élément avec l'ID ${categoriesid} introuvable dans le DOM.`);
+            return; // Arrête l'exécution si l'élément n'existe pas
+        }
+    
+        // Mise à jour du contenu de l'élément
+        categoriesElement.innerHTML = cartegoriesData.name ? cartegoriesData.name : "Inconnue";
+    
+    } catch (error) {
+        console.error("Une erreur s'est produite lors de la récupération des catégories :", error);
+        categoriesElement.innerHTML=`<p>inconnu</p>`;
+    }
+    
+
   } else {
-      console.error(`L'élément avec l'ID ${imageId} n'existe pas.`);
+      console.log("Categorie ID n'a pas été fourni.");
   }
-}
+  
+    
+  }
 
  // Appel de la fonction fetchPageData pour récupérer et afficher les données, y compris les images
  document.addEventListener('DOMContentLoaded', async () => {

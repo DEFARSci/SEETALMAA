@@ -53,10 +53,12 @@ async function fetchPageData() {
       await Promise.all([31, 35, 36, 37, 38, 39, 41, 42].map(index => displayImage(data, `img_${index}`, index)));
      
       mostView.forEach((item, index) => displayTitle(data, item,null, index));
+    
     } catch (error) {
       showError('Erreur lors de la récupération des données.'); // Appel d'une fonction d'erreur centralisée
       console.error('Erreur lors de la récupération des données:', error);
     }
+    
    
   }
   
@@ -101,67 +103,52 @@ async function fetchFeaturedMedia(mediaId) {
 }
 
 // Fonction pour afficher le titre
-async function displayTitle(data, titleid, categoriesid=null, numpost) {
-    // const data = await fetchPostData(); // Supposons que les données soient déjà disponibles
-    const post = data[numpost];
-    const title = post.title.rendered;
-    const slug = post.slug; // On récupère l'ID du post
-    
-    // console.log("CartegoriesData:",cartegoriesData.name);
-    // Ajouter l'ID en tant qu'attribut data-id et mettre à jour le contenu
-    const titleElement = document.getElementById(titleid);
-    titleElement.innerHTML = title;
-    titleElement.setAttribute('data-id', slug);
-    quote.style.display = "inline";
-    if (categoriesid !== null) {
-      // const cartegories = await fetch(siteUrl+`/wp-json/wp/v2/categories/${categoriesId}`);
-      // const cartegoriesData = await cartegories.json();
-      // const categoriesElement = document.getElementById(categoriesid);
-      // categoriesElement.innerHTML = cartegoriesData.name;
-    const categoriesId=post.categories[0];
+async function displayTitle(data, titleId, categoriesId = null, numPost) {
+  const post = data[numPost];
+  const titleElement = document.getElementById(titleId);
 
-      try {
-        const cartegoriesResponse = await fetch(`${siteUrl}/wp-json/wp/v2/categories/${categoriesId}`);
-    
-        // Vérification du statut de la réponse HTTP
-        if (!cartegoriesResponse.ok) {
-            console.error(`Erreur : ${cartegoriesResponse.status} - ${cartegoriesResponse.statusText}`);
-            return; // Arrête l'exécution si la requête a échoué
-        }
-    
-        // Conversion en JSON
-        const cartegoriesData = await cartegoriesResponse.json();
-    
-        // Vérification de la structure des données reçues
-        if (!cartegoriesData || !cartegoriesData.name) {
-            console.error("Données inattendues reçues pour 'cartegoriesData'. La propriété 'name' est manquante.");
-            return; // Arrête l'exécution si les données sont incorrectes
-        }
-    
-        // Récupération de l'élément DOM
-        const categoriesElement = document.getElementById(categoriesid);
-    
-        // Vérification de l'existence de l'élément DOM
-        if (!categoriesElement) {
-            console.error(`Élément avec l'ID ${categoriesid} introuvable dans le DOM.`);
-            return; // Arrête l'exécution si l'élément n'existe pas
-        }
-    
-        // Mise à jour du contenu de l'élément
-        categoriesElement.innerHTML = cartegoriesData.name ? cartegoriesData.name : "Inconnue";
-    
-    } catch (error) {
-        console.error("Une erreur s'est produite lors de la récupération des catégories :", error);
-        categoriesElement.innerHTML=`<p>inconnu</p>`;
-    }
-    
-
+  // Vérification de l'élément titre et mise à jour du contenu
+  if (titleElement) {
+      titleElement.innerHTML = post.title.rendered;
+      titleElement.setAttribute('data-id', post.slug);
+      titleElement.style.display = "inline";
   } else {
-      console.log("Categorie ID n'a pas été fourni.");
+      console.error(`Élément avec l'ID ${titleId} introuvable.`);
+      return;
   }
-  
-    
+
+  // Si un categoriesId est fourni, on tente de récupérer le nom de la catégorie
+  if (categoriesId !== null) {
+      const categoryElement = document.getElementById(categoriesId);
+      if (!categoryElement) {
+          console.error(`Élément avec l'ID ${categoriesId} introuvable dans le DOM.`);
+          return;
+      }
+
+      const categoryName = await fetchCategoryName(post.categories[0]);
+      categoryElement.innerHTML = categoryName ? categoryName : `<p class="text-danger">Inconnu</p>`;
+  } else {
+      console.log(`Categorie ID n'a pas été fourni.,${titleId }`);
   }
+}
+
+// Fonction utilitaire pour récupérer le nom d'une catégorie
+async function fetchCategoryName(categoryId) {
+  try {
+      const response = await fetch(`${siteUrl}/wp-json/wp/v2/categories/${categoryId}`);
+      if (!response.ok) {
+          console.error(`Erreur de récupération de la catégorie : ${response.status} - ${response.statusText}`);
+          return null;
+      }
+      
+      const categoryData = await response.json();
+      return categoryData && categoryData.name ? categoryData.name : "Inconnue";
+  } catch (error) {
+      console.error("Erreur lors de la récupération des catégories :", error);
+      return null;
+  }
+}
+
   
 
 // Fonction pour afficher le contenu de l'article
@@ -174,10 +161,6 @@ async function displayContent(data,contentid,numpost) {
 }
 
 // Fonction pour afficher l'auteur
-function displayAuthor(authorName) {
-  auteur.innerHTML = authorName;
-}
-
 // Fonction pour afficher l'image à la une
 async function displayImage(data, imageId, numpost) {
     // Vérification de l'élément image avant de continuer
@@ -205,111 +188,8 @@ async function displayImage(data, imageId, numpost) {
   }
   
 
-// Fonction pour récupérer et afficher les catégories (à implémenter)
-// async function fetchCategories(categories) {
-//   // Implémentation de la récupération des catégories
-//   console.log("Récupération des catégories:", categories);
-// }
-
-// Fonction pour récupérer et afficher les commentaires (à implémenter)
-async function fetchComments(postId) {
-  // Implémentation de la récupération des commentaires
-  console.log("Récupération des commentaires pour le post ID:", postId);
-}
-
-
-// // RÃ©cupÃ©ration des catÃ©gories
-// async function fetchCategories(categoryIds) {
-//     try {
-//         const response = await fetch(siteUrl+'/wp-json/wp/v2/categories');
-        
-//         if (!response.ok) {
-//             throw new Error(`HTTP error ${response.status}`);
-//         }
-
-
-//         const categoriesData = await response.json();
-//         console.log("Categories data:", categoriesData); 
-
-//         // Filtrer les catÃ©gories pour celles qui sont prÃ©sentes dans l'article
-//         const selectedCategories = categoriesData.filter(category => categoryIds.includes(category.id));
-//         console.log("Selected categories:", selectedCategories);
-
-//         // Afficher les catÃ©gories
-//         categoriesContainer.innerHTML = selectedCategories.length > 0 
-//             ? selectedCategories.map(category => `<span class="badge bg-secondary me-1">${category.name}</span>`).join(' ')
-//             : "<span>Aucune catÃ©gorie trouvÃ©e</span>";
-
-//     } catch (error) {
-//         console.error('Erreur lors de la rÃ©cupÃ©ration des catÃ©gories :', error);
-//     }
-// }
-
-// RÃ©cupÃ©ration des commentaires
-async function fetchComments(postId) {
-    try {
-        const response = await fetch(`${siteUrl}/wp-json/wp/v2/comments?post=${postId}`);
-        
-        if (!response.ok) {
-            throw new Error(`HTTP error ${response.status}`);
-        }
-
-        const commentsData = await response.json();
-        console.log("Comments data:", commentsData); 
-
-        // Afficher les commentaires
-        commentsContainer.innerHTML = commentsData.length > 0 
-            ? commentsData.map(comment => `<p><strong>${comment.author_name}</strong>: ${comment.content.rendered}</p>`).join('')
-            : "<p>Aucun commentaire pour cet article</p>";
-
-    } catch (error) {
-        console.error('Erreur lors de la rÃ©cupÃ©ration des commentaires :', error);
-    }
-}
-
 // Ajouter un commentaire
-async function addComment(postId) {
-    const commentContent = 'test test';
-    const authorName = authorInput.value;
-    const authorEmail = emailInput.value;
 
-    // VÃ©rification des champs
-    if (!commentContent || !authorName || !authorEmail) {
-        alert('Tous les champs doivent Ãªtre remplis');
-        return;
-    }
-
-    try {
-        const response = await fetch(siteUrl+'/wp-json/wp/v2/comments', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                post: postId,
-                author_name: authorName,
-                author_email: authorEmail,
-                content: commentContent
-            })
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error ${response.status}`);
-        }
-
-        const newComment = await response.json();
-        console.log('Nouveau commentaire ajoutÃ© :', newComment);
-
-        // Ajouter le commentaire dans la liste des commentaires
-        commentsContainer.innerHTML += `<p><strong>${newComment.author_name}</strong>: ${newComment.content.rendered}</p>`;
-
-        // RÃ©initialiser le formulaire
-        commentForm.reset();
-
-    } catch (error) {
-        console.error('Erreur lors de l\'ajout du commentaire :', error);
-    }
-}
 
 
 
@@ -320,8 +200,8 @@ function setupLinkRedirection(linkId) {
         console.error(`Aucun élément trouvé avec l'ID: ${linkId}`);
         return; // Sortie si l'élément n'existe pas
     }
-    addComment(12992);
-    fetchComments(12992);
+    // addComment(12992);
+    // fetchComments(12992);
     // Ajouter un écouteur d'événement "click" pour rediriger l'utilisateur
     linkElement.addEventListener('click', function(event) {
         event.preventDefault(); // Empêche le comportement par défaut du lien
@@ -399,3 +279,43 @@ function scrollToTop() {
     });
 }
 
+
+// alphaibrahimas95gmail.com
+// #Alphaosw1995
+
+// 
+async function getUserInfo(userId) {
+  const email = 'alphaibrahimas95gmail.com'; // Remplacez par l'email de l'utilisateur
+  const password = '#Alphaosw1995'; // Remplacez par le mot de passe de l'utilisateur
+  const headers = new Headers();
+
+  // Ajoute l'authentification de base dans le header
+  headers.append('Authorization', 'Bearer ' + btoa(`${email}:${password}`));
+  console.log(headers);
+  try {
+    const response = await fetch(`https://setalmaa.com/wp-json/wp/v2/users/${userId}`, { headers });
+    
+
+    // Vérification si la requête a réussi
+    if (!response.ok) {
+      throw new Error(`Erreur: ${response.status} ${response.statusText}`);
+    }
+
+    // Récupération des données JSON de l'utilisateur
+    const userData = await response.json();
+    return userData;
+
+  } catch (error) {
+    console.error('Erreur lors de la récupération des informations de l’utilisateur:', error);
+    return null;
+  }
+}
+
+// Exemple d'utilisation
+getUserInfo(32).then(userData => {
+  if (userData) {
+    console.log('Informations de l’utilisateur:', userData);
+  } else {
+    console.log("Impossible de récupérer les informations de l'utilisateur.");
+  }
+});

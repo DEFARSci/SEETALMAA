@@ -86,7 +86,9 @@ async function displayTitle(data, titleid, numpost) {
   
     // Ajouter l'ID en tant qu'attribut data-id et mettre à jour le contenu
     const titleElement = document.getElementById(titleid);
-    titleElement.innerHTML = `<i class="fa-solid fa-quote-left text-danger fs-2"  id="quote"></i> ${title}`;
+    // titleElement.innerHTML = `<i class="fa-solid fa-quote-left text-danger fs-2"  id="quote"></i> ${title}`;
+     titleElement.innerHTML = ` ${title}`;
+
     titleElement.setAttribute('data-id', slug);
   
   }
