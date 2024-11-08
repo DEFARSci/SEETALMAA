@@ -43,6 +43,7 @@ nav{
 /* menu */
 .menu{
     background-color: #052962;   
+    
 }
 .menu-container{
     padding-top: 4rem;
@@ -51,9 +52,7 @@ nav{
 .news{
     /* background-color: #622205; */
     width: 110px;
-height: 40px;    
-
-
+    height: 40px;    
 }
 .news a{
     margin-top: -12px;
@@ -204,7 +203,7 @@ height: 40px;
 }
 .sous-menu-container{
     margin-top: -9px;
-    border: solid 1px white;
+    border: solid 1px #DCDCDC;
     /* padding: 3px; */
 }
 .sous-menu-link{

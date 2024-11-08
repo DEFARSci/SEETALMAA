@@ -1,4 +1,13 @@
 const siteUrl = 'https://setalmaa.com'; // URL de votre site WordPress
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+const urlParams = new URLSearchParams(window.location.search);
+const slug = urlParams.get('slug');
+const postId = null;
+
+
+
+
+// const commentForm = document.getElementsByClassName('commentForm');
 
 // Fonction utilitaire pour les requêtes API
 async function fetchApi(url) {
@@ -31,6 +40,40 @@ async function fetchArticleBySlug(slug) {
         document.getElementById('article').innerHTML = '<p>Aucun article trouvé.</p>';
     }
 }
+async function fetchArticleIdBySlug(slug) {
+    const apiUrl = `${siteUrl}/wp-json/wp/v2/posts?slug=${slug}`;
+    
+    try {
+        const response = await fetch(apiUrl);
+        
+        if (!response.ok) {
+            throw new Error(`Erreur de requête : ${response.status}`);
+        }
+        
+        const articles = await response.json();
+        
+        // Vérifiez si un article a été trouvé avec ce slug
+        if (articles.length > 0) {
+            return articles[0].id;
+        } else {
+            throw new Error('Aucun article trouvé avec ce slug.');
+        }
+    } catch (error) {
+        console.error('Erreur lors de la récupération de l\'ID de l\'article :', error);
+        return null;
+    }
+}
+
+// Exemple d'utilisation
+
+// fetchArticleIdBySlug('votre-slug-ici').then(articleId => {
+//     if (articleId) {
+//         console.log('ID de l\'article :', articleId);
+//     } else {
+//         console.log('Article non trouvé.');
+//     }
+// });
+
 
 
 // Afficher l'article sur la page
@@ -50,7 +93,7 @@ async function displayArticle(article) {
         `;
         
         document.getElementById('categories').innerHTML = categoriesData;
-        toggleVisibility(['toggleFormButton', 'footer', 'author'], 'block');
+        toggleVisibility(['toggleFormButton', 'footer', 'author', 'commentaire'], 'block');
 
         // Bouton de partage
         document.getElementById('shareBtn').addEventListener('click', () => {
@@ -59,7 +102,8 @@ async function displayArticle(article) {
 
         // Récupérer et afficher les commentaires
         fetchComments(article.id);
-        addComment(article.id);
+        // addComment(214543);
+         postId = article.id;
 
     } catch (error) {
         console.error("Erreur lors de l'affichage de l'article :", error);
@@ -119,7 +163,7 @@ async function fetchComments(postId) {
                 year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
             });
             return `
-                    <h2 class="comments-title">Commentaires</h2>
+                   
             <div class="comment">
                 <div class="comment-content">
                     <div class="comment-author">${comment.author_name}</div>
@@ -139,35 +183,98 @@ async function fetchComments(postId) {
          ;
     }
 }
+document.getElementById("toggleFormButton").addEventListener("click", function() {
+    const form = document.getElementById("commentForm");
+    form.style.display = form.style.display === "none" ? "block" : "none";
+  });
+// async function addComment(postId) {
+//     const username = 'alphaibrahimas95gmail.com'; // Remplacez par l'email de l'utilisateur
+//     const password = '#Alphaosw1995'; // Remplacez par le mot de passe de l'utilisateur
+//     const headers = new Headers();
+// headers.append('Authorization', 'Basic ' + btoa(`${username}:${password}`));
+// headers.append('Content-Type', 'application/json');
 
-async function addComment(postId) {
-    const commentData = {
-        post: postId,
-        author_name: 'moussa',
-        author_email: 'meuz@gmail.com',
-        content: 'test test'
-    };
+// fetch('https://setalmaa.com/wp-json/wp/v2/comments', {
+//   method: 'POST',
+//   headers: headers,
+//   body: JSON.stringify({
+//     post: postId,       // Remplacez par l'ID de l'article
+//     content: 'Votre commentaire ici',
+//     author_name: 'Votre Nom',
+//     author_email: 'user@example.com' // Remplacez par votre email
+//   })
+// })
+// .then(response => response.json())
+// .then(data => console.log('Commentaire ajouté:', data))
+// .catch(error => console.error('Erreur lors de l\'ajout du commentaire:', error));
+
+// }
+
+
+
+document.getElementById("commentForm").addEventListener("submit", async function(event) {
+    event.preventDefault();
 
     try {
-        const response = await fetch(`${siteUrl}/wp-json/wp/v2/comments`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+        // const slug = 'votre-slug-ici'; // Définir le slug ici ou le récupérer dynamiquement
+        const apiUrl = `${siteUrl}/wp-json/wp/v2/posts?slug=${slug}`;
+        
+        // Obtenir l'article par son slug
+        const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error('Erreur lors de la récupération de l\'article');
+
+        const articles = await response.json();
+
+        // Vérifie que l'article existe
+        if (articles.length === 0) {
+            document.getElementById("responseMessage").innerText = "Article introuvable.";
+            return;
+        }
+
+        const articleId = articles[0].id;
+
+        // Récupération des informations de l'auteur et du contenu du commentaire
+        const authorName = document.getElementById("authorName").value;
+        const authorEmail = document.getElementById("authorEmail").value;
+        const content = document.getElementById("content").value;
+
+        const commentData = {
+            post: "12992",
+            content: "Ceci est un commentaire de test.",
+            author_name: "moussa",
+            author_email: "email@example.com"
+          };
+        console.log(commentData);
+        // Envoi du commentaire
+        const commentResponse = await fetch(`https://setalmaa.com/wp-json/wp/v2/comments`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                // 'Authorization': 'Bearer VOTRE_TOKEN_JWT' // Ajoutez cette ligne si l'authentification est requise
+            },
             body: JSON.stringify(commentData)
         });
 
-        if (!response.ok) throw new Error(`Erreur HTTP : ${response.status}`);
+        if (!commentResponse.ok) {
+            throw new Error('Erreur lors de l\'ajout du commentaire');
+        }
 
-        const newComment = await response.json();
-        console.log('Nouveau commentaire ajouté :', newComment);
+        const commentDataResponse = await commentResponse.json();
+        
+        // Confirmation de l'ajout du commentaire
+        document.getElementById("responseMessage").innerText = "Commentaire ajouté avec succès !";
+        document.getElementById("commentFormulaire").reset();
 
     } catch (error) {
-        console.error('Erreur lors de l\'ajout du commentaire :', error);
+        document.getElementById("responseMessage").innerText = "Erreur : " + error.message;
     }
-}
+});
+
+
+
 
 // Gestion du slug dans l'URL
-const urlParams = new URLSearchParams(window.location.search);
-const slug = urlParams.get('slug');
+
 
 if (slug) {
     fetchArticleBySlug(slug);

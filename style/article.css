@@ -56,7 +56,7 @@ p{
     margin-top: 10px;
     font-weight: bold;
   }
-  #toggleFormButton, #footer,#author{
+  #toggleFormButton, #footer,#author,#commentaire{
     display: none;
   }
 
