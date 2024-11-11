@@ -18,7 +18,7 @@ const Headlines=['0','1','2','3','4','5','6','7','8','9','10','11','12','13'];
 const News_in_focus=['14','15','16'];
 const Spotlight=['17','18','19','20','21','22','23','24'];
 const Opinion=['25','26','27','28','29','30'];
-const sport=['31','32','33','34','35','36','37','38','39','40','41','42','43'];
+const sport=['31','32','33','34','35','36','37','38','39','40','41','42','43','44'];
 const allTitles = [...Headlines, ...News_in_focus, ...Spotlight, ...Opinion, ...sport];
 const mostView=['most_1','most_2','most_3','most_4','most_5','most_6','most_7','most_8','most_9','most_10','most_11','most_12','most_13','most_14','most_15','most_16','most_17','most_18','most_19','most_20'];
 
@@ -41,7 +41,7 @@ async function fetchPageData() {
       await Promise.all([14, 15, 16].map(index => displayImage(data, `img_${index}`, index)));
   
       Spotlight.forEach((item, index) => displayTitle(data, `title_${item}`,`categories_${item}`, 17 + index));
-      await Promise.all([17, 23, 24].map(index => displayContent(data, `article_${index}`, index)));
+      await Promise.all([17,22].map(index => displayContent(data, `article_${index}`, index)));
       await Promise.all([17, 18, 19, 20, 21, 22, 23, 24].map(index => displayImage(data, `img_${index}`, index)));
   
       Opinion.forEach((item, index) => displayTitle(data, `title_${item}`,`categories_${item}`, 25 + index));
