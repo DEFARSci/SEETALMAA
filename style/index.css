@@ -93,6 +93,7 @@ nav{
     /* background-color: #622205; */
     width: 155px;
     height: 65px;
+    font-size: 42px !important;
 }
 .spotlights a{
     margin-top: -12px;
@@ -198,11 +199,11 @@ nav{
     color: #052962;  
     background-color: #FFD900 ;
     border-radius: 50%;
-    text-align: center;
-    padding: 14px;
-    margin-right: 8px;
-    margin-bottom: 1px;
-    margin-left: 8px; 
+    /* text-align: center; */
+    padding: 10px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px; 
 }
 /* sous-menu */
 .sous-menu{
@@ -729,6 +730,9 @@ img{
 #article_0{
     display: none;
 }
+/* #title_4,#title_5,#title_6,#title_7,#title_8,#title_9,#title_10,#title_11,#title_12,#title_13,#title_14,#title_15,#title_16,#title_17,#title_18,#title_19,#title_20,#title_21,#title_22,#title_23,#title_24{
+    font-size: 14px!important;
+} */
 
 /* new in focus */
 .cardFocus{
@@ -738,7 +742,7 @@ img{
 }
 
 /*Spotlight */
-#article_17{
+#article_17,#article_22{
     display: none;
 }
 #article_23{
@@ -764,19 +768,19 @@ img{
 .imgSpotlight{
     margin: 0px !important;
 }
-.cardspotlight{
-    /* background-color: #041F4A !important; */
-    /* width:15rem !important; */
-    padding-left: 10px !important;
-}
+
 #categories_24,#title_24,#categories_23,#title_23{
     /* color: white !important; */
     margin-left: 10px !important;
 }
+.spotlightCard{
+    /* background-color: #041F4A !important; */
+    margin-left: 10px;
+}
 /* Opinion */
 .cardImgOpt{
-    padding: 0px !important;
-    margin: 0px !important;
+    /* padding: 0px !important;
+    margin: 0px !important; */
 }
 .containerOpinion{
     height: auto !important;
@@ -881,7 +885,8 @@ img{
     padding: 0px !important;
 }
 .podcast{
-    display: none;
+    /* display: none; */
+    
 }
 .news{
     /* background-color: #622205; */
@@ -903,7 +908,13 @@ img{
     /* background-color: #622205; */
     width: 70px
 }
-
+#most_1,#most_2,#most_3,#most_4,#most_5,#most_6,#most_7,#most_8,#most_9,#most_10,#most_11,#most_12,#most_13,#most_14,#most_15,#most_16,#most_17,#most_18,#most_19,#most_20{
+    display: block !important;
+}
+/* pub */
+.pub{
+    height: 150px !important;
+}
 /* footer */
 .footer5{
     border-top: solid 1px #DCDCDC;
@@ -957,10 +968,28 @@ img{
     /* padding-bottom: 6px; */
     margin-left: 30px;
 }
+.bmenu{
+    /* background-color: #622205; */
+    border-right: none !important;
+    width: 95px !important;
+    height: 28px;
+}
+.menu-burger{
+    font-size: 20px !important;
+    color: #052962;  
+    background-color: #FFD900 ;
+    border-radius: 50% !important;
+    text-align: center;
+    padding: 5px !important;
+    margin-right: 4px !important;
+    margin-bottom: 1px !important;
+    margin-left: 1px !important; 
+}
+
 .news{
     /* background-color: #622205; */
     width: 85px !important;
-    height: 28px;  
+    height: 28px !important;  
 }
 .news a{
     margin-top: -8px;
@@ -969,7 +998,7 @@ img{
 .opinions{
     /* background-color: #622205; */
     width: 120px !important;
-    height: 28px;  
+    height: 28px !important;  
 }
 .opinions a{
     margin-top: -8px;
@@ -980,7 +1009,7 @@ img{
     /* background-color: #622205; */
     display: none;
     width: 87px !important;
-    height: 28px;
+    height: 28px !important;
 }
 .sports a{
    margin-top: -8px;
@@ -990,7 +1019,7 @@ img{
     /* background-color: #622205; */
     
     width: 88px !important;
-   height: 28px;
+   height: 28px !important;
 }
 .focus a{
    margin-top: -8px;
@@ -1000,7 +1029,7 @@ img{
     /* background-color: #622205; */
     border-right: none !important;
     width: 85px !important;
-    height: 28px;
+    height: 28px !important;
 }
 .spotlights a{
    margin-top: -8px;
@@ -1044,7 +1073,7 @@ img{
 #article_17{
     display: none;
 }
-#article_23{
+#article_22{
     display: none;
 }
 #article_24{
@@ -1054,8 +1083,11 @@ img{
 #article_25{
     display: none;
 }
+.cardOpinion{
+    height: auto !important;
+}
 .imgpub{
-    width: 335px;
+    width: 356px;
     height: 300px;
 }
 /* Sport */
@@ -1082,10 +1114,10 @@ img{
     border-right:solid 1px #DCDCDC;
     border-bottom:solid 1px #DCDCDC;
     padding-left: 10px;
-    height: 8rem;
-    
-
-  
+    height: 5rem;
+}
+.populaires{
+    border-bottom:solid 1px #DCDCDC;
 }
 .Most_popular_ligne_head{
     border-right:solid 1px #DCDCDC;
@@ -1095,6 +1127,9 @@ img{
 }
 .most_popular_ligne_head_text{
     color: #00000048;
+}
+#most_1,#most_2,#most_3,#most_4,#most_5,#most_6,#most_7,#most_8,#most_9,#most_10,#most_11,#most_12,#most_13,#most_14,#most_15,#most_16,#most_17,#most_18,#most_19,#most_20{
+    display: block !important;
 }
 .conternerTextMost h4{
     /* background-color: #0056b3 !important; */
@@ -1125,6 +1160,23 @@ img{
         height: 300px;
     }
 
+    .bmenu{
+        /* background-color: #622205; */
+        border-right: none !important;
+        width: 140px !important;
+        height: 55px !important;
+    }
+    .menu-burger{
+        font-size: 45px !important;
+        color: #052962;  
+        background-color: #FFD900 ;
+        border-radius: 50% !important;
+        text-align: center;
+        padding: 5px !important;
+        margin-right: 4px !important;
+        margin-bottom: 1px !important;
+        margin-left: 1px !important; 
+    }
        /* grande */
 .img_1{
     width: 100%;
