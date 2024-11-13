@@ -7,8 +7,8 @@ const lifestylebttn=document.getElementById('lifestyle');
 
 const Headlines=['title_0','title_1','title_2','title_3','title_4','title_5','title_6',
     'title_7','title_8','title_9','title_10','title_11','title_12','title_13'];
-const News_in_focus=['title_14','title_15','title_16'];
-const Spotlight=['title_17','title_18','title_19','title_20','title_21','title_22','title_23','title_24'];
+    const News_in_focus=['14','15','16'];
+    const Spotlight=['title_17','title_18','title_19','title_20','title_21','title_22','title_23','title_24'];
 const Opinion=['title_25','title_26','title_27','title_28','title_29','title_30'];
 const sport=['title_31','title_32','title_33','title_34','title_35','title_36','title_37','title_38','title_39','title_40','title_41','title_42','title_43'];
 const allTitles = [...News_in_focus];
@@ -22,17 +22,11 @@ async function fetchPageData() {
        
         // News_in_focus
 
-       for (let i = 0; i < News_in_focus.length; i++) {
-        displayTitle(data, News_in_focus[i], 14+i);
-      }
-      await displayImage( data,'img_14',14);
-      await displayImage( data,'img_15',15);
-      await displayImage( data,'img_16',16);
+    
+        News_in_focus.forEach((item, index) => displayTitle(data, `title_${item}`,`categories_${item}`, 14 + index));
+        await Promise.all([14, 15, 16].map(index => displayImage(data, `img_${index}`, index)));
+        mostView.forEach((item, index) => displayTitle(data, item,null, index));
 
-      await displayContent(data,"article_16",16);
-      await displayContent(data,"article_15",15);
-
-   
   } catch (error) {
       console.error('Erreur lors de la récupération des données :', error);
       throw error;
@@ -61,20 +55,52 @@ async function fetchFeaturedMedia(mediaId) {
 }
 
 // Fonction pour afficher le titre
-async function displayTitle(data, titleid, numpost) {
-    // const data = await fetchPostData(); // Supposons que les données soient déjà disponibles
-    const post = data[numpost];
-    const title = post.title.rendered;
-    const slug = post.slug; // On récupère l'ID du post
-  
-    // Ajouter l'ID en tant qu'attribut data-id et mettre à jour le contenu
-    const titleElement = document.getElementById(titleid);
-    titleElement.innerHTML = title;
-    titleElement.setAttribute('data-id', slug);
-    
-  
-    
+async function displayTitle(data, titleId, categoriesId = null, numPost) {
+  const post = data[numPost];
+  const titleElement = document.getElementById(titleId);
+
+  // Vérification de l'élément titre et mise à jour du contenu
+  if (titleElement) {
+      titleElement.innerHTML = post.title.rendered;
+      titleElement.setAttribute('data-id', post.slug);
+      titleElement.style.display = "inline";
+  } else {
+      console.error(`Élément avec l'ID ${titleId} introuvable.`);
+      return;
   }
+
+  // Si un categoriesId est fourni, on tente de récupérer le nom de la catégorie
+  if (categoriesId !== null) {
+      const categoryElement = document.getElementById(categoriesId);
+      if (!categoryElement) {
+          console.error(`Élément avec l'ID ${categoriesId} introuvable dans le DOM.`);
+          return;
+      }
+
+      const categoryName = await fetchCategoryName(post.categories[0]);
+      categoryElement.innerHTML = categoryName ? categoryName : `<p class="text-danger">Inconnu</p>`;
+  } else {
+      console.log(`Categorie ID n'a pas été fourni.,${titleId }`);
+  }
+}
+
+// Fonction utilitaire pour récupérer le nom d'une catégorie
+async function fetchCategoryName(categoryId) {
+  try {
+      const response = await fetch(`${siteUrl}/wp-json/wp/v2/categories/${categoryId}`);
+      if (!response.ok) {
+          console.error(`Erreur de récupération de la catégorie : ${response.status} - ${response.statusText}`);
+          return null;
+      }
+      
+      const categoryData = await response.json();
+      return categoryData && categoryData.name ? categoryData.name : "Inconnue";
+  } catch (error) {
+      console.error("Erreur lors de la récupération des catégories :", error);
+      return null;
+  }
+}
+
   
 // Fonction pour afficher le contenu de l'article
 async function displayContent(data,contentid,numpost) {
@@ -134,9 +160,9 @@ function setupLinkRedirection(linkId) {
     });
 }
 
-for (let id = 0; id < allTitles.length; id++) {
-    const element = allTitles[id];
-    setupLinkRedirection(element);
+for (let id = 0; id < News_in_focus.length; id++) {
+    const element = News_in_focus[id];
+    setupLinkRedirection("title_"+element);
     
 }
 
