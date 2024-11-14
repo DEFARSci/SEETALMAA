@@ -183,7 +183,7 @@ async function shareArticle(title, url) {
                     <i class="fab fa-whatsapp fs-1"></i> 
                  </a>
             </div>
-                <div class="col-lg-12 d-flex justify-content-between ">
+                <div class="col-lg-12 col-12 col-md-12 d-flex justify-content-between ">
             <button id="copyLinkBtn" class="btn btn-primary "><i class="fas fa-copy"></i> Copier le lien</button>
             <button id="closeModalBtn" class="btn btn-primary"><i class="fas fa-close"></i> </button>
                 </div>
@@ -251,7 +251,7 @@ async function fetchComments(postId) {
     }).join('')
        
     } else {
-        commentsContainer.innerHTML =`<h2 class="comments-title">Commentaires</h2>
+        commentsContainer.innerHTML =`
             <div class="comment">
             <p>Aucun commentaire pour cet article</p>
             </div>`

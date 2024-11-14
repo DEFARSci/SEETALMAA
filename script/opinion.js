@@ -11,7 +11,9 @@ const Headlines=['title_0','title_1','title_2','title_3','title_4','title_5','ti
     'title_7','title_8','title_9','title_10','title_11','title_12','title_13'];
 const News_in_focus=['title_14','title_15','title_16'];
 const Spotlight=['title_17','title_18','title_19','title_20','title_21','title_22','title_23','title_24'];
-const Opinion=['title_25','title_26','title_27','title_28','title_29','title_30','title_31','title_32','title_33','title_34','title_35','title_36','title_37','title_38','title_39','title_40','title_41','title_42','title_43','title_44','title_45','title_46'];
+const Opinion2=['25','title_26','title_27','title_28','title_29','title_30','title_31','title_32','title_33','title_34','title_35','title_36','title_37','title_38','title_39','title_40','title_41','title_42','title_43','title_44','title_45','title_46'];
+const Opinion=['25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46'];
+
 const sport=['title_31','title_32','title_33','title_34','title_35','title_36','title_37','title_38','title_39','title_40','title_41','title_42','title_43'];
 const allTitles = [ ...Opinion];
 const mostView=['most_1','most_2','most_3','most_4','most_5','most_6','most_7','most_8','most_9','most_10','most_11','most_12','most_13','most_14','most_15','most_16','most_17','most_18','most_19','most_20'];
@@ -23,21 +25,27 @@ async function fetchPageData() {
        const data = await fetchPostData();
      
     //  Opinion
-    for (let i = 0; i < Opinion.length; i++) {
-        displayTitle(data, Opinion[i], 25+i);
-      }
+
+    Opinion.forEach((item, index) => displayTitle(data, `title_${item}`,`categories_${item}`, 14 + index));
+    await Promise.all([25, 26, 27, 28, 29, 30, 31, 32, 33, 34].map(index => displayImage(data, `img_${index}`, index)));
+    mostView.forEach((item, index) => displayTitle(data, item,null, index));
+
+
+    // for (let i = 0; i < Opinion.length; i++) {
+    //     displayTitle(data, "title_"+Opinion[i],"categories_"+Opinion[i], 25+i);
+    //   }
       await displayContent(data,'article_25',25);
 
-      await displayImage(data, 'img_25',25);
-      await displayImage(data, 'img_26',26);
-      await displayImage(data, 'img_27',27);
-      await displayImage(data, 'img_28',28);
-      await displayImage(data, 'img_29',29);
-      await displayImage(data, 'img_30',30);
-      await displayImage(data, 'img_31',31);
-      await displayImage(data, 'img_32',32);
-      await displayImage(data, 'img_33',33);
-      await displayImage(data, 'img_34',34);
+      // await displayImage(data, 'img_25',25);
+      // await displayImage(data, 'img_26',26);
+      // await displayImage(data, 'img_27',27);
+      // await displayImage(data, 'img_28',28);
+      // await displayImage(data, 'img_29',29);
+      // await displayImage(data, 'img_30',30);
+      // await displayImage(data, 'img_31',31);
+      // await displayImage(data, 'img_32',32);
+      // await displayImage(data, 'img_33',33);
+      // await displayImage(data, 'img_34',34);
 
     //   sport
   
@@ -47,10 +55,7 @@ async function fetchPageData() {
 
     //   mostvue
 
-    for (let i = 0; i < mostView.length; i++) {
-        displayTitle(data, mostView[i],i);
-        
-      }
+   
    
   } catch (error) {
       console.error('Erreur lors de la récupération des données :', error);
@@ -78,21 +83,49 @@ async function fetchFeaturedMedia(mediaId) {
 }
 
 // Fonction pour afficher le titre
-async function displayTitle(data, titleid, numpost) {
-    // const data = await fetchPostData(); // Supposons que les données soient déjà disponibles
-    const post = data[numpost];
-    const title = post.title.rendered;
-    const slug = post.slug; // On récupère l'ID du post
-  
-    // Ajouter l'ID en tant qu'attribut data-id et mettre à jour le contenu
-    const titleElement = document.getElementById(titleid);
-    // titleElement.innerHTML = `<i class="fa-solid fa-quote-left text-danger fs-2"  id="quote"></i> ${title}`;
-     titleElement.innerHTML = ` ${title}`;
+async function displayTitle(data, titleId, categoriesId = null, numPost) {
+  const post = data[numPost];
+  const titleElement = document.getElementById(titleId);
 
-    titleElement.setAttribute('data-id', slug);
-  
+  // Vérification de l'élément titre et mise à jour du contenu
+  if (titleElement) {
+      titleElement.innerHTML = post.title.rendered;
+      titleElement.setAttribute('data-id', post.slug);
+      titleElement.style.display = "inline";
+  } else {
+      console.error(`Élément avec l'ID ${titleId} introuvable.`);
+      return;
   }
-  
+
+  // Si un categoriesId est fourni, on tente de récupérer le nom de la catégorie
+  if (categoriesId !== null) {
+      const categoryElement = document.getElementById(categoriesId);
+      if (!categoryElement) {
+          console.error(`Élément avec l'ID ${categoriesId} introuvable dans le DOM.`);
+          return;
+      }
+
+      const categoryName = await fetchCategoryName(post.categories[0]);
+      categoryElement.innerHTML = categoryName ? categoryName : `<p class="text-danger">Inconnu</p>`;
+  } else {
+      console.log(`Categorie ID n'a pas été fourni.,${titleId }`);
+  }
+}
+async function fetchCategoryName(categoryId) {
+  try {
+      const response = await fetch(`${siteUrl}/wp-json/wp/v2/categories/${categoryId}`);
+      if (!response.ok) {
+          console.error(`Erreur de récupération de la catégorie : ${response.status} - ${response.statusText}`);
+          return null;
+      }
+      
+      const categoryData = await response.json();
+      return categoryData && categoryData.name ? categoryData.name : "Inconnue";
+  } catch (error) {
+      console.error("Erreur lors de la récupération des catégories :", error);
+      return null;
+  }
+}
 
 // Fonction pour afficher le contenu de l'article
 async function displayContent(data,contentid,numpost) {
