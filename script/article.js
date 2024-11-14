@@ -217,9 +217,9 @@ document.getElementById("commentForm").addEventListener("submit", async function
 
     try {
         const proxyUrl = "https://cors-anywhere.herokuapp.com/"; // Proxy public
-        const apiUrl = `${proxyUrl}https://setalmaa.com/wp-json/wp/v2/comments`;
+        // const apiUrl = `${proxyUrl}https://setalmaa.com/wp-json/wp/v2/comments`;
         
-        // const apiUrl = `${siteUrl}/wp-json/wp/v2/posts?slug=${slug}`;
+         const apiUrl = `${siteUrl}/wp-json/wp/v2/posts?slug=${slug}`;
         
         // Obtenir l'article par son slug
         const response = await fetch(apiUrl);
@@ -248,7 +248,7 @@ document.getElementById("commentForm").addEventListener("submit", async function
         };
 console.log(JSON.stringify(commentData));
         // Envoi du commentaire
-        const commentResponse = await fetch(`${siteUrl}/wp-json/wp/v2/comments`, {
+        const commentResponse = await fetch(`${proxyUrl}https://setalmaa.com/wp-json/wp/v2/comments`, {
             method: "POST",
             mode: "no-cors",
             headers: {
