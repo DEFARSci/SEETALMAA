@@ -987,10 +987,9 @@ img{
 
 
 /* Écrans moyens à grands (Desktop) */
-@media (min-width: 768px) and (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 991px) {
     body {
         font-size: 18px !important;
-        background-color: #8A2BE2;
     }
 /* menue */
 .menu{
@@ -1024,51 +1023,52 @@ img{
 .news{
     /* background-color: #622205; */
     width: 85px !important;
-    height: 28px !important;  
+    height: 38px !important;  
 }
 .news a{
     margin-top: -8px;
-    font-size: 28px;
+    font-size: 25px;
 }
 .opinions{
     /* background-color: #622205; */
-    width: 120px !important;
+    width: 90px !important;
     height: 28px !important;  
 }
 .opinions a{
     margin-top: -8px;
-    font-size: 28px;
+    font-size: 25px;
 
 }
 .sports{
     /* background-color: #622205; */
     display: none;
-    width: 87px !important;
+    border-right: none !important;
+
+    width: 99px !important;
     height: 28px !important;
 }
 .sports a{
    margin-top: -8px;
-   font-size: 28px;
+   font-size: 25px;
 }
 .focus{
     /* background-color: #622205; */
     
-    width: 88px !important;
+    width: 98px !important;
    height: 28px !important;
 }
 .focus a{
    margin-top: -8px;
-   font-size: 28px;
+   font-size: 25px;
 }
 .spotlights{
     /* background-color: #622205; */
-    border-right: none !important;
-    width: 85px !important;
+    width: 120px !important;
     height: 28px !important;
 }
 .spotlights a{
    margin-top: -8px;
-   font-size: 28px;
+   font-size: 25px;
 }
 /* fin  menue*/
     #article_0{
@@ -1191,10 +1191,10 @@ img{
 }
 
 /* Grand écran (XL) */
-@media (min-width: 993px) and (max-width: 1399px) {
+@media (min-width: 992px) and (max-width: 1399px) {
     body {
         font-size: 20px !important;
-        background-color:red;
+        
     }
     .navbar .menu a {
         font-size: 20px;

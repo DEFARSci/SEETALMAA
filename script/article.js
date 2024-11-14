@@ -131,26 +131,101 @@ function toggleVisibility(elementIds, displayStyle) {
 }
 
 // Partager l'article
+// async function shareArticle(title, url) {
+//     const shareButton = document.getElementById('shareBtn');
+//     const originalButtonText = `<i class="fas fa-share-alt "></i> ${shareButton.textContent}`;
+
+//     if (navigator.share) {
+//         try {
+//             await navigator.share({ title, url });
+//         } catch (error) {
+//             console.log('Erreur lors du partage:', error);
+//         }
+//     } else {
+//         try {
+//             await navigator.clipboard.writeText(url);
+//             shareButton.textContent = "Lien copié !";
+//             setTimeout(() => shareButton.innerHTML = originalButtonText, 3000);
+//         } catch (error) {
+//             console.error('Échec de la copie du lien', error);
+//         }
+//     }
+// }
+
 async function shareArticle(title, url) {
     const shareButton = document.getElementById('shareBtn');
-    const originalButtonText = `<i class="fas fa-share-alt "></i> ${shareButton.textContent}`;
+    const originalButtonText = `<i class="fas fa-share-alt"></i> ${shareButton.textContent}`;
 
+    // Vérifie si l'API de partage est disponible
     if (navigator.share) {
         try {
             await navigator.share({ title, url });
         } catch (error) {
-            console.log('Erreur lors du partage:', error);
+            console.log('Erreur lors du partage :', error);
         }
     } else {
-        try {
-            await navigator.clipboard.writeText(url);
-            shareButton.textContent = "Lien copié !";
-            setTimeout(() => shareButton.innerHTML = originalButtonText, 3000);
-        } catch (error) {
-            console.error('Échec de la copie du lien', error);
-        }
+        // Création de la modal pour centrer les liens de partage
+        const socialLinksModal = document.createElement('div');
+        socialLinksModal.id = 'socialShareModal';
+        socialLinksModal.innerHTML = `
+            <div id="socialShareLinks" class="col-lg-2  " style="display: flex; flex-direction: column; align-items: center; gap: 15px; background: white; padding: 20px; border-radius: 8px;">
+               <div class=" d-flex justify-content-center ">
+                <a href="https://twitter.com/intent/tweet?url=URL_A_PARTAGER&text=TITRE_A_PARTAGER" class="p-3" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-twitter fs-1"></i> 
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=URL_A_PARTAGER" class="p-3" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook fs-1"></i> 
+                </a>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url=URL_A_PARTAGER&title=TITRE_A_PARTAGER" class="p-3" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin fs-1"></i> 
+                </a>
+                <a href="https://wa.me/?text=TITRE_A_PARTAGER%20URL_A_PARTAGER" class="p-3" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp fs-1"></i> 
+                 </a>
+            </div>
+                <div class="col-lg-12 d-flex justify-content-between ">
+            <button id="copyLinkBtn" class="btn btn-primary "><i class="fas fa-copy"></i> Copier le lien</button>
+            <button id="closeModalBtn" class="btn btn-primary"><i class="fas fa-close"></i> </button>
+                </div>
+            </div>
+        `;
+        
+        // Style de la modal
+        socialLinksModal.style.position = 'fixed';
+        socialLinksModal.style.top = '0';
+        socialLinksModal.style.left = '0';
+        socialLinksModal.style.width = '100%';
+        socialLinksModal.style.height = '100%';
+        socialLinksModal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        socialLinksModal.style.display = 'flex';
+        socialLinksModal.style.justifyContent = 'center';
+        socialLinksModal.style.alignItems = 'center';
+        socialLinksModal.style.zIndex = '1000';
+
+        document.body.appendChild(socialLinksModal);
+
+        // Ajoute l'événement pour copier le lien
+        const copyLinkBtn = document.getElementById('copyLinkBtn');
+        copyLinkBtn.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(url);
+                copyLinkBtn.innerHTML = "Lien copié !";
+                setTimeout(() => copyLinkBtn.innerHTML = '<i class="fas fa-copy"></i> Copier le lien', 3000);
+                setTimeout(() => document.body.removeChild(socialLinksModal), 2000);
+                // document.body.removeChild(socialLinksModal);
+            } catch (error) {
+                console.error('Échec de la copie du lien', error);
+            }
+        });
+
+        // Fermer la modal
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        closeModalBtn.addEventListener('click', () => {
+            document.body.removeChild(socialLinksModal);
+        });
     }
 }
+
 
 // Afficher et ajouter des commentaires
 async function fetchComments(postId) {
@@ -246,7 +321,7 @@ document.getElementById("commentForm").addEventListener("submit", async function
             author_name: authorName,
             author_email: authorEmail
         };
-console.log(JSON.stringify(commentData));
+        console.log(JSON.stringify(commentData));
         // Envoi du commentaire
         const commentResponse = await fetch(`${proxyUrl}https://setalmaa.com/wp-json/wp/v2/comments`, {
             method: "POST",
@@ -259,8 +334,11 @@ console.log(JSON.stringify(commentData));
             body: JSON.stringify(commentData)
         });
 
-        if (!commentResponse.ok) {
-            throw new Error("Erreur lors de l'ajout du commentaire");
+         // Vérification de la réponse
+         if (!commentResponse.ok) {
+            const errorResponse =  commentResponse.text(); // Lire le texte de l'erreur
+            console.error("Erreur du serveur :", errorResponse); // Afficher l'erreur dans la console
+            throw new Error('Erreur lors de l\'ajout du commentaire : ' + errorResponse);
         }
 
         // Confirmation de l'ajout du commentaire

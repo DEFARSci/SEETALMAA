@@ -7,6 +7,7 @@
     border-left: 1px solid #DCDCDC;
     
 } */
+
 figure{
     width: 100% !important;
 }
@@ -56,7 +57,7 @@ p{
     margin-top: 10px;
     font-weight: bold;
   }
-  #toggleFormButton, #footer,#author,#commentaire{
+  #toggleFormButton, #footer,#author,#commentaire,#modalContent{
     display: none;
   }
 
