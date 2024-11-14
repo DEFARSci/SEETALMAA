@@ -216,10 +216,10 @@ document.getElementById("commentForm").addEventListener("submit", async function
     event.preventDefault();
 
     try {
-        // const proxyUrl = "https://cors-anywhere.herokuapp.com/"; // Proxy public
-        // const apiUrl = `${proxyUrl}https://setalmaa.com/wp-json/wp/v2/comments`;
+        const proxyUrl = "https://cors-anywhere.herokuapp.com/"; // Proxy public
+        const apiUrl = `${proxyUrl}https://setalmaa.com/wp-json/wp/v2/comments`;
         
-        const apiUrl = `${siteUrl}/wp-json/wp/v2/posts?slug=${slug}`;
+        // const apiUrl = `${siteUrl}/wp-json/wp/v2/posts?slug=${slug}`;
         
         // Obtenir l'article par son slug
         const response = await fetch(apiUrl);
@@ -246,10 +246,11 @@ document.getElementById("commentForm").addEventListener("submit", async function
             author_name: authorName,
             author_email: authorEmail
         };
-console.log(commentData);
+console.log(JSON.stringify(commentData));
         // Envoi du commentaire
         const commentResponse = await fetch(`${siteUrl}/wp-json/wp/v2/comments`, {
             method: "POST",
+            mode: "no-cors",
             headers: {
                 "Content-Type": "application/json",
                 // Ajouter le jeton JWT si requis
