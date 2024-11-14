@@ -216,12 +216,14 @@ document.getElementById("commentForm").addEventListener("submit", async function
     event.preventDefault();
 
     try {
-        // const slug = 'votre-slug-ici'; // Définir le slug ici ou le récupérer dynamiquement
+        // const proxyUrl = "https://cors-anywhere.herokuapp.com/"; // Proxy public
+        // const apiUrl = `${proxyUrl}https://setalmaa.com/wp-json/wp/v2/comments`;
+        
         const apiUrl = `${siteUrl}/wp-json/wp/v2/posts?slug=${slug}`;
         
         // Obtenir l'article par son slug
         const response = await fetch(apiUrl);
-        if (!response.ok) throw new Error('Erreur lors de la récupération de l\'article');
+        if (!response.ok) throw new Error("Erreur lors de la récupération de l'article");
 
         const articles = await response.json();
 
@@ -232,38 +234,37 @@ document.getElementById("commentForm").addEventListener("submit", async function
         }
 
         const articleId = articles[0].id;
-
+      
         // Récupération des informations de l'auteur et du contenu du commentaire
         const authorName = document.getElementById("authorName").value;
         const authorEmail = document.getElementById("authorEmail").value;
         const content = document.getElementById("content").value;
 
         const commentData = {
-            post: "12992",
-            content: "Ceci est un commentaire de test.",
-            author_name: "moussa",
-            author_email: "email@example.com"
-          };
-        console.log(commentData);
+            post: articleId,
+            content: content,
+            author_name: authorName,
+            author_email: authorEmail
+        };
+console.log(commentData);
         // Envoi du commentaire
-        const commentResponse = await fetch(`https://setalmaa.com/wp-json/wp/v2/comments`, {
+        const commentResponse = await fetch(`${siteUrl}/wp-json/wp/v2/comments`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                // 'Authorization': 'Bearer VOTRE_TOKEN_JWT' // Ajoutez cette ligne si l'authentification est requise
+                // Ajouter le jeton JWT si requis
+                // "Authorization": "Bearer VOTRE_TOKEN_JWT"
             },
             body: JSON.stringify(commentData)
         });
 
         if (!commentResponse.ok) {
-            throw new Error('Erreur lors de l\'ajout du commentaire');
+            throw new Error("Erreur lors de l'ajout du commentaire");
         }
 
-        const commentDataResponse = await commentResponse.json();
-        
         // Confirmation de l'ajout du commentaire
         document.getElementById("responseMessage").innerText = "Commentaire ajouté avec succès !";
-        document.getElementById("commentFormulaire").reset();
+        document.getElementById("commentForm").reset();
 
     } catch (error) {
         document.getElementById("responseMessage").innerText = "Erreur : " + error.message;

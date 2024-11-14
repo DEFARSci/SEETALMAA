@@ -814,8 +814,13 @@ img{
 }
 /* Opinion */
 .cardImgOpt{
-    padding: 0px !important;
+    /* background-color: #0056b3 !important; */
+    /* padding: 1px !important; */
     margin: 0px !important;
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+    padding-right: 0px !important;
+    padding-left: 8px !important;
 }
 .containerOpinion{
     height: auto !important;
