@@ -550,7 +550,7 @@ img{
 
 
   /* Style pour les petits écrans (mobile) */
-  @media (min-width: 375px) and (max-width:767px) {
+  @media (min-width: 412px) and (max-width:767px) {
     body {
         font-size: 16px !important;
         /* background-color: #333; */
@@ -627,75 +627,84 @@ img{
 }
 .news{
     /* background-color: #622205; */
-    width: 50px !important;
-    height: 28px;  
+    width: 60px !important;
+    height: 28px; 
 
 }
 .news a{
     margin-top: -8px;
-    font-size: 13px;
+    font-size: 15px;
     padding-left: 3px !important;
     padding-top: 3px !important;
+    margin-left: 0px !important;
 }
 .opinions{
+    /* background-color: #622205; */
     width: 55px !important;
-    height: 28px;  
+    height: 28px; 
     
 }
 .opinions a{
     margin-top: -8px;
-    font-size: 13px;
+    font-size: 15px;
     padding-left: 3px !important;
     padding-top: 3px !important;
+    margin-left: 0px !important;
 
 }
 .sports{
     /* background-color: #622205; */
     border-right: none !important;
     /* display: none; */
-    width: 50px !important;
-    height: 28px;
+    width: 45px !important;
+    height: 28px; 
 }
 .sports a{
+    text-align: left !important;
    margin-top: -8px;
-   font-size: 13px;
-   padding-left: 3px !important;
+   font-size: 15px;
+   padding-left: 0px !important;
     padding-top: 3px !important;
+    margin-left: 0px !important;
 }
 .focus{
     /* background-color: #622205; */
     
-    width: 55px !important;
-   height: 28px;
+    width: 65px !important;
+    height: 28px; 
 }
 .focus a{
    margin-top: -8px;
-   font-size: 13px;
+   font-size: 15px;
    padding-left: 3px !important;
     padding-top: 3px !important;
+    margin-left: 0px !important;
 }
 .spotlights{
     /* background-color: #622205; */
     /* border-right: none !important; */
-    width: 65px !important;
-    height: 28px;
+    width: 75px !important;
+    height: 28px; 
 }
 .spotlights a{
    margin-top: -8px;
-   font-size: 13px;
+   font-size: 15px;
    padding-left: 3px !important;
     padding-top: 3px !important;
+    margin-left: 0px !important;
 }
 .spotlightsm{
     border-right: none !important;
 
     width: 75px !important;
-    height: 38px;
+    height: 20px;
 }
 .bmenu{
     /* background-color: #622205; */
+    display: flex;
+  justify-content: space-between; 
     border-right: none !important;
-    width: 75px !important;
+    width: 88px !important;
     height: 28px;
 }
 .menu-burger-container{
@@ -719,8 +728,13 @@ img{
     padding: 5px !important;
     margin-right: 4px !important;
     margin-bottom: 1px !important;
-    margin-left: 1px !important; 
+    /* margin-left: 45px !important;  */
+    margin-left: auto;
 }
+.divimg {
+    width: 8.25rem !important;
+    height: 2.125rem !important;
+  }
     /* Les images */
 
     /* pub */
@@ -758,6 +772,8 @@ img{
     display: flex;
 }
 .sous_card_1{
+    /* background-color: #041F4A; */
+    width: 21rem;
     margin-left: 10px;
 }
 .consultesFocusInNew{
@@ -1001,7 +1017,7 @@ img{
 }
 
   }
-  @media (min-width: 290px) and (max-width:374px) {
+  @media (min-width: 290px) and (max-width:411px) {
     body {
         
         /* background-color: #333; */
@@ -1416,9 +1432,35 @@ img{
     margin-left: 30px;
 }
 .bmenu{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
     /* background-color: #622205; */
     border-right: none !important;
-    width: 95px !important;
+    width: 14rem !important;
+    height: 28px;
+    padding-left: 10px !important;
+}
+.menu-burger-container {
+    width: 6rem;
+    margin-bottom: 4rem !important;
+    padding-bottom: 1.25rem !important;
+  }
+  .menu-burger {
+    margin-left: auto;
+    font-size: 1.55rem !important;
+    color: #052962;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    text-align: center;
+    padding: 0.25rem !important;
+    /* margin: var(--padding-small) 0; */
+  }
+/* .bmenu{
+    
+    background-color: #622205;
+    border-right: none !important;
+    width: 14rem !important;
     height: 28px;
 }
 .menu-burger{
@@ -1431,7 +1473,7 @@ img{
     margin-right: 4px !important;
     margin-bottom: 1px !important;
     margin-left: 1px !important; 
-}
+} */
 
 .news{
     /* background-color: #622205; */
@@ -1445,7 +1487,7 @@ img{
 .opinions{
     /* background-color: #622205; */
     width: 90px !important;
-    height: 28px !important;  
+    height: 38px !important;  
 }
 .opinions a{
     margin-top: -8px;
@@ -1458,7 +1500,7 @@ img{
     border-right: none !important;
 
     width: 99px !important;
-    height: 28px !important;
+    height: 38px !important;
 }
 .sports a{
    margin-top: -8px;
@@ -1468,7 +1510,7 @@ img{
     /* background-color: #622205; */
     
     width: 98px !important;
-   height: 28px !important;
+   height: 38px !important;
 }
 .focus a{
    margin-top: -8px;
@@ -1477,12 +1519,17 @@ img{
 .spotlights{
     /* background-color: #622205; */
     width: 120px !important;
-    height: 28px !important;
+    height: 38px !important;
 }
 .spotlights a{
    margin-top: -8px;
    font-size: 25px;
 }
+.divimg {
+    padding-top: 1rem;
+    width: 20.25rem !important;
+    height: 5.125rem !important;
+  }
 /* fin  menue*/
     #article_0{
         display: none;
@@ -1616,6 +1663,63 @@ img{
         font-size: 24px;
     }
 
+    .news{
+        /* background-color: #622205; */
+        width: 95px !important;
+        height: 55px !important;
+    }
+    .news a{
+        margin-top: -8px;
+        font-size: 25px;
+    }
+    .opinions{
+        /* background-color: #622205; */
+        width: 90px !important;
+        height: 55px !important;
+    }
+    .opinions a{
+        margin-top: -8px;
+        font-size: 25px;
+    
+    }
+    .sports{
+        /* background-color: #622205; */
+        /* display: none;
+        border-right: none !important;
+     */
+        width: 99px !important;
+        height: 55px !important;
+    }
+    .sports a{
+       margin-top: -8px;
+       font-size: 25px;
+    }
+    .focus{
+        /* background-color: #622205; */
+        
+        width: 98px !important;
+        height: 55px !important;
+    }
+    .focus a{
+       margin-top: -8px;
+       font-size: 25px;
+    }
+    .spotlights{
+        /* background-color: #622205; */
+        width: 120px !important;
+        height: 55px !important;
+    }
+    .spotlights a{
+       margin-top: -8px;
+       font-size: 25px;
+    }
+    .divimg {
+       
+        width: 20.25rem !important;
+        height: 2.125rem !important;
+      }
+    
+
 
     .imgpub{
         width: 455px;
@@ -1625,8 +1729,9 @@ img{
     .bmenu{
         /* background-color: #622205; */
         border-right: none !important;
-        width: 140px !important;
+        width: 100px !important;
         height: 55px !important;
+        padding-left: 1rem !important;
     }
     .menu-burger{
         font-size: 45px !important;

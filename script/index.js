@@ -14,7 +14,7 @@ const lifestylebttn=document.getElementById('lifestyle');
 
 
 
-const Headlines=['0','1','2','3','4','5','6','7','8','9','10','11','12','13'];
+const Headlines=['0','1','2','3','4','55','6','7','8','9','10','11','12','13'];
 const News_in_focus=['14','15','16'];
 const Spotlight=['17','18','19','20','21','22','23','24'];
 const Opinion=['25','26','27','28','29','30'];
