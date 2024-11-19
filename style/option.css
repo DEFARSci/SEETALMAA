@@ -1,0 +1,33 @@
+@media (min-width: 375px) and (max-width:767px) {
+    body {
+        font-size: 16px !important;
+        
+    }
+
+    .card1text h5 {
+        font-size: 18px !important;
+    }
+    .card1text p {
+        font-size: 15px !important;
+    }
+    .card1text {
+        padding-left: 25px !important;
+        margin: 0px !important;
+    }
+    .card1img  {
+        padding-top: 10px;
+    }
+    .card2{
+        height: auto !important;
+    }
+    .cardCercle{
+        height: auto !important;
+    }
+    .cardCercle2 img{
+        margin-top: 0px !important;
+      
+    }
+    .card3{
+        height: auto !important;
+    }
+}
