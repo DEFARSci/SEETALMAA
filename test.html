@@ -1,136 +1,129 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Commentaires de l'Article</title>
-  <style>
-    /* Style de base */
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
-      margin: 0;
-      padding: 20px;
-      color: #333;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        audio {
+            width: 100%;
+            max-width: 600px;
+        }
+        .podcast-list {
+            margin-top: 20px;
+        }
+        .podcast-item {
+            margin: 10px 0;
+            cursor: pointer;
+        }
+        .visual-player {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 400px;
+}
+.visual-player img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+audio {
+    width: 100%;
+}
+.floating-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 10px;
+}
+audio {
+    width: 100%;
+}
 
-    /* Conteneur de commentaires */
-    .comments-container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #ffffff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-    }
 
-    /* Titre des commentaires */
-    .comments-title {
-      font-size: 1.8em;
-      font-weight: bold;
-      margin-bottom: 20px;
-      color: #333;
-      text-align: center;
-    }
-
-    /* Chaque commentaire */
-    .comment {
-      border-top: 1px solid #e0e0e0;
-      padding: 20px 0;
-      display: flex;
-      align-items: flex-start;
-    }
-
-    /* Avatar */
-    .comment-avatar {
-      flex-shrink: 0;
-      margin-right: 15px;
-    }
-
-    .comment-avatar img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    /* Détails du commentaire */
-    .comment-content {
-      flex-grow: 1;
-    }
-
-    .comment-author {
-      font-weight: bold;
-      color: #555;
-    }
-
-    .comment-date {
-      font-size: 0.9em;
-      color: #888;
-      margin-top: 3px;
-    }
-
-    .comment-text {
-      margin-top: 10px;
-      line-height: 1.6;
-      color: #444;
-    }
-
-    /* Style pour le dernier commentaire sans bordure */
-    .comment:last-child {
-      border-bottom: none;
-    }
-  </style>
+    </style>
 </head>
 <body>
-
-  <!-- Conteneur principal des commentaires -->
-  <div class="comments-container">
-    <h2 class="comments-title">Commentaires</h2>
-
-    <!-- Exemple de commentaire -->
-    <div class="comment">
-      <div class="comment-avatar">
-        <img src="https://via.placeholder.com/50" alt="Avatar de l'utilisateur">
-      </div>
-      <div class="comment-content">
-        <div class="comment-author">Jean Dupont</div>
-        <div class="comment-date">Publié le 27 octobre 2024</div>
-        <div class="comment-text">
-          Très bon article, j'ai appris beaucoup de nouvelles informations. Merci pour le partage !
-        </div>
-      </div>
-    </div>
-
-    <!-- Commentaire 2 -->
-    <div class="comment">
-      <div class="comment-avatar">
-        <img src="https://via.placeholder.com/50" alt="Avatar de l'utilisateur">
-      </div>
-      <div class="comment-content">
-        <div class="comment-author">Marie Claire</div>
-        <div class="comment-date">Publié le 26 octobre 2024</div>
-        <div class="comment-text">
-          Cet article est vraiment intéressant. J'espère que vous ferez plus de contenu de ce genre.
-        </div>
-      </div>
-    </div>
-
-    <!-- Commentaire 3 -->
-    <div class="comment">
-      <div class="comment-avatar">
-        <img src="https://via.placeholder.com/50" alt="Avatar de l'utilisateur">
-      </div>
-      <div class="comment-content">
-        <div class="comment-author">Paul Lambert</div>
-        <div class="comment-date">Publié le 25 octobre 2024</div>
-        <div class="comment-text">
-          Bien expliqué, clair et précis. J'ai apprécié la lecture.
-        </div>
-      </div>
-    </div>
-
+    <h1>Podcast Player</h1>
+    <div class="visual-player">
+      <img id="podcastImage" src="img/banner_footer.jpg" alt="Podcast Cover" />
+      <audio id="audioPlayer" controls>
+          <source src="podcasts/episode1.mp3" type="audio/mpeg">
+      </audio>
   </div>
+  
+    <div class="podcast-list">
+        <!-- Les podcasts seront affichés ici -->
+    </div>
+    <!-- <script src="script.js"></script> -->
+     <script>
+      // Liste des podcasts
+const podcasts = [
+    { title: "Épisode 1: Introduction", url: "audio/1.mp3" },
+    { title: "Épisode 2: Les bases", url: "audio/2.mp3" },
+    { title: "Épisode 3: Approfondissement", url: "audio/3.mp3" },
+];
 
+// Sélection des éléments HTML
+const audioPlayer = document.getElementById("audioPlayer");
+const podcastList = document.querySelector(".podcast-list");
+
+// Fonction pour afficher les podcasts
+function loadPodcastList() {
+    podcasts.forEach((podcast, index) => {
+        const div = document.createElement("div");
+        div.classList.add("podcast-item");
+        div.textContent = podcast.title;
+        div.dataset.index = index;
+
+        // Ajouter un événement pour lire le podcast lorsqu'on clique
+        div.addEventListener("click", () => playPodcast(index));
+
+        podcastList.appendChild(div);
+    });
+}
+
+// Fonction pour lire un podcast
+function playPodcast(index) {
+    const selectedPodcast = podcasts[index];
+    audioPlayer.src = selectedPodcast.url;
+    audioPlayer.play();
+}
+
+// Charger la liste des podcasts au chargement de la page
+loadPodcastList();
+audioPlayer.addEventListener("timeupdate", () => {
+    const currentTime = audioPlayer.currentTime;
+    localStorage.setItem("currentPodcastTime", currentTime);
+});
+
+// Reprendre là où l'utilisateur s'était arrêté
+audioPlayer.addEventListener("loadedmetadata", () => {
+    const savedTime = localStorage.getItem("currentPodcastTime");
+    if (savedTime) {
+        audioPlayer.currentTime = savedTime;
+    }
+});
+const podcastImage = document.getElementById("podcastImage");
+
+document.querySelectorAll(".podcast-list li").forEach(item => {
+    item.addEventListener("click", function () {
+        const imageUrl = this.dataset.image; // Assurez-vous d'ajouter des images
+        podcastImage.src = imageUrl || "images/default.jpg";
+        audioPlayer.src = this.dataset.url;
+        audioPlayer.play();
+    });
+});
+
+
+     </script>
 </body>
 </html>

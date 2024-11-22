@@ -156,8 +156,28 @@ async function displayContent(data,contentid,numpost) {
 //   const data = await fetchPostData();
   const post = data[numpost];
   const content = post.content.rendered;
+  
+ 
+  // Découpe le contenu en mots et limite à 20 mots, tout en gardant le HTML
   const mots = content.split(' ');
-  document.getElementById(contentid).innerHTML = mots.slice(0, 20).join(' ') + '...';
+  const truncatedContent = mots.slice(0, 25).join(' ') + '...';
+
+  // Insère le contenu HTML dans l'élément cible
+  const contentElement = document.getElementById(contentid);
+  contentElement.innerHTML = truncatedContent;
+
+  // Modifier les styles des balises spécifiques (si présentes)
+  const h1 = contentElement.querySelector('h1');
+  if (h1) {
+    h1.style.fontSize = '15px'; // Modifie la taille du texte pour <h1>
+    // Exemple de changement de couleur
+  }
+
+  const span = contentElement.querySelector('span');
+  if (span) {
+    span.style.fontSize = '15px'; // Modifie la taille du texte pour <span>
+   // Exemple de changement de couleur
+  }
 }
 
 // Fonction pour afficher l'auteur
@@ -319,3 +339,103 @@ getUserInfo(32).then(userData => {
     console.log("Impossible de récupérer les informations de l'utilisateur.");
   }
 });
+
+
+
+// podcaste
+const podcasts = [
+  {
+      title: "Introduction à l'IA",
+      url: "audio/1.mp3",
+      category: "Technologie",
+      image: "https://picsum.photos/400/200?random=1"
+  },
+  {
+      title: "Comprendre les bases",
+      url: "audio/2.mp3",
+      category: "Éducation",
+      image: "https://picsum.photos/400/200?random=2"
+  },
+  {
+      title: "Les défis éthiques",
+      url: "audio/3.mp3",
+      category: "Philosophie",
+      image: "https://picsum.photos/400/200?random=3"
+  },
+  {
+    title: "Les défis éthiques",
+    url: "audio/1.mp3",
+    category: "Éducation",
+    image: "https://picsum.photos/400/200?random=4"
+},
+{
+  title: "Épisode 3: Les défis éthiques",
+  url: "audio/2.mp3",
+  category: "Technologie",
+  image: "https://picsum.photos/400/200?random=5"
+}
+];
+
+
+const audioPlayer = document.getElementById("audioPlayer");
+const podcastList = document.querySelector(".podcast-list");
+
+function loadPodcastList() {
+  const podcastList = document.querySelector(".podcast-carousel"); // Conteneur des cartes
+  const audioPlayers = []; // Liste pour suivre tous les lecteurs audio
+
+  podcasts.forEach((podcast, index) => {
+    // Créer le conteneur principal de la carte
+    const card = document.createElement("div");
+    card.classList.add("podcast-card");
+
+    // Ajouter l'image de la carte
+    const imageDiv = document.createElement("div");
+    imageDiv.classList.add("podcast-image");
+    imageDiv.style.backgroundImage = `url(${podcast.image || 'https://via.placeholder.com/400x200'})`;
+
+    // Ajouter le contenu texte (catégorie + titre)
+    const contentDiv = document.createElement("div");
+    contentDiv.classList.add("podcast-content");
+
+    const categoryDiv = document.createElement("div");
+    categoryDiv.classList.add("podcast-category");
+    categoryDiv.textContent = podcast.category || "Catégorie";
+
+    const title = document.createElement("h3");
+    title.classList.add("podcast-title");
+    title.textContent = podcast.title;
+
+    contentDiv.appendChild(categoryDiv);
+    contentDiv.appendChild(title);
+
+    // Ajouter le lecteur audio
+    const audioDiv = document.createElement("div");
+    const audioPlayer = document.createElement("audio");
+    audioPlayer.controls = true;
+    audioPlayer.src = podcast.url;
+    audioPlayer.style.margin = "10px 0"; // Ajout des marges au lecteur
+    audioDiv.appendChild(audioPlayer);
+
+    // Ajouter un événement pour arrêter les autres lecteurs lorsqu'un est activé
+    audioPlayer.addEventListener("play", () => {
+        audioPlayers.forEach(player => {
+            if (player !== audioPlayer) {
+                player.pause();
+            }
+        });
+    });
+
+    // Ajouter le lecteur à la liste des lecteurs
+    audioPlayers.push(audioPlayer);
+
+    // Assembler la carte
+    card.appendChild(imageDiv);
+    card.appendChild(contentDiv);
+    card.appendChild(audioDiv);
+
+    // Ajouter la carte au conteneur principal
+    podcastList.appendChild(card);
+});
+}
+loadPodcastList();
