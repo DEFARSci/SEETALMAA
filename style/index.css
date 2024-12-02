@@ -400,6 +400,8 @@ nav{
 
 img{
     object-fit: cover;
+    /* background-color:rgba(198, 199, 201, 0.438) ; */
+
 }
 
 
@@ -416,19 +418,21 @@ img{
 /* Les images */
 /* grande */
 .img_1{
-    width: 490px;
-    height: 374px;
+    width: 497px;
+    height: 300px;
 }
 
 /* moyenne */
 .img_2 {
     width: 220px;
-    height: 220px;
+    height: 205px;
+    /* width: 220px;
+    height: 220px; */
 }
 /* petite */
 .img_3 {
-    width: 135px;
-    height: 81px;
+    width: 165px;
+    height: 101px;
 }
 .img_2_rond{
     width: 150px;
@@ -1897,7 +1901,7 @@ img{
     content: '→';
 }
 .video-carousel {
-    padding: 0 30px;
+    padding: 20px 30px;
 }
 .custom-dots {
     display: flex;
@@ -1958,8 +1962,10 @@ img{
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: 0 15px;
-    width: calc(25% - 30px); /* 4 cards par ligne avec marge */
-    height: 300px; 
+    width: 12px; /* 4 cards par ligne avec marge */
+
+    /* width: calc(25% - 30px); 4 cards par ligne avec marge */
+    height: 350px; 
 }
 
 
@@ -1971,6 +1977,7 @@ img{
 .podcast-content {
     padding: 10px;
     position: relative;
+    text-align: left;
 }
 .podcast-category {
     color: #ff0000;

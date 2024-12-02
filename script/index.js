@@ -28,7 +28,7 @@ const mostView=['most_1','most_2','most_3','most_4','most_5','most_6','most_7','
 async function fetchPageData() {
     try {
       const data = await fetchPostData();
-      const imageIndexes = [0, 4, 5, 9];
+      const imageIndexes = [0, 4, 5, 9,14, 15, 16,17, 18, 19, 20, 21, 22, 23, 24,25, 26, 27, 28, 29, 30,31, 35, 36, 37, 38, 39, 41, 42];
   
       // Afficher les images
       await Promise.all(imageIndexes.map(index => displayImage(data, `img_${index}`, index)));
@@ -38,19 +38,19 @@ async function fetchPageData() {
       await displayContent(data, 'article_0', 0);
       
       News_in_focus.forEach((item, index) => displayTitle(data, `title_${item}`,`categories_${item}`, 14 + index));
-      await Promise.all([14, 15, 16].map(index => displayImage(data, `img_${index}`, index)));
+      // await Promise.all([14, 15, 16].map(index => displayImage(data, `img_${index}`, index)));
   
       Spotlight.forEach((item, index) => displayTitle(data, `title_${item}`,`categories_${item}`, 17 + index));
       await Promise.all([17,22].map(index => displayContent(data, `article_${index}`, index)));
-      await Promise.all([17, 18, 19, 20, 21, 22, 23, 24].map(index => displayImage(data, `img_${index}`, index)));
+      // await Promise.all([17, 18, 19, 20, 21, 22, 23, 24].map(index => displayImage(data, `img_${index}`, index)));
   
       Opinion.forEach((item, index) => displayTitle(data, `title_${item}`,`categories_${item}`, 25 + index));
       await displayContent(data, 'article_25', 25);
-      await Promise.all([25, 26, 27, 28, 29, 30].map(index => displayImage(data, `img_${index}`, index)));
+      // await Promise.all([25, 26, 27, 28, 29, 30].map(index => displayImage(data, `img_${index}`, index)));
   
       sport.forEach((item, index) => displayTitle(data, `title_${item}`,`categories_${item}`, 31 + index));
       await displayContent(data, 'article_31', 31);
-      await Promise.all([31, 35, 36, 37, 38, 39, 41, 42].map(index => displayImage(data, `img_${index}`, index)));
+      // await Promise.all([31, 35, 36, 37, 38, 39, 41, 42].map(index => displayImage(data, `img_${index}`, index)));
      
       mostView.forEach((item, index) => displayTitle(data, item,null, index));
     
@@ -74,14 +74,63 @@ async function fetchPageData() {
 
 // Fonction pour récupérer les données des posts
 async function fetchPostData() {
-  const response = await fetch(siteUrl+'/wp-json/wp/v2/posts?per_page=100&page=1');
- 
+  const cachedData = localStorage.getItem('postData');
 
-  if (!response.ok) {
+  // Si les données sont en cache, les comparer avec celles récupérées
+  if (cachedData) {
+    console.log("Données chargées depuis le LocalStorage.");
+    const cachedDataParsed = JSON.parse(cachedData);
+    
+    // Faire une requête pour récupérer les données du serveur
+    const response = await fetch(siteUrl + '/wp-json/wp/v2/posts?per_page=50&page=1');
+    if (!response.ok) {
       throw new Error(`Erreur HTTP ${response.status}`);
+    }
+
+    const serverData = await response.json();
+
+    // Comparer les données du cache avec celles du serveur (simplifiée ici avec une comparaison par longueur, mais vous pouvez être plus spécifique)
+    if (JSON.stringify(cachedDataParsed) !== JSON.stringify(serverData)) {
+      console.log("Les données ont changé. Mise à jour du cache.");
+      localStorage.setItem('postData', JSON.stringify(serverData)); // Mise à jour du cache avec les nouvelles données
+    } else {
+      console.log("Aucune modification des données. Cache inchangé.");
+    }
+
+    return serverData;
+  } else {
+    // Si aucune donnée n'est en cache, on les récupère du serveur
+    const response = await fetch(siteUrl + '/wp-json/wp/v2/posts?per_page=50&page=1');
+    if (!response.ok) {
+      throw new Error(`Erreur HTTP ${response.status}`);
+    }
+
+    const data = await response.json();
+    localStorage.setItem('postData', JSON.stringify(data)); // Mise en cache des données
+    console.log("Données récupérées depuis le serveur.");
+    return data;
   }
-  return await response.json();
 }
+
+// async function fetchPostData() {
+//   const cachedData = localStorage.getItem('postData');
+
+//     if (cachedData) {
+//         console.log("Données chargées depuis le LocalStorage.");
+//         return JSON.parse(cachedData);
+//     }
+
+//     const response = await fetch(siteUrl + '/wp-json/wp/v2/posts?per_page=50&page=1');
+//     if (!response.ok) {
+//         throw new Error(`Erreur HTTP ${response.status}`);
+//     }
+
+//     const data = await response.json();
+//     localStorage.setItem('postData', JSON.stringify(data)); // Mise en cache des données
+//     console.log("Données récupérées depuis le serveur.");
+//     return data;
+
+// }
 
 // Fonction pour récupérer les informations de l'auteur
 // async function fetchAuthorData(authorId) {
@@ -93,14 +142,36 @@ async function fetchPostData() {
 // }
 
 // Fonction pour récupérer les informations de l'image à la une
+
 async function fetchFeaturedMedia(mediaId) {
+  const cachedUrl = localStorage.getItem(`image_${mediaId}`);
+  if (cachedUrl) {
+      console.log(`Image ${mediaId} chargée depuis le LocalStorage.`);
+      return cachedUrl;
+  }
+
   const response = await fetch(`${siteUrl}/wp-json/wp/v2/media/${mediaId}`);
   if (!response.ok) {
-      throw new Error(`Erreur HTTP ${response.status} lors de la récupération de l'image`);
+      throw new Error(`Erreur HTTP ${response.status}`);
   }
-  const mediaData = await response.json();
-  return mediaData.source_url;
+
+  const media = await response.json();
+  const imageUrl = media.source_url;
+
+  localStorage.setItem(`image_${mediaId}`, imageUrl); // Mise en cache de l'URL
+  console.log(`Image ${mediaId} récupérée depuis le serveur.`);
+  return imageUrl;
 }
+
+// async function fetchFeaturedMedia(mediaId) {
+//   const response = await fetch(`${siteUrl}/wp-json/wp/v2/media/${mediaId}`);
+//   if (!response.ok) {
+//       throw new Error(`Erreur HTTP ${response.status} lors de la récupération de l'image`);
+//   }
+//   const mediaData = await response.json();
+//   return mediaData.source_url;
+// }
+
 
 // Fonction pour afficher le titre
 async function displayTitle(data, titleId, categoriesId = null, numPost) {
@@ -134,19 +205,36 @@ async function displayTitle(data, titleId, categoriesId = null, numPost) {
 
 // Fonction utilitaire pour récupérer le nom d'une catégorie
 async function fetchCategoryName(categoryId) {
-  try {
-      const response = await fetch(`${siteUrl}/wp-json/wp/v2/categories/${categoryId}`);
-      if (!response.ok) {
-          console.error(`Erreur de récupération de la catégorie : ${response.status} - ${response.statusText}`);
-          return null;
-      }
-      
-      const categoryData = await response.json();
-      return categoryData && categoryData.name ? categoryData.name : "Inconnue";
-  } catch (error) {
-      console.error("Erreur lors de la récupération des catégories :", error);
-      return null;
+  //  localStorage.removeItem(`category_${categoryId}`);
+  const cachedCategory = localStorage.getItem(`category_${categoryId}`);
+  if (cachedCategory) {
+      console.log(`Catégorie ${categoryId} chargée depuis le LocalStorage.`);
+      return cachedCategory;
   }
+
+  const response = await fetch(`${siteUrl}/wp-json/wp/v2/categories/${categoryId}`);
+  if (!response.ok) {
+      throw new Error(`Erreur HTTP ${response.status}`);
+  }
+
+  const category = await response.json();
+  localStorage.setItem(`category_${categoryId}`,category && category.name ? category.name : "Inconnue"); // Mise en cache
+  console.log(`Catégorie ${categoryId} récupérée depuis le serveur.`);
+    return category && category.name ? category.name : "Inconnue";
+
+  // try {
+  //     const response = await fetch(`${siteUrl}/wp-json/wp/v2/categories/${categoryId}`);
+  //     if (!response.ok) {
+  //         console.error(`Erreur de récupération de la catégorie : ${response.status} - ${response.statusText}`);
+  //         return null;
+  //     }
+      
+  //     const categoryData = await response.json();
+  //     return categoryData && categoryData.name ? categoryData.name : "Inconnue";
+  // } catch (error) {
+  //     console.error("Erreur lors de la récupération des catégories :", error);
+  //     return null;
+  // }
 }
 
   
@@ -414,7 +502,8 @@ function loadPodcastList() {
     const audioPlayer = document.createElement("audio");
     audioPlayer.controls = true;
     audioPlayer.src = podcast.url;
-    audioPlayer.style.margin = "10px 0"; // Ajout des marges au lecteur
+    audioPlayer.classList.add('podcast-audio');
+    audioPlayer.style.margin = "20px 0"; // Ajout des marges au lecteur
     audioDiv.appendChild(audioPlayer);
 
     // Ajouter un événement pour arrêter les autres lecteurs lorsqu'un est activé
@@ -438,4 +527,5 @@ function loadPodcastList() {
     podcastList.appendChild(card);
 });
 }
-loadPodcastList();
+// loadPodcastList();
+
