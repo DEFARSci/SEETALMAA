@@ -73,64 +73,64 @@ async function fetchPageData() {
   
 
 // Fonction pour récupérer les données des posts
-async function fetchPostData() {
-  const cachedData = localStorage.getItem('postData');
-
-  // Si les données sont en cache, les comparer avec celles récupérées
-  if (cachedData) {
-    console.log("Données chargées depuis le LocalStorage.");
-    const cachedDataParsed = JSON.parse(cachedData);
-    
-    // Faire une requête pour récupérer les données du serveur
-    const response = await fetch(siteUrl + '/wp-json/wp/v2/posts?per_page=50&page=1');
-    if (!response.ok) {
-      throw new Error(`Erreur HTTP ${response.status}`);
-    }
-
-    const serverData = await response.json();
-
-    // Comparer les données du cache avec celles du serveur (simplifiée ici avec une comparaison par longueur, mais vous pouvez être plus spécifique)
-    if (JSON.stringify(cachedDataParsed) !== JSON.stringify(serverData)) {
-      console.log("Les données ont changé. Mise à jour du cache.");
-      localStorage.setItem('postData', JSON.stringify(serverData)); // Mise à jour du cache avec les nouvelles données
-    } else {
-      console.log("Aucune modification des données. Cache inchangé.");
-    }
-
-    return serverData;
-  } else {
-    // Si aucune donnée n'est en cache, on les récupère du serveur
-    const response = await fetch(siteUrl + '/wp-json/wp/v2/posts?per_page=50&page=1');
-    if (!response.ok) {
-      throw new Error(`Erreur HTTP ${response.status}`);
-    }
-
-    const data = await response.json();
-    localStorage.setItem('postData', JSON.stringify(data)); // Mise en cache des données
-    console.log("Données récupérées depuis le serveur.");
-    return data;
-  }
-}
-
 // async function fetchPostData() {
 //   const cachedData = localStorage.getItem('postData');
 
-//     if (cachedData) {
-//         console.log("Données chargées depuis le LocalStorage.");
-//         return JSON.parse(cachedData);
-//     }
-
+//   // Si les données sont en cache, les comparer avec celles récupérées
+//   if (cachedData) {
+//     console.log("Données chargées depuis le LocalStorage.");
+//     const cachedDataParsed = JSON.parse(cachedData);
+    
+//     // Faire une requête pour récupérer les données du serveur
 //     const response = await fetch(siteUrl + '/wp-json/wp/v2/posts?per_page=50&page=1');
 //     if (!response.ok) {
-//         throw new Error(`Erreur HTTP ${response.status}`);
+//       throw new Error(`Erreur HTTP ${response.status}`);
+//     }
+
+//     const serverData = await response.json();
+
+//     // Comparer les données du cache avec celles du serveur (simplifiée ici avec une comparaison par longueur, mais vous pouvez être plus spécifique)
+//     if (JSON.stringify(cachedDataParsed) !== JSON.stringify(serverData)) {
+//       console.log("Les données ont changé. Mise à jour du cache.");
+//       localStorage.setItem('postData', JSON.stringify(serverData)); // Mise à jour du cache avec les nouvelles données
+//     } else {
+//       console.log("Aucune modification des données. Cache inchangé.");
+//     }
+
+//     return serverData;
+//   } else {
+//     // Si aucune donnée n'est en cache, on les récupère du serveur
+//     const response = await fetch(siteUrl + '/wp-json/wp/v2/posts?per_page=50&page=1');
+//     if (!response.ok) {
+//       throw new Error(`Erreur HTTP ${response.status}`);
 //     }
 
 //     const data = await response.json();
 //     localStorage.setItem('postData', JSON.stringify(data)); // Mise en cache des données
 //     console.log("Données récupérées depuis le serveur.");
 //     return data;
-
+//   }
 // }
+
+async function fetchPostData() {
+  const cachedData = localStorage.getItem('postData');
+
+    if (cachedData) {
+        console.log("Données chargées depuis le LocalStorage.");
+        return JSON.parse(cachedData);
+    }
+
+    const response = await fetch(siteUrl + '/wp-json/wp/v2/posts?per_page=50&page=1');
+    if (!response.ok) {
+        throw new Error(`Erreur HTTP ${response.status}`);
+    }
+
+    const data = await response.json();
+    localStorage.setItem('postData', JSON.stringify(data)); // Mise en cache des données
+    console.log("Données récupérées depuis le serveur.");
+    return data;
+
+}
 
 // Fonction pour récupérer les informations de l'auteur
 // async function fetchAuthorData(authorId) {
