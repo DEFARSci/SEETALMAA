@@ -40,7 +40,7 @@ $(document).ready(function () {
 
     // Initialisation du carousel de podcast mis à jour
     $('.podcast-carousel').slick({
-        slidesToShow: 4.2,
+        slidesToShow: 4,
         slidesToScroll: 1,
         arrows: true,
         dots: false,

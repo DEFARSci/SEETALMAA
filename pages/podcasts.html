@@ -1,0 +1,426 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SETALMAA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="../style/podcast.css">
+    <link rel="stylesheet" href="../style/index.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+   
+     
+   </style>
+</head>
+
+<body>
+    
+   
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+
+        <div class="container  mr-4 ml-4  ">
+            <div class="logo  d-flex justify-content-start fw-bold fs-4 text-white ">
+                SETALMAA
+            </div>
+            <div class=" content-top-menu d-flex justify-content-end  ">
+                <div class="separator"id="separator-top-menu"></div>
+                <div class="separator " id="separator-top-menu">
+                    <div class=" mt-3 fs-5  top-menu  "><strong>subscriptions</strong> </div>
+                </div>
+                <div class="separator " id="separator-top-menu">
+    
+                    <div class="mt-3  fs-5 top-menu "><strong>Search jobs</strong> </div>
+                </div>
+    
+                <div class="mt-3  fs-5  top-menu ">
+    
+                    <i class="fa-solid fa-user top-menu-user"></i>
+    
+                    <strong>Sign in</strong>
+                </div>
+    
+            </div>
+        </div>
+    </nav>
+    <!-- menu -->
+    <nav class="menu col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <!-- Div du milieu -->
+                    <!-- <div class=" news  fs-2 separator  text-white  " id="separator-menu">
+                            <a href="index.html" class=" text-decoration-none text-white link-hover">
+                                <strong>News</strong>
+                            </a>                                                                                                                                                                                                            
+                        </div>                    -->
+                    <div class=" news p-0  fs-2 text-white separator d-flex justify-content-start align-items-start link-hover link "
+                        id="separator-menu">
+                        <a href="/index.html" class=" text-decoration-none text-white  ">
+                            <strong>Accueil</strong>
+                        </a>
+                    </div>
+                    <div class=" spotlights p-0  fs-2 text-white separator d-flex justify-content-start link-hover "
+                        id="separator-menu" style="text-align: left;">
+                        <a href="/pages/lifestyle.html" class="text-decoration-none text-white  ">
+                            <strong>Maternité</strong>
+                        </a>
+                    </div>
+                    <!-- Div de gauche -->
+                    <div class=" opinions p-0  fs-2 text-white separator d-flex justify-content-start link-hover "
+                        id="separator-menu">
+                        <a href="/pages/opinion.html" id="opinion" class="text-decoration-none text-white  ">
+                            <strong>Société</strong>
+                        </a>
+                    </div>
+                    <!-- Div de droite qui doit passer en haut sur petit écran -->
+                    
+                    <div class=" focus p-0  fs-2 text-white separator d-flex justify-content-start link-hover "
+                        id="separator-menu">
+                        <a href="/pages/culture.html" class="text-decoration-none text-white ">
+                            <strong>Opinion</strong>
+                        </a>
+                    </div>
+                    <div class=" sports p-0  fs-2 text-white separator d-flex justify-content-start link-hover"
+                        id="separator-menu">
+                        <a href="/pages/sport.html" id="sport" class="text-decoration-none text-white ">
+                            <strong>Services</strong>
+                        </a>
+                    </div>
+                    
+                    <!-- <div class=" bmenu p-0 fs-2 text-white  d-flex justify-content-start  "
+                    id="">
+                    <i class="fa-solid fa-bars menu-burger "> </i>
+
+                </div> -->
+                    <div class="  logotexte col-md-12 col-12 col-lg-5 order-0 order-md-3    d-flex justify-content-end ">
+                        <div class=" divimg " id="separator-menu">
+                            
+                                <img class="img-fluid" src="/img/logo-2x_footer_only.png" alt="">
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+ 
+   
+</head>
+<body>
+   
+    
+    <div class="" style="background-color: black;">
+        
+   
+    <div class="container-article container  " style="background-color: black; border-top: 1px solid #DCDCDC;">
+        <div class="row">
+            <div class="col-md-12 col-lg-2 col-12 " style="">
+                <div class="" style="height: 7rem;">
+
+                </div>
+                <div class=" " style="height: 15rem; background-color: rgba(84, 81, 78, 0.281);"></div>
+
+                <button id="shareBtn" class="share-button hidden">
+                    <i class="fa fa-podcast" aria-hidden="true"></i> Appele podcasts
+                </button>
+                <button id="shareBtn" class="share-button hidden">
+                    <i class="fa-brands fa-spotify"></i> Spotify
+                </button>
+                <button id="shareBtn" class="share-button hidden">
+                    <i class="fa fa-download" aria-hidden="true"></i> Download
+                </button>
+            </div>
+
+            <div class="article-content col-lg-7 col-md-12 col-12  pt-3" style="border-left: 1px solid #DCDCDC;">
+                <div>
+                    <h1 class="fw-bold text-white pt-3">
+                        Revisited: Too much stuff: can we solve our addiction to consumerism? – podcast
+                    </h1>
+                </div>
+                <div class="row" style="background-color: #333333;" >
+                    <div class=" col-md-2 col-12 col-lg-2  d-flex flex-column align-items-center justify-content-center" style="background-color: #333333; " >
+                        <div class="d-flex justify-content-center align-items-center">
+                            <span class="text-white fw-bold"id="current-time" >00:00:00</span>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-12 col-lg-8  " style="height: 4rem;  " >
+                        <div id="audio-spectrum" class=" " style="background-color: #333333; position: relative;  " >
+                            <!-- <audio controls>
+                                <source src="../audio/4.mp3" type="audio/mpeg">
+                                Votre navigateur ne supporte pas la lecture audio.
+                            </audio> -->
+                        </div>
+
+                    </div>
+                    <div class=" col-md-2 col-12 col-lg-2  d-flex flex-column align-items-center justify-content-center" style="background-color: #333333; " >
+                        <div id="audio-info" class="d-flex justify-content-center align-items-center">
+                            <span class="text-white fw-bold" id="audio-duration">00:00:00</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="d-flex justify-content-center  " style="background-color: #121212; position:absolute; z-index: 2; width: 47.4rem; ">
+                    <button type="button" id="avance" class="btn  m-3 " style="background-color: #dc9934; border-radius: 100%;"><i class="fas fa-rotate-left fs-2 "></i></button>
+                    <button type="button" id="playPause" class="btn  m-3 " style="background-color: #dc9934; border-radius: 100%;"><i class="fas fa-pause fs-1"></i></button>
+                    <button type="button" id="recule" class="btn  m-3 " style="background-color: #dc9934; border-radius: 100%;"><i class="fas fa-rotate-right fs-2"></i></button>
+
+                </div>
+               <div class="" style="margin-top: 8rem; margin-right:3rem; margin-bottom: 3rem; border-bottom: 1px solid #DCDCDC;">
+                <h4 class="text-white ">
+                    In the 1960s the birthrate in Greenland was one of the highest in the world. Then it plunged. Decades later, women have finally begun speaking out about what happened
+
+                    Because of industrial action taking place by members of the National Union of Journalists at the Guardian and Observer this week, we are re-running an episode from earlier in the year.
+
+                    This episode originally ran on Friday 19 April 2024
+
+                    Bula Larsen was 14 when one day she and her friends were told to go to the hospital. Bula lived in Greenland and was Inuit like most of the population of the island, which is an autonomous territory of Denmark. At the hospital she and her friends lined up, and one by one were told to enter a room. Bula recalls how she was asked to sit on a bed with “cold metal stirrups” where, to her shock, she was fitted with an IUD, a contraceptive coil she had never asked for or agreed to have.
+
+                    Today, more than 100 women are suing the Danish government for a policy of forced contraception. Helen Pidd hears how thousands of Inuit women and girls – some aged just 13 – were fitted with coils. Many say this was done without their or their parents’ consent, and caused lasting damage.
+
+                    Celine Klint is a Danish journalist whose work on the coil scandal, along with her colleague Anne Pilegaard Petersen, revealed there had been a Danish policy to reduce Greenland’s birthrate to cut the amount of money that had to be spent on the region.
+
+                    Now the women are suing the government and an inquiry is under way. Will they get justice?
+                </h4>
+                <div class="">
+                    <img class="img-fluid" src="https://picsum.photos/885/335" alt="" loading="lazy" >
+                </div>
+                <h6 class="text-white mt-2"><i class="fa-solid fa-camera"></i>Photograph: Lucas Jackson/Reuters</h6>
+               </div>
+                
+                <!-- <input type="button" id="playPause" value="Play" />
+                <input type="button" id="btn-pause" value="Pause" disabled="disabled"/>
+                <input type="button" id="btn-stop" value="Stop" disabled="disabled" /> -->
+            </div>
+            <div class="col-md-12 col-12 col-lg-3 ">
+                <div class="" style="height: 6rem;">
+
+                </div>
+                <h3 class="fw-bold ">pub</h3>
+                <div class=" " style="height: 15rem; background-color: rgba(84, 81, 78, 0.281);"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- pub -->
+<div class="pub" style="background-color: rgba(61, 61, 60, 0.206); height: 300px;">
+</div>
+<!--fin pub  -->
+<!-- podcast -->
+<section class="container podcast-section">
+    <div class="container">
+        <div class="row" style="">
+            <div class=" col-lg-2 col-md-12 col-12  " style="">
+
+                <h2 class="
+                " >Podcasts</h2>
+            </div>
+
+            <div class="col-md-12 col-12 col-lg-9 d-flex justify-content-center "> 
+                <div class="podcast-carousel m-2">
+                    <!-- Carte de podcast 1 -->
+                    
+                        <div class="podcast-card">
+                            <div class="podcast-image"
+                                style="background-image: url('https://picsum.photos/400/100?random=1');"></div>
+                            <div class="podcast-content">
+                                <div class="podcast-category">Technologie</div>
+                                <h3 class="podcast-title">
+                                    <a href="http://" class="link-Podcast">Starmer’s reset and the assisted dying bill – Politics Weekly Westminster </a></h3>
+                            <i class="fas fa-volume-up podcast-icon"></i>
+
+                            </div>
+                            <!-- <div class="">
+                                <audio id="audioPlayer" controls>
+                                    <source src="podcasts/episode1.mp3" type="audio/mpeg">
+                                </audio>
+                            </div> -->
+                        </div>
+
+                    <!-- Carte de podcast 2 -->
+                    <div class="podcast-card">
+                        <div class="podcast-image"
+                            style="background-image: url('https://picsum.photos/400/200?random=2');"></div>
+                        <div class="podcast-content">
+                            <div class="podcast-category">Science</div>
+                            <h3 class="podcast-title"><a href="http://" class="link-Podcast">
+
+                             Is the Premier League title already Liverpool’s to lose? - Football Weekly </a></h3>
+                            <i class="fas fa-volume-up podcast-icon"></i>
+                        </div>
+                    </div>
+                    <!-- Carte de podcast 3 -->
+                    <div class="podcast-card">
+                        <div class="podcast-image"
+                            style="background-image: url('https://picsum.photos/400/200?random=3');"></div>
+                        <div class="podcast-content">
+                            <div class="podcast-category">Culture</div>
+                            <h3 class="podcast-title"><a href="http://" class="link-Podcast"> Art moderne</a></h3>
+                            <i class="fas fa-volume-up podcast-icon"></i>
+                        </div>
+                    </div>
+                    <!-- Carte de podcast 4 -->
+                    <div class="podcast-card">
+                        <div class="podcast-image"
+                            style="background-image: url('https://picsum.photos/400/200?random=4');"></div>
+                        <div class="podcast-content">
+                            <div class="podcast-category">Sport</div>
+                            <h3 class="podcast-title"><a href="pages/podcasts.html" class="link-Podcast"> Jeux Olympiques 2024 </a> </h3>
+                            <i class="fas fa-volume-up podcast-icon"></i>
+                        </div>
+                    </div>
+                    <!-- Carte de podcast 5 (pour démontrer le défilement) -->
+                    <div class="podcast-card">
+                        <div class="podcast-image"
+                            style="background-image: url('https://picsum.photos/400/200?random=5');"></div>
+                        <div class="podcast-content">
+                            <div class="podcast-category">Santé</div>
+                            <h3 class="podcast-title">Bien-être et méditation</h3>
+                            <i class="fas fa-volume-up podcast-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- fin podcast -->
+
+    <div class="footer" id="footer">
+        <div class="container p-0">
+            <div class="row">
+                <div class="col-md-6 col-lg-6  col-12">
+                    <div class="col-lg-12 ">
+                        <div class="d-flex justify-content-start">
+                            <img src="/img/logo-2x_footer_only.png" width="200" alt="" srcset="">
+                        </div>
+                        <div class="d-flex justify-content-start">
+                            <p class="text-white fs-5 "style="text-align: left;" >L’information sur le marché de la beauté et des cosmétiques en
+                                Afrique</p>
+                        </div>
+                    </div>
+                </div>
+                    <div class="col-lg-12 ">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="d-flex justify-content-start">
+                                    <p class="text-white fs-5 col-12"  style="border-bottom: 1px solid #DCDCDC; text-align: left;">A PROPOS DE SETALMAA</p>
+                                    </p>
+                                </div>
+                                <div class="">
+                                    <div class="d-flex justify-content-start">
+                                        <p class="text-white fs-5" style="text-align: left;">
+                                            <a href="#" class="text-decoration-none text-white">A propos</a><br>
+                                            <a href="#" class="text-decoration-none text-white">Les chroniques</a><br> 
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start" >
+                                    <p class="text-white fs-5 col-12" style="border-bottom: 1px solid #DCDCDC; text-align: left;">NOUS JOINDRE</p>
+                                    </p>
+                                </div>
+                                <div class="">
+                                    <div class="d-flex justify-content-start">
+                                        <p class="text-white fs-5"><a href="#" class="text-decoration-none text-white">
+                                                Contact</a> </p>
+                                    </div>
+
+                                </div>
+                                <div class="d-flex justify-content-start">
+                                    <p class="text-white fs-5 col-12"style="border-bottom: 1px solid #DCDCDC; text-align: left;">NOUS SUIVRE</p></p>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-lg-1 col-1 m-1">
+                                        <a href="http://www.facebook.com"class="text-decoration-none text-white" >
+                                            <i class="fa-brands fa-facebook-f fa-2x "></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-1 col-1 m-1">
+                                        <a href="http://instagram.col" class="text-decoration-none text-white">
+                                            <i class="fa-brands fa-instagram fa-2x "></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-1 col-1 m-1">
+                                        <a href="http://linkedin.com" class="text-decoration-none text-white">
+                                            <i class="fa-brands fa-linkedin-in fa-2x"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-1 col-1 m-1">
+                                        <a href="http://twitter.com" class="text-decoration-none text-white">
+                                            <i class="fa-brands fa-x-twitter fa-2x"></i>
+                                        </a>
+                                    </div>
+
+                                    <div class="col-lg-1 col-1 m-1">
+                                        <a href="http://youtube.com" class="text-decoration-none text-white">
+                                            <i class="fa-brands fa-youtube fa-2x"></i>
+                                        </a>
+                                    </div>
+                                   
+                                    
+                                </div>
+                            </div>
+                            
+
+                            <div class="col-lg-2">
+                                <div class="d-flex justify-content-start" >
+                                    <p class="text-white fs-5 col-12 "style="border-bottom: 1px solid #DCDCDC; text-align: left; ">NOS PRODUITS</p>
+
+                                </div>
+                                <div class="">
+                                    <div class="d-flex justify-content-start">
+                                        <p class="text-white fs-5" style="text-align: left;">
+                                            <a href="#" class="text-decoration-none text-white">Rapport 2020</a><br>
+                                            <a href="#" class="text-decoration-none text-white">Rapport 2021</a><br> 
+                                            <a href="#" class="text-decoration-none text-white">Livre Beauté</a><br> 
+                                            <a href="#" class="text-decoration-none text-white">Services</a><br> 
+                                            <a href="#" class="text-decoration-none text-white">Shop</a><br>
+                                            <a href="#" class="text-decoration-none text-white">African Beauty Forum</a><br>
+                                            <a href="#" class="text-decoration-none text-white">L’Annuaire</a>
+                                        </p>
+                                    </div>
+                                
+                                   
+                                </div>
+
+                            </div>
+                            <div class="col-md-8 col-lg-7 col-12 col-sm-6">
+                                <img src="/img/banner_footer.jpg" alt="" srcset="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            <button id="topButton" class="top-button col-1 " onclick="scrollToTop()"><i
+                    class="fa-solid fa-angles-up"></i></button>
+            <!-- fin pub -->
+            <footer class="footer">
+                &copy; 2024 <span>SETALMAA Media </span> | Tous droits réservés
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.3.7/wavesurfer.min.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js@7"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Slick -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- Slick Carousel -->
+    <script src="../script/podcast.js" defer></script>
+    <!-- <script src="../script/index.js"></script> -->
+</body>
+</html>
