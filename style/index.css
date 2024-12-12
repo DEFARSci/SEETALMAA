@@ -1999,6 +1999,7 @@ img{
 .link-Podcast{
     text-decoration: none;
     color: #fff;
+    cursor: pointer;
 }
 .link-Podcast:hover{
     text-decoration: underline;

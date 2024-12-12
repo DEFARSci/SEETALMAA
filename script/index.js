@@ -222,19 +222,6 @@ async function fetchCategoryName(categoryId) {
   console.log(`Catégorie ${categoryId} récupérée depuis le serveur.`);
     return category && category.name ? category.name : "Inconnue";
 
-  // try {
-  //     const response = await fetch(`${siteUrl}/wp-json/wp/v2/categories/${categoryId}`);
-  //     if (!response.ok) {
-  //         console.error(`Erreur de récupération de la catégorie : ${response.status} - ${response.statusText}`);
-  //         return null;
-  //     }
-      
-  //     const categoryData = await response.json();
-  //     return categoryData && categoryData.name ? categoryData.name : "Inconnue";
-  // } catch (error) {
-  //     console.error("Erreur lors de la récupération des catégories :", error);
-  //     return null;
-  // }
 }
 
   
@@ -323,7 +310,7 @@ function setupLinkRedirection(linkId) {
         console.log(`ID du post cliqué : ${slug}`);
 
         // Rediriger vers une URL basée sur le slug
-        window.location.href = `pages/article.html?slug=${slug}`; // Modifiez ce chemin si nécessaire
+        window.location.href = `../pages/article.html?slug=${slug}`; // Modifiez ce chemin si nécessaire
     });
 }
 
@@ -528,4 +515,20 @@ function loadPodcastList() {
 });
 }
 // loadPodcastList();
+
+
+const linkElemenets=document.getElementsByClassName('link-Podcast');
+  // const linkElemenet=document.getElementsByClassName(linkid);
+ 
+// Parcourir tous les éléments ayant la classe "link-Podcast"
+Array.from(linkElemenets).forEach(link => {
+  link.addEventListener('click', () => {
+      const title = link.textContent || link.innerText; // Récupère le texte du lien
+
+      localStorage.setItem('titleText', title);
+      window.location.href = '/pages/podcasts.html';
+      
+  });
+});
+
 

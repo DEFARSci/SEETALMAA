@@ -127,3 +127,257 @@ p{
   .comment:last-child {
     border-bottom: none;
   }
+  .responsive-image {
+   
+    width: 20rem !important; /* Adapte l'image à la largeur du conteneur */
+    height: 14rem !important; /* Maintient le ratio d'aspect */
+    max-width: 100%; /* Empêche l'image de dépasser la largeur de l'écran */
+    max-height: max-content;
+}
+  #tagBtn{ 
+    display: inline-block; /* Ajuste la taille à son contenu */
+    white-space: nowrap;  /* Empêche le texte de se couper sur plusieurs lignes */
+    background-color: #000000;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 25px;
+    margin-bottom: 10px;
+}
+#tagBtn:hover {
+    background-color: #ffffff;
+    color: #000000;
+    
+}
+.podcast-content{
+  height: 12rem !important;
+}
+
+.podcast-content-lect{
+  height: 12rem !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+#podcast-lect{
+  background: #ffffff !important;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 7px;
+
+  /* width: 0px; 4 cards par ligne avec marge */
+
+  /* width: calc(25% - 30px); 4 cards par ligne avec marge */
+  height: 390px;
+}
+.imgPod{
+  
+  height: 227px ;
+  width: 227px;
+}
+.link-Podcastart{
+  text-decoration: none;
+  color: #fff;
+}
+.link-Podcastart:hover{
+  text-decoration: underline;
+}
+
+
+
+@media (min-width: 412px) and (max-width:767px) {
+  body {
+      /* background-color: #1a4a98; */
+  }
+
+  .responsive-image {
+    width: 100% !important; /* Adapte l'image à la largeur du conteneur */
+    height: 100%; /* Maintient le ratio d'aspect */
+    max-width: 100%; /* Empêche l'image de dépasser la largeur de l'écran */
+    max-height: max-content;
+}
+
+  .divleft{
+    order: 2;
+  }
+
+  .counterleft{
+    background-color: #4f4f50 !important;
+    order: -1;
+  }
+  .counterleft span{
+    font-size: 15px !important;
+    /* text-align: left !important; */
+  }
+  .counterright{
+    background-color: #4f4f50 !important;
+    order: -1;
+  }
+  .counterright span{
+    font-size: 15px !important;
+    /* text-align: left !important; */
+  }
+  .divcontrole{
+    padding: 0px !important;
+    margin: 0px !important;
+    width: 96% !important;
+  }
+  .divcontent{
+    margin: 0px !important;
+    margin-top: 6rem !important;
+  }
+  .divcontent h4{
+    font-size: 18px !important;
+  }
+  .divimgpod img{
+    width: 100% !important;
+    height: 15rem!important;
+  }
+
+
+  .pubPodcast{
+    display: none;
+  }
+  /* .podcast-image img{
+    width: 23.3rem;
+  } */
+ 
+}
+
+@media (min-width: 290px) and (max-width:411px) {
+  body {
+      
+      /* background-color: #6b0f0f; */
+  }
+  .responsive-image {
+    
+    width: 100% !important; /* Adapte l'image à la largeur du conteneur */
+    height: 100%; /* Maintient le ratio d'aspect */
+    max-width: 100%; /* Empêche l'image de dépasser la largeur de l'écran */
+    max-height: max-content;
+}
+
+  .divleft{
+    order: 2;
+  }
+
+  .counterleft{
+    background-color: #4f4f50 !important;
+    order: -1;
+  }
+  .counterleft span{
+    font-size: 15px !important;
+    /* text-align: left !important; */
+  }
+  .counterright{
+    background-color: #4f4f50 !important;
+    order: -1;
+  }
+  .counterright span{
+    font-size: 15px !important;
+    /* text-align: left !important; */
+  }
+  .divcontrole{
+    padding: 0px !important;
+    margin: 0px !important;
+    width: 94% !important;
+  }
+  .divcontent{
+    margin: 0px !important;
+    margin-top: 6rem !important;
+  }
+  .divcontent h4{
+    font-size: 18px !important;
+  }
+  .divimgpod img{
+    width: 100% !important;
+    height: 15rem!important;
+  }
+
+  .custom-buttons > button {
+    display: inline-block !important;
+    /* background-color: #4f4f50 !important; */
+    white-space: wrap !important;  /* Empêche le texte de se couper sur plusieurs lignes */
+    flex: 1 1 calc(50% - 8px) !important; /* Deux boutons par ligne avec espace */
+    max-width: calc(50% - 8px) !important; 
+    font-size: 12px;
+}
+  .pubPodcast{
+    display: none;
+  }
+  /* .podcast-image img{
+    width: 15.8rem;
+  } */
+ 
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  body {
+    /* background-color: #1a4a98; */
+}
+
+.responsive-image {
+  width: 100% !important; /* Adapte l'image à la largeur du conteneur */
+  height: 100%; /* Maintient le ratio d'aspect */
+  max-width: 100%; /* Empêche l'image de dépasser la largeur de l'écran */
+  max-height: max-content;
+}
+
+.divleft{
+  order: 2;
+}
+
+.counterleft{
+  background-color: #4f4f50 !important;
+  order: -1;
+}
+.counterleft span{
+  font-size: 15px !important;
+  /* text-align: left !important; */
+}
+.counterright{
+  background-color: #4f4f50 !important;
+  order: -1;
+}
+.counterright span{
+  font-size: 15px !important;
+  /* text-align: left !important; */
+}
+.divcontrole{
+  padding: 0px !important;
+  margin: 0px !important;
+  max-width: 92% !important;
+}
+.divcontent{
+  margin: 0px !important;
+  margin-top: 6rem !important;
+}
+.divcontent h4{
+  font-size: 18px !important;
+}
+.divimgpod img{
+  width: 100% !important;
+  height: 15rem!important;
+}
+
+
+.pubPodcast{
+  display: none;
+}
+/* .podcast-image img{
+  width: 23.3rem;
+} */
+
+}
+
+@media (min-width: 992px) and (max-width: 1399px) {
+  body{
+    /* background-color: aqua; */
+  }
+  .divcontrole{
+    padding: 0px !important;
+    margin: 0px !important;
+    width: 50% !important;
+  }
+}
+
