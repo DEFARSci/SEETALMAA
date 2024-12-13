@@ -178,11 +178,18 @@ p{
 .link-Podcastart{
   text-decoration: none;
   color: #fff;
+  
 }
 .link-Podcastart:hover{
   text-decoration: underline;
 }
-
+.podcast-image {
+  display: flex;
+  align-items: flex-end; /* Positionne l'image en bas */
+  justify-content: center; /* Centre horizontalement (optionnel) */
+  /* height: 200px; Définissez une hauteur pour le conteneur */
+  /* background-color: #1818db; */
+}
 
 
 @media (min-width: 412px) and (max-width:767px) {
@@ -368,6 +375,11 @@ p{
   width: 23.3rem;
 } */
 
+
+.podcast-content{
+  height: 13rem !important;
+}
+
 }
 
 @media (min-width: 992px) and (max-width: 1399px) {
@@ -379,5 +391,12 @@ p{
     margin: 0px !important;
     width: 50% !important;
   }
+
+  /* .podcast-content{
+    height: 1rem !important;
+  } */
 }
 
+/* .podcast-content{
+  height: 20rem !important;
+} */

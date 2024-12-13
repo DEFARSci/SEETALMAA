@@ -33,40 +33,47 @@ async function fetchPageData() {
 
 // Fonction pour récupérer les données des posts
 async function fetchPostData() {
-    const controller = new AbortController(); // Utilisé pour le timeout
-    const timeoutId = setTimeout(() => controller.abort(), 15000); // Timeout de 5 secondes
-
-    try {
-        const response = await fetch(`${siteUrl}/wp-json/wp/v2/posts?per_page=100&page=1`, {
-            signal: controller.signal
-        });
-
-        if (!response.ok) {
-            throw new Error(`Erreur HTTP ${response.status}`);
-        }
-
-        return response.json(); // Inutile d'utiliser await ici
-    } catch (error) {
-        if (error.name === 'AbortError') {
-            throw new Error('La requête a expiré après 5 secondes');
-        }
-        throw new Error(`Erreur de la requête : ${error.message}`);
-    } finally {
-        clearTimeout(timeoutId); // Nettoyage du timeout
-    }
-}
+    const cachedData = localStorage.getItem('postData');
+  
+      if (cachedData) {
+          console.log("Données chargées depuis le LocalStorage.");
+          return JSON.parse(cachedData);
+      }
+  
+      const response = await fetch(siteUrl + '/wp-json/wp/v2/posts?per_page=50&page=1');
+      if (!response.ok) {
+          throw new Error(`Erreur HTTP ${response.status}`);
+      }
+  
+      const data = await response.json();
+      localStorage.setItem('postData', JSON.stringify(data)); // Mise en cache des données
+      console.log("Données récupérées depuis le serveur.");
+      return data;
+  
+  }
 
 
 
 // Fonction pour récupérer les informations de l'image à la une
 async function fetchFeaturedMedia(mediaId) {
-  const response = await fetch(`${siteUrl}/wp-json/wp/v2/media/${mediaId}`);
-  if (!response.ok) {
-      throw new Error(`Erreur HTTP ${response.status} lors de la récupération de l'image`);
+    const cachedUrl = localStorage.getItem(`image_${mediaId}`);
+    if (cachedUrl) {
+        console.log(`Image ${mediaId} chargée depuis le LocalStorage.`);
+        return cachedUrl;
+    }
+  
+    const response = await fetch(`${siteUrl}/wp-json/wp/v2/media/${mediaId}`);
+    if (!response.ok) {
+        throw new Error(`Erreur HTTP ${response.status}`);
+    }
+  
+    const media = await response.json();
+    const imageUrl = media.source_url;
+  
+    localStorage.setItem(`image_${mediaId}`, imageUrl); // Mise en cache de l'URL
+    console.log(`Image ${mediaId} récupérée depuis le serveur.`);
+    return imageUrl;
   }
-  const mediaData = await response.json();
-  return mediaData.source_url;
-}
 
   
 

@@ -13,6 +13,7 @@ const mostView=['most_1','most_2','most_3','most_4','most_5','most_6','most_7','
 // RÃ©cupÃ©ration des donnÃ©es de l'article
 
 async function fetchPageData() {
+    
   try {
       
 
@@ -32,23 +33,46 @@ async function fetchPageData() {
 
 // Fonction pour récupérer les données des posts
 async function fetchPostData() {
-  const response = await fetch(siteUrl+'/wp-json/wp/v2/posts?per_page=100&page=1');
-  if (!response.ok) {
-      throw new Error(`Erreur HTTP ${response.status}`);
+    const cachedData = localStorage.getItem('postData');
+  
+      if (cachedData) {
+          console.log("Données chargées depuis le LocalStorage.");
+          return JSON.parse(cachedData);
+      }
+  
+      const response = await fetch(siteUrl + '/wp-json/wp/v2/posts?per_page=50&page=1');
+      if (!response.ok) {
+          throw new Error(`Erreur HTTP ${response.status}`);
+      }
+  
+      const data = await response.json();
+      localStorage.setItem('postData', JSON.stringify(data)); // Mise en cache des données
+      console.log("Données récupérées depuis le serveur.");
+      return data;
+  
   }
-  return await response.json();
-}
 
 
 // Fonction pour récupérer les informations de l'image à la une
 async function fetchFeaturedMedia(mediaId) {
-  const response = await fetch(`${siteUrl}/wp-json/wp/v2/media/${mediaId}`);
-  if (!response.ok) {
-      throw new Error(`Erreur HTTP ${response.status} lors de la récupération de l'image`);
+    const cachedUrl = localStorage.getItem(`image_${mediaId}`);
+    if (cachedUrl) {
+        console.log(`Image ${mediaId} chargée depuis le LocalStorage.`);
+        return cachedUrl;
+    }
+  
+    const response = await fetch(`${siteUrl}/wp-json/wp/v2/media/${mediaId}`);
+    if (!response.ok) {
+        throw new Error(`Erreur HTTP ${response.status}`);
+    }
+  
+    const media = await response.json();
+    const imageUrl = media.source_url;
+  
+    localStorage.setItem(`image_${mediaId}`, imageUrl); // Mise en cache de l'URL
+    console.log(`Image ${mediaId} récupérée depuis le serveur.`);
+    return imageUrl;
   }
-  const mediaData = await response.json();
-  return mediaData.source_url;
-}
 
 // Fonction pour afficher le titre
 async function displayTitle(data, titleId, categoriesId = null, numPost) {

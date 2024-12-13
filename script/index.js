@@ -59,7 +59,7 @@ async function fetchPageData() {
       console.error('Erreur lors de la récupération des données:', error);
     }
     
-   
+   await updatePostData();
   }
   
   // Appel à la fonction principale une fois que la page est prête
@@ -130,6 +130,26 @@ async function fetchPostData() {
     console.log("Données récupérées depuis le serveur.");
     return data;
 
+}
+async function updatePostData() {
+  try {
+      const response = await fetch(siteUrl + '/wp-json/wp/v2/posts?per_page=50&page=1');
+      if (!response.ok) {
+          throw new Error(`Erreur HTTP ${response.status}`);
+      }
+
+      const data = await response.json();
+      const cachedData = localStorage.getItem('postData');
+
+      if (!cachedData || JSON.stringify(JSON.parse(cachedData)) !== JSON.stringify(data)) {
+          localStorage.setItem('postData', JSON.stringify(data));
+          console.log("Données mises à jour dans le cache.");
+      } else {
+          console.log("Aucune mise à jour nécessaire pour les données.");
+      }
+  } catch (error) {
+      console.error("Erreur lors de la mise à jour des données :", error);
+  }
 }
 
 // Fonction pour récupérer les informations de l'auteur
