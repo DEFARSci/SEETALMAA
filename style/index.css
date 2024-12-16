@@ -1280,9 +1280,9 @@ img{
 #article_0{
     display: none;
 }
-/* #title_4,#title_5,#title_6,#title_7,#title_8,#title_9,#title_10,#title_11,#title_12,#title_13,#title_14,#title_15,#title_16,#title_17,#title_18,#title_19,#title_20,#title_21,#title_22,#title_23,#title_24{
-    font-size: 14px!important;
-} */
+#title_4,#title_5,#title_6,#title_7,#title_8,#title_9,#title_10,#title_11,#title_12,#title_13,#title_14,#title_15,#title_16,#title_17,#title_18,#title_19,#title_20,#title_21,#title_22,#title_23,#title_24{
+    font-size: 12px!important;
+}
 
 /* new in focus */
 .cardFocus{
