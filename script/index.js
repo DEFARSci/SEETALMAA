@@ -14,7 +14,7 @@ const lifestylebttn=document.getElementById('lifestyle');
 
 
 
-const Headlines=['0','1','2','3','4','55','6','7','8','9','10','11','12','13'];
+const Headlines=['0','1','2','3','4','5','6','7','8','9','10','11','12','13'];
 const News_in_focus=['14','15','16'];
 const Spotlight=['17','18','19','20','21','22','23','24'];
 const Opinion=['25','26','27','28','29','30'];
@@ -45,7 +45,9 @@ async function fetchPageData() {
       // await Promise.all([17, 18, 19, 20, 21, 22, 23, 24].map(index => displayImage(data, `img_${index}`, index)));
   
       Opinion.forEach((item, index) => displayTitle(data, `title_${item}`,`categories_${item}`, 25 + index));
-      await displayContent(data, 'article_25', 25);
+      await Promise.all([25,29].map(index => displayContent(data, `article_${index}`, index)));
+
+      // await displayContent(data, 'article_25', 25);
       // await Promise.all([25, 26, 27, 28, 29, 30].map(index => displayImage(data, `img_${index}`, index)));
   
       sport.forEach((item, index) => displayTitle(data, `title_${item}`,`categories_${item}`, 31 + index));

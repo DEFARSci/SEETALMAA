@@ -606,7 +606,7 @@ img{
 
 
   /* Style pour les petits écrans (mobile) */
-  @media (min-width: 412px) and (max-width:767px) {
+  @media (min-width: 376px) and (max-width:767px) {
     body {
         font-size: 16px !important;
         /* background-color: #333; */
@@ -808,16 +808,13 @@ img{
     height: 374px;
 }
 /* moyenne */
-.img_2 {
-    width: 135px;
-    height: 81px;
+.img_2,.img_3 {
+    width: 9rem;
+    height: 80px;
    
 }
 /* petite */
-.img_3 {
-    width: 135px;
-    height: 81px;
-}
+
 .img_2_rond{
     width: 150px;
     height: 150px;
@@ -847,10 +844,10 @@ img{
 /* new in focus */
 .cardFocus{
     /* background-color: #622205; */
-    margin-top: 0px !important;
-    padding-left: 1px !important;
+    margin: 0px !important;
+    padding-left: 12px !important;
     /* margin-left: 0px !important; */
-    
+    /* width: 59% !important; */
 }
 .contentcardfocus{
     padding-right: 0px !important;
@@ -884,10 +881,7 @@ img{
     margin: 0px !important;
 }
 
-#categories_24,#title_24,#categories_23,#title_23{
-    /* color: white !important; */
-    margin-left: 10px !important;
-}
+
 .spotlightCard{
     /* background-color: #041F4A !important; */
     margin-left: 10px;
@@ -895,10 +889,11 @@ img{
 .cardSpotlight{
     padding: 0px !important;
 }
+
 .cardSpotlighttext{
-    /* background-color: red !important; */
-    margin-left: 20px !important;
-    /* padding: 0px !important; */
+    /* background-color: rgb(68, 5, 5) !important; */
+    margin-left: 0px !important;
+    padding: 0px !important;
 
 }
 /* Opinion */
@@ -1073,10 +1068,10 @@ img{
 }
 
   }
-  @media (min-width: 290px) and (max-width:411px) {
+  @media (min-width: 321px) and (max-width:375px) {
     body {
         
-        /* background-color: #333; */
+        /* background-color: #cc1616; */
     }
     nav{
         /* background-color: #000000; */
@@ -1249,9 +1244,8 @@ img{
     width: 100%;
     height: 25rem;
   }
-/* moyenne */
-.img_2 {
-    width: 6rem;
+  .img_2 {
+    width: 6.5rem;
     height: 5.06rem;
   }
 
@@ -1280,21 +1274,35 @@ img{
 #article_0{
     display: none;
 }
-#title_4,#title_5,#title_6,#title_7,#title_8,#title_9,#title_10,#title_11,#title_12,#title_13,#title_14,#title_15,#title_16,#title_17,#title_18,#title_19,#title_20,#title_21,#title_22,#title_23,#title_24{
-    font-size: 12px!important;
-}
+/* #title_1,#title_2,#title_3,#title_4,#title_5,#title_6,#title_7,#title_8,#title_9,
+#title_10,#title_11,#title_12,#title_13,#title_15,#title_16,#title_18,#title_19,
+#title_20,#title_21,#title_22,#title_23,#title_24,#title_26,#title_27,#title_28,
+#title_29,#title_30,#title_32,#title_33,#title_34,#title_35,#title_36,
+#title_37,#title_38,#title_39,#title_40,#title_41,#title_42,#title_43,#title_44,
+#title_45,#title_46{
+    font-size: 13px!important;
+} */
+/* #categories_1,#categories_2,#categories_3,#categories_4,#categories_5,#categories_6,
+#categories_7,#categories_8,#categories_9,#categories_10,#categories_11,#categories_12,
+#categories_13,#categories_15,#categories_16,#categories_18,#categories_19,#categories_20,
+#categories_21,#categories_22,#categories_23,#categories_24,#categories_26,#categories_27,
+#categories_28,#categories_29,#categories_30,#categories_32,#categories_33,#categories_34,
+#categories_35,#categories_36,#categories_37,#categories_38,#categories_39,#categories_40,
+#categories_41,#categories_42,#categories_43,#categories_44,#categories_45,#categories_46{
+    font-size: 13px!important;
+} */
 
 /* new in focus */
 .cardFocus{
     /* background-color: #622205; */
-    margin-top: 0px !important;
+    margin: 0px !important;
     padding-left: 0px !important;
-    width: 10.7rem !important;
+    /* width: 10.7rem !important; */
     /* margin-left: 0px !important; */
-    
+    /*  */
 }
 .contentcardfocus{
-    padding-right: 0px !important;
+    /* padding-right: 0px !important; */
 }
 
 /*Spotlight */
@@ -1324,10 +1332,14 @@ img{
 .imgSpotlight{
     margin: 0px !important;
 }
+.text-content{
+    padding: 0px !important; 
+     margin: 0px !important;
+}
 
-#categories_24,#title_24,#categories_23,#title_23{
-    /* color: white !important; */
-    margin-left: 10px !important;
+.title_22{
+    /* background-color: #007BFF; */
+    padding-left: 0px ;
 }
 .spotlightCard{
     /* background-color: #041F4A !important; */
@@ -1336,10 +1348,18 @@ img{
 .cardSpotlight{
     padding: 0px !important;
 }
-.cardSpotlighttext{
+
+.cardSpotlighttex{
     /* background-color: red !important; */
-    margin-left: 20px !important;
-    /* padding: 0px !important; */
+    margin-left: 0px !important;
+    padding: 4px !important;
+
+}
+.cardSpotlighttex2{
+    /* background-color: red !important; */
+    margin-left: 0px !important;
+    padding-left: 0px !important;
+   
 
 }
 /* Opinion */
@@ -1469,7 +1489,433 @@ img{
 }
 
 
+
   }
+  @media (min-width: 290px) and (max-width:320px) {
+    body {
+        
+        /* background-color: #333; */
+    }
+    nav{
+        /* background-color: #000000; */
+        padding: 0;
+        margin: 0   ;
+        display: flex;
+        justify-content: flex-end;
+    }
+    #separator-top-menu,
+    .logo {
+      display: none !important;
+    }
+    .top-menu{
+        margin: 0;  
+    }
+    .content-top-menu{
+      width:100%  !important;
+        display: flex;
+        justify-content: flex-end !important;
+    }
+    .top-menu i {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+      .top-menu strong {
+        font-size: var(--font-medium);
+      }
+    .navbar{
+        width: 100%;
+
+    }
+   
+    
+    #separator-menu div a {
+        font-size: var(--font-small);
+        margin: var(--padding-small) !important;
+        padding: var(--padding-small) !important;
+      }
+      #separator-menu div,
+      #separator-menu {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+   
+/* menue */
+.menu{
+
+    padding-top: 15px!important;
+}
+.logotexte {
+    order: -1 !important;
+    padding-bottom: 0.5rem;
+  }
+.news{
+    /* background-color: #622205; */
+    width: 50px !important;
+    height: 20px; 
+
+}
+.news a{
+    margin-top: -8px;
+    font-size: 11px;
+    padding-left: 3px !important;
+    padding-top: 3px !important;
+    margin-left: 0px !important;
+}
+.opinions{
+    /* background-color: #622205; */
+    width: 50px !important;
+    height: 20px;  
+    
+}
+.opinions a{
+    margin-top: -8px;
+    font-size: 11px;
+    padding-left: 3px !important;
+    padding-top: 3px !important;
+    margin-left: 0px !important;
+
+}
+.sports{
+    /* background-color: #622205; */
+    border-right: none !important;
+    /* display: none; */
+    width: 50px !important;
+    height: 20px;
+}
+.sports a{
+    text-align: left !important;
+   margin-top: -8px;
+   font-size: 11px;
+   padding-left: 3px !important;
+    padding-top: 3px !important;
+    margin-left: 0px !important;
+}
+.focus{
+    /* background-color: #622205; */
+    
+    width: 50px !important;
+    height: 20px;
+}
+.focus a{
+   margin-top: -8px;
+   font-size: 11px;
+   padding-left: 3px !important;
+    padding-top: 3px !important;
+    margin-left: 0px !important;
+}
+.spotlights{
+    /* background-color: #622205; */
+    /* border-right: none !important; */
+    width: 65px !important;
+    height: 20px;
+}
+.spotlights a{
+   margin-top: -8px;
+   font-size: 11px;
+   padding-left: 3px !important;
+    padding-top: 3px !important;
+    margin-left: 0px !important;
+}
+.spotlightsm{
+    border-right: none !important;
+
+    width: 75px !important;
+    height: 20px;
+}
+.bmenu{
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    /* background-color: #622205; */
+    border-right: none !important;
+    width: 30px !important;
+    height: 20px;
+    padding-left: 10px !important;
+}
+.menu-burger-container {
+    width: 6rem;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5rem !important;
+    padding-bottom: 1.25rem !important;
+  }
+  .menu-burger {
+    font-size: 1.25rem !important;
+    color: #052962;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    text-align: center;
+    padding: 0.25rem !important;
+    margin: var(--padding-small) 0;
+  }
+  .divimg {
+    width: 6.25rem !important;
+    height: 2.125rem !important;
+  }
+    /* Les images */
+
+    /* pub */
+.imgpub{
+    width: 195px;
+    height: 112px;
+
+}
+/* grande */
+#img{
+    order: -1;
+}
+.img_1 {
+    width: 100%;
+    height: 25rem;
+  }
+/* moyenne */
+.img_2 {
+    width: 6.5rem;
+    height: 5.06rem;
+  }
+
+/* petite */
+.img_3 {
+    width: 6.5rem;
+    height: 5.06rem;
+  }
+  .img_2_rond {
+    width: 9.375rem;
+    height: 9.375rem;
+    margin-left: 3.125rem;
+    margin-top: 5rem;
+  }
+.card_1{
+    display: flex;
+}
+.sous_card_1{
+    margin-left: 10px;
+}
+.consultesFocusInNew{
+
+    padding-left: 6px !important;
+}
+/* Headline */
+#article_0,#article_29{
+    display: none;
+}
+/* #title_1,#title_2,#title_3,#title_4,#title_5,#title_6,#title_7,#title_8,#title_9,
+#title_10,#title_11,#title_12,#title_13,#title_15,#title_16,#title_18,#title_19,
+#title_20,#title_21,#title_22,#title_23,#title_24,#title_26,#title_27,#title_28,
+#title_29,#title_30,#title_32,#title_33,#title_34,#title_35,#title_36,
+#title_37,#title_38,#title_39,#title_40,#title_41,#title_42,#title_43,#title_44,
+#title_45,#title_46{
+    font-size: 13px!important;
+} */
+/* #categories_1,#categories_2,#categories_3,#categories_4,#categories_5,#categories_6,
+#categories_7,#categories_8,#categories_9,#categories_10,#categories_11,#categories_12,
+#categories_13,#categories_15,#categories_16,#categories_18,#categories_19,#categories_20,
+#categories_21,#categories_22,#categories_23,#categories_24,#categories_26,#categories_27,
+#categories_28,#categories_29,#categories_30,#categories_32,#categories_33,#categories_34,
+#categories_35,#categories_36,#categories_37,#categories_38,#categories_39,#categories_40,
+#categories_41,#categories_42,#categories_43,#categories_44,#categories_45,#categories_46{
+    font-size: 13px!important;
+} */
+
+/* new in focus */
+.cardFocus{
+    /* background-color: #622205; */
+    margin-top: 0px !important;
+    padding-left: 0px !important;
+    width: 10.7rem !important;
+    /* margin-left: 0px !important; */
+    
+}
+.contentcardfocus{
+    padding-right: 0px !important;
+}
+.img_content{
+    
+    margin-right: 9px !important;
+}
+/*Spotlight */
+#article_17,#article_22{
+    display: none;
+}
+#article_23{
+    display: none;
+}
+#article_24{
+    display: none;
+}
+#categories_18{
+    margin-top: 0px !important;
+   
+}
+.containeSpotlight{
+    margin-left: 0px !important;
+    
+}
+.containeSpotlight div{
+    border-left:0px !important;
+    margin-left: 0px !important;
+    padding: 0px !important;
+
+}
+.imgSpotlight{
+    margin: 0px !important;
+}
+.title_22{
+    /* background-color: #007BFF; */
+    padding-left: 16px ;
+}
+/* #categories_24,#title_24,#categories_23,#title_23{
+    /* color: white !important; */
+    /* margin-left: 10px !important; */
+} 
+.spotlightCard{
+    /* background-color: #041F4A !important; */
+    margin-left: 10px;
+}
+.cardSpotlight{
+    padding: 0px !important;
+}
+.cardSpotlighttex{
+    /* background-color: red !important; */
+    margin-left: 0px !important;
+    padding-left: 24px !important;
+    /* padding: 0px !important; */
+}
+
+.cardSpotlighttex2{
+    /* background-color: red !important; */
+    margin-left: 0px !important;
+    padding-left: 24px !important;
+
+}
+/* Opinion */
+.cardImgOpt{
+    /* background-color: #0056b3 !important; */
+    /* padding: 1px !important; */
+    margin: 0px !important;
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+    padding-right: 0px !important;
+    padding-left: 8px !important;
+}
+.containerOpinion{
+    height: auto !important;
+}
+#article_25{
+    display: none;
+}
+.cardOpinion{
+    height: auto !important;
+}
+
+/*Sport */
+.cardSport{
+    height: auto !important;
+    
+    /* background-color: #052962; */
+}
+.cardSport2{
+    height: auto !important;
+    border-left:0px !important;
+    margin-left: 0px !important;
+    padding: 0px !important;
+    /* background-color: #052962; */
+}
+.cardSporttext{
+    margin: 0px !important;
+    padding-left: 9px !important;
+}
+.cardSport1{
+    height: auto !important;
+}
+.cardSportimg{ 
+    border-left:0px !important;
+    margin-left: 0px !important;
+    padding: 0px !important;
+    /* background-color: #052962; */
+}
+#title_42{
+    font-size: medium !important;
+}
+.cardSportimg img{
+    
+    border:0px !important;
+    margin-left: 0px !important;
+    padding: 0px !important;
+    /* background-color: #052962; */
+}
+.cardSport3{ 
+    border-left:0px !important;
+    margin-left: 0px !important;
+    padding: 0px !important;
+    /* background-color: #052962; */
+}
+#article_31{
+    display: none;
+}
+.button{
+    margin-bottom: 10px !important;
+}
+/* most popular */
+.Most_popular{
+   
+    border-left:solid 1px #DCDCDC;
+    border-right:solid 1px #DCDCDC;
+    border-top:solid 1px #DCDCDC;
+    
+}
+.Most_popular_ligne{
+    /* border-left:solid 1px #DCDCDC; */
+    border-right:solid 1px #DCDCDC;
+    border-bottom:solid 1px #DCDCDC;
+    /* padding-left: 10px; */
+    height: 5rem;
+    
+
+  
+}
+.Most_popular_ligne_head{
+    border-right:solid 1px #DCDCDC;
+    border-bottom:solid 1px #DCDCDC;
+    border-top:solid 1px #DCDCDC;
+
+    padding-left: 10px;
+    height: 5rem;
+   
+}
+.most_popular_ligne_head_text{
+    color: #00000048;
+}
+.news-number {
+    font-size: 4rem;
+    font-weight: bold;
+    line-height: 1;
+    margin: 0;
+}
+.news-item h4 {
+    font-size: 16px;
+    margin-left: 40px !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
+.conternerTextMost{
+    padding: 0px !important;
+}
+.podcast{
+    /* display: none; */
+    
+}
+
+#most_1,#most_2,#most_3,#most_4,#most_5,#most_6,#most_7,#most_8,#most_9,#most_10,#most_11,#most_12,#most_13,#most_14,#most_15,#most_16,#most_17,#most_18,#most_19,#most_20{
+    display: block !important;
+}
+/* pub */
+.pub{
+    height: 150px !important;
+}
+
+
+  
 
 /* Écrans moyens à grands (Desktop) */
 @media (min-width: 768px) and (max-width: 991px) {
@@ -1697,14 +2143,6 @@ img{
 
 
 
-@media (min-width: 1200px) {
-   
-}
-
-@media (min-width: 1400px) {
-  
-    
-}
 
 /* Grand écran (XL) */
 @media (min-width: 992px) and (max-width: 1399px) {
