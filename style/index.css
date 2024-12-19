@@ -770,7 +770,6 @@ img{
    justify-content:flex-end;
    padding: 0;
    margin: 0;
- 
      margin-bottom: 80px !important; 
     padding-bottom: 20px !important; 
 
@@ -797,7 +796,6 @@ img{
 .imgpub{
     width: 195px;
     height: 112px;
-
 }
 /* grande */
 #img{
@@ -808,10 +806,13 @@ img{
     height: 374px;
 }
 /* moyenne */
-.img_2,.img_3 {
+.img_2 {
     width: 9rem;
     height: 80px;
-   
+}
+.img_3{
+    width: 9rem;
+    height: 80px;
 }
 /* petite */
 
@@ -829,6 +830,9 @@ img{
     width: 21rem;
     margin-left: 10px;
 }
+#img_5{
+    width: 12rem;
+}
 .consultesFocusInNew{
 
     padding-left: 6px !important;
@@ -836,6 +840,15 @@ img{
 /* Headline */
 #article_0{
     display: none;
+}
+
+.text-content{
+    padding: 0px !important; 
+     margin-left: 25px !important;
+}
+.title_22{
+    /* background-color: #007BFF; */
+    padding-left: 25px;
 }
 /* #title_4,#title_5,#title_6,#title_7,#title_8,#title_9,#title_10,#title_11,#title_12,#title_13,#title_14,#title_15,#title_16,#title_17,#title_18,#title_19,#title_20,#title_21,#title_22,#title_23,#title_24{
     font-size: 14px!important;
@@ -845,7 +858,7 @@ img{
 .cardFocus{
     /* background-color: #622205; */
     margin: 0px !important;
-    padding-left: 12px !important;
+    padding-left: 14px !important;
     /* margin-left: 0px !important; */
     /* width: 59% !important; */
 }
@@ -893,7 +906,12 @@ img{
 .cardSpotlighttext{
     /* background-color: rgb(68, 5, 5) !important; */
     margin-left: 0px !important;
-    padding: 0px !important;
+    padding-left: 30px !important;
+
+}
+.cardSpotlighttex{
+    /* background-color: #0056b3; */
+    margin-left: 25px !important;
 
 }
 /* Opinion */
@@ -904,7 +922,7 @@ img{
     padding-bottom: 0px !important;
     padding-top: 0px !important;
     padding-right: 0px !important;
-    padding-left: 8px !important;
+    padding-left: 18px !important;
 }
 .containerOpinion{
     height: auto !important;
@@ -1349,10 +1367,10 @@ img{
     padding: 0px !important;
 }
 
-.cardSpotlighttex{
+.cardSpotlighttext{
     /* background-color: red !important; */
     margin-left: 0px !important;
-    padding: 4px !important;
+    padding-left: 5px !important;
 
 }
 .cardSpotlighttex2{
