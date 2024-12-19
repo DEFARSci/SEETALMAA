@@ -407,6 +407,7 @@ img{
 
 
 .news-number {
+    
     font-size: 5rem;
     font-weight: bold;
     line-height: 1;
@@ -831,7 +832,7 @@ img{
     margin-left: 10px;
 }
 #img_5{
-    width: 12rem;
+    width: 10rem;
 }
 .consultesFocusInNew{
 
@@ -867,7 +868,7 @@ img{
 }
 
 /*Spotlight */
-#article_17,#article_22{
+#article_17,#article_22,#article_29{
     display: none;
 }
 #article_23{
@@ -932,6 +933,12 @@ img{
 }
 .cardOpinion{
     height: auto !important;
+}
+
+.cardSpotlighttex2{
+    /* background-color: red !important; */
+    margin-left: 0px !important;
+    padding-left: 0px !important;
 }
 
 /*Sport */
@@ -1785,6 +1792,13 @@ img{
 /* #categories_24,#title_24,#categories_23,#title_23{
     /* color: white !important; */
     /* margin-left: 10px !important; */
+    .news-item h4 {
+        
+        font-size: 16px;
+        margin-left: 42px !important;
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
+    }
 } 
 .spotlightCard{
     /* background-color: #041F4A !important; */
@@ -1912,11 +1926,12 @@ img{
 }
 .news-item h4 {
     font-size: 16px;
-    margin-left: 40px !important;
+    margin-left: 0px;
     margin-top: 5px !important;
     margin-bottom: 5px !important;
 }
 .conternerTextMost{
+    /* background-color: #0056b3; */
     padding: 0px !important;
 }
 .podcast{
@@ -2089,13 +2104,16 @@ img{
     display: none;
 }
 #article_22{
-    display: none;
+    /* display: none; */
 }
 #article_24{
-    display: none;
+    /* display: none; */
 }
 /* Opinion */
-#article_25{
+#opinioncard{
+    height:16rem !important;
+}
+#article_25,#article_29{
     display: none;
 }
 .cardOpinion{
@@ -2271,6 +2289,12 @@ img{
 .img_3 {
     width: 100px;
     height: 81px;
+}
+.news-item h4 {
+    font-size: 16px;
+    margin-left: 20px !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
 }
 }
 
