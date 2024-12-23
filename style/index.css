@@ -361,7 +361,9 @@ nav{
     border-right:solid 1px #DCDCDC; */
     padding-top: 15px;
 }
-
+#article_29{
+    display: none;
+}
 /* sport */
 
 .sport{
@@ -2099,6 +2101,27 @@ img{
     margin: 0!important;
     /* background-color: #000000 !important; */
 }
+.contentcardfocus{
+    /* background-color: #041F4A !important; */
+    /* padding-left: 25px !important; */
+}
+.rowfocus{
+    /* background-color: #041F4A !important; */
+    padding: 0px !important;
+}
+.contentcardfocus img{
+   width: 160px ;
+}
+.cardFocus{
+    /* background-color: #041F4A !important; */
+    width: 170px !important;
+}
+/* societé */
+.societéRow{
+    /* background-color: #007BFF; */
+    margin-top: 9px !important;
+}
+/* fin societe */
 /* Spotlight */
 #article_17{
     display: none;
@@ -2109,9 +2132,31 @@ img{
 #article_24{
     /* display: none; */
 }
+.cardSpotlighttext{
+    /* background-color: #041F4A !important; */
+    margin: 0px;
+    padding: 0px;
+    width: 222px !important;
+}
+.card_1{
+    /* background-color: #0056b3; */
+    width: 172px !important;
+    padding: 0px !important;
+}
+.card_1 img{
+    width: 162px !important;
+}
+.textGroTitre{
+    /* background-color: #041F4A !important; */
+    padding: 0px !important;
+}
 /* Opinion */
+
+.cardImgOpt img{
+    width: 160px;
+}
 #opinioncard{
-    height:16rem !important;
+    height:19rem !important;
 }
 #article_25,#article_29{
     display: none;
@@ -2140,6 +2185,17 @@ img{
     margin-top: 0px !important;
     margin-left: 10px !important;
     width: 170px !important;
+}
+.cardSpotlight{
+    /* background-color: #4a0504 !important; */
+    padding: 0px !important;
+    /* margin: 0px !important; */
+}
+.cardSpotlighttex2{
+    /* background-color: #041F4A !important; */
+    margin: 0px;
+    padding-left: 10px !important;
+    width: 230px !important;
 }
 /* Most popular */
 .Most_popular_ligne{
@@ -2184,6 +2240,7 @@ img{
 @media (min-width: 992px) and (max-width: 1399px) {
     body {
         font-size: 20px !important;
+        /* background-color: #041F4A !important; */
         
     }
     .navbar .menu a {
@@ -2285,6 +2342,9 @@ img{
     height: 100px;
    
 }
+#img_14{
+    width: 370px;
+}
 /* petite */
 .img_3 {
     width: 100px;
@@ -2296,6 +2356,24 @@ img{
     margin-top: 5px !important;
     margin-bottom: 5px !important;
 }
+
+
+.contentcardfocus img{
+    width: 140px ;
+ }
+ .cardSpotlighttext{
+    /* background-color: #041F4A !important; */
+    margin: 0px;
+    padding: 0px;
+    width: 225px !important;
+}
+.cardSpotlighttex2{
+    /* background-color: #041F4A !important; */
+    margin: 0px;
+    padding-left: 10px !important;
+    width: 240px !important;
+}
+
 }
 
 /* carousel */

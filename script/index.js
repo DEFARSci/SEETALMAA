@@ -41,7 +41,7 @@ async function fetchPageData() {
       // await Promise.all([14, 15, 16].map(index => displayImage(data, `img_${index}`, index)));
   
       Spotlight.forEach((item, index) => displayTitle(data, `title_${item}`,`categories_${item}`, 17 + index));
-      await Promise.all([17,22].map(index => displayContent(data, `article_${index}`, index)));
+      await Promise.all([17,22,24].map(index => displayContent(data, `article_${index}`, index)));
       // await Promise.all([17, 18, 19, 20, 21, 22, 23, 24].map(index => displayImage(data, `img_${index}`, index)));
   
       Opinion.forEach((item, index) => displayTitle(data, `title_${item}`,`categories_${item}`, 25 + index));
