@@ -10,7 +10,17 @@
     --font-medium: 1rem;
     --menu-color: #041F4A;
     --menu-color2: #052962;
+    
   }
+
+
+
+
+
+
+
+
+
 /* Audio */
   
   /* Styles globaux */
@@ -190,7 +200,8 @@ nav{
     bottom: 1px; /* Positionnement juste en dessous du texte */
     width: 100%;
     height: 6px; /* Épaisseur de la ligne */
-    background-color: rgb(240, 230, 24); /* Couleur de la ligne */
+    /* background-color: rgb(240, 230, 24); Couleur de la ligne */
+    background-color: rgb(230, 70, 26); /* Couleur de la ligne */
     transform: scaleY(1); /* Ligne visible en permanence */
     transform-origin: bottom;
 }
@@ -202,7 +213,7 @@ nav{
     bottom: 1px; /* Positionnement juste en dessous du texte */
     width: 100%;
     height: 6px; /* Épaisseur de la ligne */
-    background-color: rgb(230, 70, 26); /* Couleur de la ligne */
+    background-color: rgb(181, 128, 4); /*Couleur de la ligne*/
     transform: scaleY(1); /* Ligne visible en permanence */
     transform-origin: bottom;
 }
@@ -214,7 +225,7 @@ nav{
     bottom: 1px; /* Positionnement juste en dessous du texte */
     width: 100%;
     height: 6px; /* Épaisseur de la ligne */
-    background-color: rgb(101, 230, 26); /* Couleur de la ligne */
+    background-color: rgb(3, 128, 20); /* Couleur de la ligne */
     transform: scaleY(1); /* Ligne visible en permanence */
     transform-origin: bottom;
 }
@@ -356,9 +367,9 @@ nav{
 /* opinion */
 
 .opinion{
-    /* border-top: solid 1px #DCDCDC;
+    /* background-color: #000000; */
     border-left:solid 1px #DCDCDC;
-    border-right:solid 1px #DCDCDC; */
+    border-right:solid 1px #DCDCDC;
     padding-top: 15px;
 }
 #article_29{
@@ -828,13 +839,14 @@ img{
 .card_1{
     display: flex;
 }
+/* TODO taille de l'image */
 .sous_card_1{
     /* background-color: #041F4A; */
     width: 21rem;
     margin-left: 10px;
 }
 #img_5{
-    width: 10rem;
+    /* width: 12rem; */
 }
 .consultesFocusInNew{
 
@@ -851,7 +863,7 @@ img{
 }
 .title_22{
     /* background-color: #007BFF; */
-    padding-left: 25px;
+    padding-left: 18px;
 }
 /* #title_4,#title_5,#title_6,#title_7,#title_8,#title_9,#title_10,#title_11,#title_12,#title_13,#title_14,#title_15,#title_16,#title_17,#title_18,#title_19,#title_20,#title_21,#title_22,#title_23,#title_24{
     font-size: 14px!important;
@@ -867,6 +879,11 @@ img{
 }
 .contentcardfocus{
     padding-right: 0px !important;
+}
+
+#card_22{
+    /* background-color: #041F4A !important; */
+    padding-left: 15px ;
 }
 
 /*Spotlight */
@@ -1360,13 +1377,14 @@ img{
     margin: 0px !important;
 }
 .text-content{
+   
     padding: 0px !important; 
      margin: 0px !important;
 }
 
 .title_22{
     /* background-color: #007BFF; */
-    padding-left: 0px ;
+    padding-left: 16px ;
 }
 .spotlightCard{
     /* background-color: #041F4A !important; */
@@ -1379,7 +1397,7 @@ img{
 .cardSpotlighttext{
     /* background-color: red !important; */
     margin-left: 0px !important;
-    padding-left: 5px !important;
+    padding:0px !important;
 
 }
 .cardSpotlighttex2{
@@ -1388,6 +1406,9 @@ img{
     padding-left: 0px !important;
    
 
+}
+#card_22{
+    padding-left: 20px !important;
 }
 /* Opinion */
 .cardImgOpt{
@@ -1502,10 +1523,7 @@ img{
 .conternerTextMost{
     padding: 0px !important;
 }
-.podcast{
-    /* display: none; */
-    
-}
+
 
 #most_1,#most_2,#most_3,#most_4,#most_5,#most_6,#most_7,#most_8,#most_9,#most_10,#most_11,#most_12,#most_13,#most_14,#most_15,#most_16,#most_17,#most_18,#most_19,#most_20{
     display: block !important;
@@ -1712,6 +1730,12 @@ img{
     margin-left: 3.125rem;
     margin-top: 5rem;
   }
+  .text-content{
+   /* background-color: #8A2BE2; */
+    padding-left: 10px !important; 
+     margin: 0px !important;
+     width: 202px!important;
+}
 .card_1{
     display: flex;
 }
@@ -1749,7 +1773,7 @@ img{
     /* background-color: #622205; */
     margin-top: 0px !important;
     padding-left: 0px !important;
-    width: 10.7rem !important;
+    width: 191px!important;
     /* margin-left: 0px !important; */
     
 }
@@ -1809,7 +1833,7 @@ img{
 .cardSpotlight{
     padding: 0px !important;
 }
-.cardSpotlighttex{
+.cardSpotlighttext{
     /* background-color: red !important; */
     margin-left: 0px !important;
     padding-left: 24px !important;
@@ -1936,6 +1960,11 @@ img{
     /* background-color: #0056b3; */
     padding: 0px !important;
 }
+
+.conternerTextMost h4{
+    /* background-color: #c01307; */
+    padding-right: 40px;
+}
 .podcast{
     /* display: none; */
     
@@ -2046,7 +2075,7 @@ img{
 .focus{
     /* background-color: #622205; */
     
-    width: 98px !important;
+   width: 98px !important;
    height: 38px !important;
 }
 .focus a{
@@ -2197,6 +2226,23 @@ img{
     padding-left: 10px !important;
     width: 230px !important;
 }
+
+.podcast-card {
+    background: #333333;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 7px;
+    /* width: 0px; 4 cards par ligne avec marge */
+
+    /* width: calc(25% - 30px); 4 cards par ligne avec marge */
+    height: 390px; 
+    width: 300px !important;
+    /* margin: 10px !important; */
+}
+.podcastContent{
+    padding-left: 35px;
+}
 /* Most popular */
 .Most_popular_ligne{
     /* border-left:solid 1px #DCDCDC; */
@@ -2212,6 +2258,7 @@ img{
     border-right:solid 1px #DCDCDC;
     border-bottom:solid 1px #DCDCDC;
     padding-left: 10px;
+    
     height: 5rem;
 }
 .most_popular_ligne_head_text{
@@ -2223,7 +2270,8 @@ img{
 .conternerTextMost h4{
     /* background-color: #0056b3 !important; */
     font-size: 15px !important;
-    margin-left: 30px !important;
+    margin-left: 10px !important;
+    padding-right: 23px;
 }
 .footer1{
     border-width: 0px !important;
@@ -2374,6 +2422,14 @@ img{
     width: 240px !important;
 }
 
+.news-item h4 {
+    font-size: 16px;
+    margin-left: 20px !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    padding-right: 30px;
+}
+
 }
 
 /* carousel */
@@ -2429,7 +2485,7 @@ img{
     color: white;
     border: none;
     outline: none;
-    background: rgba(0,0,0,0.5);
+    background: rgba(4, 4, 4, 0.5);
     border-radius: 50%;
     z-index: 1;
     transition: background-color 0.3s ease;

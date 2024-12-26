@@ -1,0 +1,7 @@
+:root{
+    --color-maternite:rgb(181, 128, 4);
+}
+
+#categories_14,#categories_15,#categories_16{
+    color: var(--color-maternite) !important;
+}

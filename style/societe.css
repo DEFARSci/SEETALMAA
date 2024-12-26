@@ -1,0 +1,8 @@
+:root{
+    --color-socite:rgb(3, 128, 20);
+}
+
+#categories_17,#categories_18,#categories_19,#categories_20,#categories_21,#categories_22,#categories_23,
+#categories_24{
+    color: var(--color-socite) !important;
+}

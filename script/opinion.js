@@ -11,7 +11,6 @@ const Headlines=['title_0','title_1','title_2','title_3','title_4','title_5','ti
     'title_7','title_8','title_9','title_10','title_11','title_12','title_13'];
 const News_in_focus=['title_14','title_15','title_16'];
 const Spotlight=['title_17','title_18','title_19','title_20','title_21','title_22','title_23','title_24'];
-const Opinion2=['25','title_26','title_27','title_28','title_29','title_30','title_31','title_32','title_33','title_34','title_35','title_36','title_37','title_38','title_39','title_40','title_41','title_42','title_43','title_44','title_45','title_46'];
 const Opinion=['25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46'];
 
 const sport=['title_31','title_32','title_33','title_34','title_35','title_36','title_37','title_38','title_39','title_40','title_41','title_42','title_43'];
@@ -23,10 +22,10 @@ const mostView=['most_1','most_2','most_3','most_4','most_5','most_6','most_7','
 async function fetchPageData() {
   try {
        const data = await fetchPostData();
-     
+    
     //  Opinion
 
-    Opinion.forEach((item, index) => displayTitle(data, `title_${item}`,`categories_${item}`, 14 + index));
+    Opinion.forEach((item, index) => displayTitle(data, `title_${item}`,`categories_${item}`, 25 + index));
     await Promise.all([25, 26, 27, 28, 29, 30, 31, 32, 33, 34].map(index => displayImage(data, `img_${index}`, index)));
     mostView.forEach((item, index) => displayTitle(data, item,null, index));
 
@@ -34,26 +33,7 @@ async function fetchPageData() {
     // for (let i = 0; i < Opinion.length; i++) {
     //     displayTitle(data, "title_"+Opinion[i],"categories_"+Opinion[i], 25+i);
     //   }
-      await displayContent(data,'article_25',25);
-
-      // await displayImage(data, 'img_25',25);
-      // await displayImage(data, 'img_26',26);
-      // await displayImage(data, 'img_27',27);
-      // await displayImage(data, 'img_28',28);
-      // await displayImage(data, 'img_29',29);
-      // await displayImage(data, 'img_30',30);
-      // await displayImage(data, 'img_31',31);
-      // await displayImage(data, 'img_32',32);
-      // await displayImage(data, 'img_33',33);
-      // await displayImage(data, 'img_34',34);
-
-    //   sport
-  
-
-       
-
-
-    //   mostvue
+    await Promise.all([25,29].map(index => displayContent(data, `article_${index}`, index)));
 
    
    
@@ -152,12 +132,32 @@ async function fetchCategoryName(categoryId) {
 
 // Fonction pour afficher le contenu de l'article
 async function displayContent(data,contentid,numpost) {
-//   const data = await fetchPostData();
-  const post = data[numpost];
-  const content = post.content.rendered;
-  const mots = content.split(' ');
-  document.getElementById(contentid).innerHTML = mots.slice(0, 20).join(' ') + '...';
-}
+  //   const data = await fetchPostData();
+    const post = data[numpost];
+    const content = post.content.rendered;
+    
+   
+    // Découpe le contenu en mots et limite à 20 mots, tout en gardant le HTML
+    const mots = content.split(' ');
+    const truncatedContent = mots.slice(0, 25).join(' ') + '...';
+  
+    // Insère le contenu HTML dans l'élément cible
+    const contentElement = document.getElementById(contentid);
+    contentElement.innerHTML = truncatedContent;
+  
+    // Modifier les styles des balises spécifiques (si présentes)
+    const h1 = contentElement.querySelector('h1');
+    if (h1) {
+      h1.style.fontSize = '15px'; // Modifie la taille du texte pour <h1>
+      // Exemple de changement de couleur
+    }
+  
+    const span = contentElement.querySelector('span');
+    if (span) {
+      span.style.fontSize = '15px'; // Modifie la taille du texte pour <span>
+     // Exemple de changement de couleur
+    }
+  }
 
 // Fonction pour afficher l'auteur
 

@@ -20,7 +20,7 @@ async function fetchPageData() {
      const data = await fetchPostData();
 
     Spotlight.forEach((item, index) => displayTitle(data, `title_${item}`,`categories_${item}`, 17 + index));
-    await Promise.all([17,22].map(index => displayContent(data, `article_${index}`, index)));
+    await Promise.all([17,22,24].map(index => displayContent(data, `article_${index}`, index)));
     await Promise.all([17, 18, 19, 20, 21, 22, 23, 24].map(index => displayImage(data, `img_${index}`, index)));
     mostView.forEach((item, index) => displayTitle(data, item,null, index));
 
@@ -124,12 +124,32 @@ async function fetchCategoryName(categoryId) {
 
 // Fonction pour afficher le contenu de l'article
 async function displayContent(data,contentid,numpost) {
-//   const data = await fetchPostData();
-  const post = data[numpost];
-  const content = post.content.rendered;
-  const mots = content.split(' ');
-  document.getElementById(contentid).innerHTML = mots.slice(0, 20).join(' ') + '...';
-}
+    //   const data = await fetchPostData();
+      const post = data[numpost];
+      const content = post.content.rendered;
+      
+     
+      // Découpe le contenu en mots et limite à 20 mots, tout en gardant le HTML
+      const mots = content.split(' ');
+      const truncatedContent = mots.slice(0, 25).join(' ') + '...';
+    
+      // Insère le contenu HTML dans l'élément cible
+      const contentElement = document.getElementById(contentid);
+      contentElement.innerHTML = truncatedContent;
+    
+      // Modifier les styles des balises spécifiques (si présentes)
+      const h1 = contentElement.querySelector('h1');
+      if (h1) {
+        h1.style.fontSize = '15px'; // Modifie la taille du texte pour <h1>
+        // Exemple de changement de couleur
+      }
+    
+      const span = contentElement.querySelector('span');
+      if (span) {
+        span.style.fontSize = '15px'; // Modifie la taille du texte pour <span>
+       // Exemple de changement de couleur
+      }
+    }
 
 // Fonction pour afficher l'auteur
 function displayAuthor(authorName) {

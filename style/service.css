@@ -1,0 +1,11 @@
+:root{
+    --colore-service:rgb(26, 230, 210);
+}
+
+
+#categories_31,#categories_32,#categories_33,#categories_34,#categories_35,#categories_36,
+#categories_37,#categories_38,#categories_39,#categories_40,#categories_41,#categories_42,
+#categories_43{
+    font-size: 13px !important;
+    color: var(--colore-service) !important;
+}

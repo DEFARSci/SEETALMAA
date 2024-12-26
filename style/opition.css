@@ -1,3 +1,17 @@
+:root{
+    --color-opinion:rgb(186, 26, 230);
+}
+
+#categories_25,#categories_26,#categories_27,#categories_34,#categories_28,#categories_29,#categories_30,
+#categories_31,#categories_32,#categories_33,#categories_35,#categories_36,#categories_37,#categories_38,
+#categories_39,#categories_40,#categories_41,#categories_42,#categories_43,#categories_44,#categories_45,#categories_46{
+    color: var(--color-opinion) !important;
+}
+
+
+
+
+
 @media (min-width: 375px) and (max-width:767px) {
     body {
         font-size: 16px !important;
