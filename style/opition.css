@@ -38,10 +38,35 @@
         height: auto !important;
     }
     .cardCercle2 img{
+        display: flex !important;
+        justify-content: center !important;
         margin-top: 0px !important;
       
     }
     .card3{
         height: auto !important;
+    }
+}
+.cardCercle2 img{
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 0px !important;
+  
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .img_2_rond{
+        width: 120px;
+        height: 120px;
+        margin-left: 30px;
+        margin-top: 80px;
+    }
+}
+@media (min-width: 992px) and (max-width: 1399px) {
+    .img_2_rond{
+        width: 140px;
+        height: 140px;
+        margin-left: 0px;
+        margin-top: 80px;
     }
 }

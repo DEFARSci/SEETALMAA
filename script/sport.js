@@ -7,7 +7,7 @@ const lifestylebttn=document.getElementById('lifestyle');
 
 
 
-const sport=['31','32','33','34','35','36','37','38','39','40','41','42','43'];
+const sport=['31','32','33','34','35','36','37','38','39','40','41','42','43','44'];
 
 const mostView=['most_1','most_2','most_3','most_4','most_5','most_6','most_7','most_8','most_9','most_10','most_11','most_12','most_13','most_14','most_15','most_16','most_17','most_18','most_19','most_20'];
 
@@ -20,6 +20,8 @@ async function fetchPageData() {
 
     sport.forEach((item, index) => displayTitle(data, `title_${item}`,`categories_${item}`, 31 + index));
     await displayContent(data, 'article_31', 31);
+    await Promise.all([31].map(index => displayContent(data, `article_${index}`, index)));
+
     await Promise.all([31, 35, 36, 37, 38, 39, 41, 42].map(index => displayImage(data, `img_${index}`, index)));
     mostView.forEach((item, index) => displayTitle(data, item,null, index));
 
@@ -79,12 +81,32 @@ async function fetchFeaturedMedia(mediaId) {
 
 // Fonction pour afficher le contenu de l'article
 async function displayContent(data,contentid,numpost) {
-//   const data = await fetchPostData();
-  const post = data[numpost];
-  const content = post.content.rendered;
-  const mots = content.split(' ');
-  document.getElementById(contentid).innerHTML = mots.slice(0, 20).join(' ') + '...';
-}
+  //   const data = await fetchPostData();
+    const post = data[numpost];
+    const content = post.content.rendered;
+    
+   
+    // Découpe le contenu en mots et limite à 20 mots, tout en gardant le HTML
+    const mots = content.split(' ');
+    const truncatedContent = mots.slice(0, 25).join(' ') + '...';
+  
+    // Insère le contenu HTML dans l'élément cible
+    const contentElement = document.getElementById(contentid);
+    contentElement.innerHTML = truncatedContent;
+  
+    // Modifier les styles des balises spécifiques (si présentes)
+    const h1 = contentElement.querySelector('h1');
+    if (h1) {
+      h1.style.fontSize = '15px'; // Modifie la taille du texte pour <h1>
+      // Exemple de changement de couleur
+    }
+  
+    const span = contentElement.querySelector('span');
+    if (span) {
+      span.style.fontSize = '15px'; // Modifie la taille du texte pour <span>
+     // Exemple de changement de couleur
+    }
+  }
 
 
 // Fonction pour afficher le titre
